@@ -1,0 +1,140 @@
+@media (max-width: 1440px) {
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .hide-on-mobile-tablet {
+    display: none;
+  }
+
+  .show-on-mobile-tablet {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+
+  .show-on-tablet {
+    display: block;
+  }
+
+  .mt-tablet-10 {
+    margin-top: 28px;
+  }
+
+  .footer-menu-link {
+    margin: 20px 0px;
+    margin-right: 14px;
+  }
+
+  .footer-menu-left .footer-menu-link:last-child {
+    margin-right: 0px;
+  }
+
+  .footer-menu-link:not(.footer-menu-right
+      .footer-menu-link:last-child)::after {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .mt-tablet-10 {
+    margin-top: 28px;
+  }
+
+  .brand-info-container {
+    padding: 40px;
+  }
+
+  .footer-menu-link:not(.footer-menu-right
+      .footer-menu-link:last-child)::after {
+    display: none;
+  }
+
+  .footer-menu-left {
+    justify-content: center;
+  }
+
+  .footer-menu-right {
+    justify-content: center;
+  }
+
+  .footer-menu-link {
+    margin: 20px 10px;
+  }
+
+  .footer-menu-right .footer-menu-link:first-child {
+    margin: 20px 10px;
+  }
+
+  .email-input {
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+    border-radius: 0;
+    width: 362px;
+    height: 46px;
+    padding: 10px;
+  }
+
+  .title-email {
+    font-size: 2.6rem;
+  }
+
+  .email-text {
+    font-size: 1.4rem;
+    margin-top: 34px;
+    margin-bottom: 24px;
+  }
+
+  .input-email-container {
+    margin-top: 0;
+  }
+
+  .load-more-news {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 738px) {
+}
+
+@media (min-width: 370px) and (max-width: 599px) {
+}
+
+@media (max-width: 369px) {
+  .footer {
+    margin-top: 40px;
+  }
+
+  .footer-menu-link {
+    margin: 20px 8px;
+  }
+
+  .footer-menu-right .footer-menu-link:first-child {
+    margin: 20px 8px;
+  }
+
+  .title-email {
+    font-size: 2rem;
+  }
+
+  .email-text {
+    font-size: 1.4rem;
+    margin-top: 34px;
+    margin-bottom: 24px;
+  }
+
+  .email-input {
+    width: 300px;
+    height: 46px;
+  }
+
+  .input-email-container {
+    margin-top: 0;
+  }
+}

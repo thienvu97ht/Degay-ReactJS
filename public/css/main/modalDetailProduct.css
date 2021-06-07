@@ -1,0 +1,190 @@
+/* Modal */
+
+.modal__body-detail-product {
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  display: none;
+  padding: 20px;
+}
+
+.custom-wide-model-box {
+  width: 656px;
+}
+
+.detail-product-img {
+  width: 100%;
+}
+
+.small-img-product {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-img-product-box {
+  cursor: pointer;
+}
+
+/* Modal right */
+
+.modal-title-product {
+  line-height: 26px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.category-product {
+  font-size: 1.4rem;
+  margin-top: 24px;
+}
+
+.modal-size-box {
+  display: flex;
+  align-items: center;
+}
+
+input[name="option-0"] {
+  display: none;
+}
+
+.size-title {
+  font-size: 1.4rem;
+  width: 70px;
+}
+
+.size-input-box {
+  margin-left: 10px;
+}
+
+.size-input-box label {
+  background-color: #eee;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity-product-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+.quantity-input {
+  height: 36px;
+  width: 192px;
+  font-size: 1.4rem;
+  outline: none;
+  padding: 0 10px;
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  margin-left: 10px;
+}
+
+#swatch-0-nh:checked ~ label[for="swatch-0-nh"],
+#swatch-0-trung:checked ~ label[for="swatch-0-trung"],
+#swatch-0-lon:checked ~ label[for="swatch-0-lon"] {
+  color: #fff;
+  background-color: #bda47d;
+  transition: ease-in 0.1s;
+}
+
+.modal-product-price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 26px;
+}
+
+.modal-add-product-btn {
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 194px;
+  height: 38px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.modal-add-product-btn:hover {
+  background-color: #bda47d;
+  transition: ease-in 0.2s;
+}
+
+/* Button close modal */
+
+.modal__body-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.modal__body-close-btn {
+  color: #fff;
+  font-size: 1.4rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ẩn trên Mobile & Tablet */
+@media (max-width: 1023px) {
+  .modal {
+    display: none;
+  }
+}
+
+/* Slide modal */
+.sv-slider-item img {
+  width: 100%;
+  height: 290px;
+}
+
+.sv-slider .owl-thumbs {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.owl-thumbs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.owl-thumbs > .owl-thumb-item {
+  border: none;
+  background-color: #fff;
+}
+
+.owl-thumb-item.active {
+  border: 1px solid #000;
+}
+
+.owl-thumbs button > img {
+  height: 50px;
+}
+
+/* Animation op-close modal */
+.modal-active {
+  animation: fadeIn linear 0.15s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(40%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}

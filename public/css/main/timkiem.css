@@ -1,0 +1,14 @@
+.search-container {
+  margin-top: 140px;
+}
+
+.search-container-text {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #767976;
+}
+
+.list-products-container {
+    margin-top: 0;
+}

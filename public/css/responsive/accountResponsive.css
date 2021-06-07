@@ -1,0 +1,37 @@
+@media (max-width: 1440px) {
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .account-container {
+    margin-top: 100px;
+  }
+
+  .user_info-container {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+}
+
+@media (min-width: 600px) and (max-width: 738px) {
+}
+
+@media (min-width: 370px) and (max-width: 599px) {
+}
+
+@media (max-width: 369px) {
+  .user_info-box span {
+    font-size: 1.3rem;
+  }
+
+  .user_info-box span:first-child {
+    width: 25%;
+  }
+}

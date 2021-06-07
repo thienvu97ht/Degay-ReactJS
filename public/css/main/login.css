@@ -1,0 +1,199 @@
+.log-in-sign-up-container {
+  margin-top: 100px;
+}
+
+.login-socia-network {
+  padding: 40px 0;
+}
+
+.login-socia-title {
+  color: rgb(92, 91, 91);
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-socialoginfb {
+  background: #546ea6
+    url(//theme.hstatic.net/200000031420/1000527863/14/facebook.png?v=381)
+    no-repeat 0 center;
+}
+
+.btn-socialogingg {
+  background: #df5656
+    url(//theme.hstatic.net/200000031420/1000527863/14/googleplus.png?v=381)
+    no-repeat 0 center;
+}
+
+.text-center .btn-socialoginfb,
+.text-center .btn-socialogingg {
+  margin: 0 5px;
+  padding-right: 10px;
+  text-indent: 30px;
+  line-height: 24px;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.btn-socialoginfb:hover,
+.btn-socialogingg:hover {
+  cursor: pointer;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+  transition: ease-in 0.2s;
+}
+
+.line-or {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.liner-or-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -13px;
+  background: #fff;
+  display: inline-block;
+  padding: 5px;
+  color: #999999;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Login - Sign up */
+/* Login Form*/
+.log-in-sign-up-form {
+  margin-top: 20px;
+}
+
+.content-cus-form {
+  width: 410px;
+  margin: 0 auto;
+}
+
+.col_full {
+  font-size: 1.4rem;
+  display: block;
+  position: relative;
+}
+.not-null {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: #ed1846;
+  z-index: 1;
+}
+
+.icon_checkout.ico-email {
+  background-position: 0 -44px;
+}
+
+.icon_checkout.ico-pass {
+  background-position: 0 -154px;
+}
+
+.icon_checkout {
+  background: url(//theme.hstatic.net/200000031420/1000527863/14/icon-checkout.png?v=381)
+    0 0 no-repeat;
+  background-size: 300px;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  left: 12px;
+}
+
+.content-cus-form .col_full > input {
+  height: 40px;
+  border-radius: 0;
+  font-weight: normal;
+  padding-top: 0;
+  padding-bottom: 0;
+  outline: none !important;
+  box-shadow: none !important;
+  padding-left: 42px;
+  width: 100%;
+  margin-bottom: 15px !important;
+  background: #f2f2f2;
+  border: none;
+  color: #777;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 1.4rem;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  -webkit-transition: border-color ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.content-cus-form .col_full > button {
+  width: 100%;
+  margin-bottom: 20px !important;
+  display: block;
+  height: 40px;
+  border: 1px solid #6f6a60;
+  background: transparent;
+  color: #6f6a60;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-size: 1.4rem;
+}
+
+.content-cus-form .col_full > button:hover {
+  border: 1px solid #000000;
+  background: #000000;
+  color: #fff;
+}
+
+.forgot-password {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #6f6a60;
+  position: relative;
+}
+
+.forgot-password::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -4px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.forgot-password:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* Sign Up Form */

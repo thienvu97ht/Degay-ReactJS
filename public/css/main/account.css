@@ -1,0 +1,177 @@
+.account-container {
+  margin-top: 140px;
+}
+
+.nav-bar-top {
+  display: flex;
+  background-color: #000;
+  padding: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.account-name {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.nav-bar-bottom {
+  padding: 10px;
+}
+
+.account-information-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-information-item {
+  padding: 5px 5px 5px 10px;
+}
+
+.account-information-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.account-information-item.active {
+  background-color: #f1f1f1;
+}
+
+/* detailAccount */
+.user_info-container {
+  width: 50%;
+}
+
+/* accountInfo */
+
+.accountInfo h3 {
+  font-size: 1.6rem;
+}
+
+.user_info-container p {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.user_info-box {
+  padding: 10px;
+  border: 1px solid #eaeaea;
+}
+
+.user_info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user_info-box li {
+  padding: 5px 0;
+}
+
+.user_info-box span {
+  color: #333;
+  font-size: 1.4rem;
+}
+
+.user_info-box span:first-child {
+  display: inline-block;
+  width: 30%;
+}
+
+/* accountNeworder */
+
+.accountNeworder-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountNeworder-table {
+  overflow-y: hidden;
+}
+
+.accountNeworder-title p,
+.accountNeworder-title a {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table thead {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody > tr > td {
+  white-space: nowrap;
+}
+
+.table thead > tr > th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table thead > tr > th,
+.table tbody > tr > td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.table tbody > tr > td > a {
+  text-decoration: none;
+  color: #333;
+  line-height: 26px;
+}
+
+/* accountAddress */
+.accountAddress-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountAddress-title p,
+.accountAddress-title a {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.accountAddress-box {
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.accountAddress-box .name {
+  font-size: 1.4rem;
+  font-family: 600;
+}
+
+.accountAddress-box .address,
+.accountAddress-box .phone {
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 24px;
+}
+
+.accountAddress-box > .address-actions > .action-btn {
+  margin-right: 10px;
+}
+
+.accountAddress-box > .address-actions > .action-btn > a {
+  color: #333;
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+}

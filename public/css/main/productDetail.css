@@ -1,0 +1,199 @@
+.product-detail-container {
+  margin-top: 140px;
+}
+
+.detail-product-img {
+  width: 100%;
+}
+
+.small-img-product {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-img-product-box {
+  cursor: pointer;
+}
+
+/* Product detail right */
+.detail-product-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-detail-title {
+  line-height: 26px;
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.category-product {
+  font-size: 1.4rem;
+  margin-top: 24px;
+}
+
+.product-detail_size-box {
+  display: flex;
+  align-items: center;
+}
+
+input[name="option-0"] {
+  display: none;
+}
+
+.size-title {
+  font-size: 1.4rem;
+  width: 70px;
+}
+
+.size-input-box {
+  margin-left: 10px;
+}
+
+.size-input-box label {
+  background-color: #eee;
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity-product-box {
+  display: flex;
+  margin-top: 10px;
+}
+
+.quantity-input {
+  height: 36px;
+  width: 192px;
+  font-size: 1.4rem;
+  outline: none;
+  padding: 0 10px;
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  margin-left: 10px;
+}
+
+#swatch-0-nh:checked ~ label[for="swatch-0-nh"],
+#swatch-0-trung:checked ~ label[for="swatch-0-trung"],
+#swatch-0-lon:checked ~ label[for="swatch-0-lon"] {
+  color: #fff;
+  background-color: #bda47d;
+  transition: ease-in 0.1s;
+}
+
+.product-detail_price {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 26px;
+}
+
+.product-detail_add-btn {
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 194px;
+  height: 38px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.product-detail_add-btn:hover {
+  background-color: #bda47d;
+  transition: ease-in 0.2s;
+}
+
+.product_detail-description .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.product_detail-description .description {
+  font-size: 1.4rem;
+}
+
+.free_shipping {
+  font-size: 1.6rem;
+  border-top: 1px solid #ccc;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.share-container {
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+.share-container p {
+  font-size: 1.4rem;
+}
+
+.share-icon {
+  font-size: 1.6rem;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Slide product detail */
+.sv-slider-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.sv-slider .owl-thumbs {
+  white-space: nowrap;
+}
+
+.owl-thumbs {
+  display: flex;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.owl-thumbs > .owl-thumb-item {
+  border: none;
+  background-color: #fff;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.owl-thumb-item.active {
+  border: 1px solid #000;
+}
+
+.owl-thumbs button > img {
+  height: 80px;
+}
+
+/* Line */
+
+.line-or {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #dfdfdf;
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.liner-or-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -13px;
+  background: #fff;
+  display: inline-block;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  font-size: 3.4rem;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+}

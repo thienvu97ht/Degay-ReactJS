@@ -1,0 +1,36 @@
+@media (max-width: 1440px) {
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .log-in-sign-up-container {
+    margin-top: 40px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .content-cus-form {
+    width: 340px;
+  }
+
+  .login-socia-title {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 738px) {
+}
+
+@media (min-width: 370px) and (max-width: 599px) {
+}
+
+@media (max-width: 369px) {
+  .content-cus-form {
+    width: 100%;
+  }
+}

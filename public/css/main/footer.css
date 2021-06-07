@@ -1,0 +1,161 @@
+/* Footer */
+
+/* Footer top */
+.footer {
+  margin-top: 80px;
+}
+
+.footer-top {
+  text-align: center;
+}
+
+.title-email {
+  display: inline;
+  font-size: 3.4rem;
+  position: relative;
+}
+
+.title-email::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -8px;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 0%;
+  position: absolute;
+  background: #555;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 100%;
+}
+
+.email-text {
+  font-size: 2.2rem;
+  margin-top: 50px;
+}
+
+.input-email-container {
+  margin-top: 50px;
+}
+
+.input-email-left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input-email-right {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.email-input {
+  width: 434px;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  height: 48px;
+}
+
+.btn-subscribe {
+  cursor: pointer;
+  width: 116px;
+  height: 48px;
+  outline: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  margin-left: 16px;
+  font-size: 1.6rem;
+  border: none;
+}
+
+/* Footer bottom */
+
+.footer-bottom {
+  margin-top: 50px;
+  background-color: #000;
+}
+
+.brand-info-container {
+  padding: 44px 0;
+}
+
+.brand-info {
+  display: flex;
+}
+
+.brand-info-img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.brand-info-text {
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.brand-info-icon {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+.brand-policy {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.footer-menu-left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-menu-right {
+  display: flex;
+}
+
+.footer-menu-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 20px 20px;
+  position: relative;
+}
+
+.footer-menu-link:not(.footer-menu-right .footer-menu-link:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: 1px solid rgb(255, 255, 255);
+  width: 1px;
+  height: 16px;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-menu-right .footer-menu-link:first-child {
+  margin-left: -4px;
+}
+
+.footer-menu-link:hover {
+  text-decoration: underline;
+}
+
+.designer {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+

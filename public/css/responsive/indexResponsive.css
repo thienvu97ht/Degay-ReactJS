@@ -1,0 +1,157 @@
+@media (max-width: 1440px) {
+  .header__slider-img {
+    object-position: 0px 0;
+    height: 800px;
+  }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .hide-on-mobile-tablet {
+    display: none;
+  }
+
+  .show-on-mobile-tablet {
+    display: block;
+  }
+
+  .add-cart-btn {
+    top: 0px;
+    right: 0px;
+    opacity: 1;
+    color: #000;
+  }
+
+  .container__trending-item:hover .add-cart-btn {
+    transform: translateX(0);
+  }
+
+  /* Slide 1 */
+  .slide-container {
+    top: 60px;
+  }
+
+  /* Trending container */
+  .container__trending {
+    margin-top: 90px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+
+  .show-on-tablet {
+    display: block;
+  }
+
+  .container__trending-item {
+    height: 290px;
+  }
+
+  .header__slider-img {
+    object-position: -60px 0;
+    height: 550px;
+  }
+
+  /* Slide 2 */
+  .owl-prev-two,
+  .owl-next-two {
+    top: 180px;
+  }
+
+  .owl-prev-two {
+    left: 2%;
+  }
+
+  .owl-next-two {
+    right: 2%;
+  }
+
+  .js-carousel-catmain .owl-dots {
+    top: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .header__slider-img {
+    object-position: 0px 0;
+    height: 400px;
+  }
+
+  .container__product-item {
+    margin-bottom: 50px;
+  }
+
+  .load-more-news {
+  }
+}
+
+@media (min-width: 600px) and (max-width: 738px) {
+  .container__trending-item {
+    height: 550px;
+  }
+}
+
+@media (min-width: 370px) and (max-width: 599px) {
+  .container__trending-item {
+    height: 350px;
+  }
+
+  .app__container-title {
+    font-size: 2.4rem;
+  }
+
+  .header__slider-img {
+    object-position: -150px 0;
+    height: 380px;
+  }
+
+  .news-item-img {
+    height: 300px;
+  }
+
+  .js-carousel-catmain .owl-dots {
+    top: 250px;
+  }
+}
+
+@media (max-width: 369px) {
+  .container__trending-item {
+    height: 290px;
+  }
+
+  .app__container-title {
+    font-size: 2.4rem;
+  }
+
+  .header__slider-img {
+    object-position: -120px 0;
+    height: 300px;
+  }
+
+  .news-item-img {
+    height: 200px;
+  }
+
+  /* Slide 2 */
+  .owl-prev-two,
+  .owl-next-two {
+    top: 100px;
+  }
+
+  .owl-prev-two {
+    left: 10%;
+  }
+
+  .owl-next-two {
+    right: 10%;
+  }
+
+  .js-carousel-catmain .owl-dots {
+    top: 160px;
+  }
+}
