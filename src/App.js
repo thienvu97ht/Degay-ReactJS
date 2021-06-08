@@ -1,28 +1,24 @@
 import React, { Component } from "react";
 import "./App.css";
 import Menu from "./components/Menu/Menu";
-import Slider from "./components/Slider/Slider";
-import Trending from "./components/Trending/Trending";
-import News from "./components/News/News";
+import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <div className="header">
-          {/* Nav bar */}
+      <Router>
+        <div className="app">
+          {/* Menu */}
           <Menu />
-          {/* Slider */}
-          <Slider />
-          {/* End Slide */}
+          {/* Nội dung */}
+          <Route path="/" exact component={Home} />
+          <Route path="/listProducts" component={Home} />
+          {/* Footer */}
+          <Footer />
         </div>
-        {/* Sản phẩm bán chạy */}
-        <Trending />
-        {/* Tin tức */}
-        <News />
-        <Footer />
-      </div>
+      </Router>
     );
   }
 }

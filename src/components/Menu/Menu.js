@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
   render() {
@@ -16,86 +17,86 @@ class Menu extends Component {
               </button>
             </li>
             <li className="header__navbar-item hide-on-mobile-tablet">
-              <a
-                href="index.html"
+              <Link
+                to="/"
                 className="header__navbar-item-link header__navbar-item-link-underline">
                 Trang chủ
-              </a>
+              </Link>
             </li>
             <li className="header__navbar-item hide-on-mobile-tablet">
-              <a
-                href="listproducts.html"
+              <Link
+                to="/listProducts"
                 className="header__navbar-item-link header__navbar-item-link-underline">
                 Sản phẩm
-              </a>
+              </Link>
               <div className="products-nav">
                 <ul className="products-nav-list">
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link ">
+                    <Link to="/tee" className="products-nav-item-link ">
                       TEE
-                    </a>
+                    </Link>
                   </li>
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link">
+                    <Link to="/sweater" className="products-nav-item-link">
                       SWEATER
-                    </a>
+                    </Link>
                   </li>
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link">
+                    <Link to="/hoodie" className="products-nav-item-link">
                       HOODIE
-                    </a>
+                    </Link>
                   </li>
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link">
+                    <Link to="/jeacket" className="products-nav-item-link">
                       JEACKET
-                    </a>
+                    </Link>
                   </li>
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link">
+                    <Link to="/pants" className="products-nav-item-link">
                       PANTS
-                    </a>
+                    </Link>
                   </li>
                   <li className="products-nav-item">
-                    <a href className="products-nav-item-link">
+                    <Link to="/accessories" className="products-nav-item-link">
                       ACCESSORIES
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </li>
             <li className="header__navbar-item hide-on-mobile-tablet">
-              <a
-                href="cuahang.html"
+              <Link
+                to="/stores"
                 className="header__navbar-item-link header__navbar-item-link-underline">
                 Cửa hàng
-              </a>
+              </Link>
             </li>
             <li className="header__navbar-item hide-on-mobile-tablet">
-              <a
-                href="gioithieu.html"
+              <Link
+                to="/about"
                 className="header__navbar-item-link header__navbar-item-link-underline">
                 Giới thiệu
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="header__navbar-center">
-          <a href="index.html">
+          <Link to="/">
             <img
               src="//theme.hstatic.net/1000281824/1000704890/14/logo.png?v=383"
               className="header__navbar-brand-logo"
               alt=""
             />
-          </a>
+          </Link>
         </div>
         <div className="header__navbar-right">
           <ul className="header__navbar-list">
             <li className="header__navbar-item hide-on-mobile-tablet">
-              <a
-                href="login.html"
+              <Link
+                to="/login"
                 className="header__navbar-item-link header__navbar-item-link-underline">
                 Đăng nhập
-              </a>
+              </Link>
             </li>
             <li className="header__navbar-item hide-on-mobile-tablet">
               <button
