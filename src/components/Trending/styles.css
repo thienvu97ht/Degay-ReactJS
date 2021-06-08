@@ -1,0 +1,125 @@
+/* Container trending */
+
+.container__trending {
+  margin-top: 140px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.app__container-title {
+  text-align: center;
+  font-size: 3.4rem;
+  padding-bottom: 36px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.container__trending-item {
+  width: 100%;
+  height: 268px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  transform: translateY(0px);
+  transition: all ease 0.3s;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.container__trending-img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.container__trending-img:hover {
+  transform: rotateY(180deg);
+}
+
+.container__trending-img1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.container__trending-img2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateY(180deg);
+}
+
+.icon-eye,
+.icon-bag {
+  font-size: 2rem;
+}
+
+.quick-view-btn,
+.add-cart-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: -34px;
+  cursor: pointer;
+  opacity: 0.3;
+  color: rgb(125, 125, 125);
+}
+
+.quick-view-btn {
+  transition: ease-in 0.2s;
+}
+
+.add-cart-btn {
+  transition: ease-in 0.3s;
+  top: 50px;
+}
+
+.container__trending-item:hover .quick-view-btn {
+  transform: translateX(-45px);
+  transition: ease-in 0.2s;
+  opacity: 1;
+}
+
+.container__trending-item:hover .add-cart-btn {
+  transform: translateX(-45px);
+  transition: ease-in 0.3s;
+  opacity: 1;
+}
+
+.quick-view-btn:hover,
+.add-cart-btn:hover {
+  color: #000;
+}
+
+/* Product */
+
+.product-name {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.product-price {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.currency-unit {
+  text-decoration: underline;
+}
