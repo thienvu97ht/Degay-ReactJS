@@ -1,5 +1,5 @@
 /* Header navbar */
-/* .header__navbar {
+.header__navbar {
   position: fixed;
   z-index: 2;
   right: 0;
@@ -110,11 +110,11 @@
 .header__navbar-item-link-underline:hover:after {
   width: 100%;
   left: 0;
-} */
+}
 
 /* Sub nav menu */
 
-/* .header__navbar-left {
+.header__navbar-left {
   position: relative;
 }
 
@@ -163,4 +163,4 @@
 .products-nav-item-link:hover::after {
   width: 100%;
   left: 0%;
-} */
+}
