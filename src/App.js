@@ -10,6 +10,8 @@ import About from "./components/About/About";
 import Search from "./components/Search/Search";
 import ViewCart from "./components/ViewCart/ViewCart";
 import Account from "./components/Account/Account";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
+import TestSlide from "./components/TestSlider/TestSlider";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -28,6 +30,8 @@ class App extends Component {
           <Route path="/search" component={Search} />
           <Route path="/view-cart" component={ViewCart} />
           <Route path="/account" component={Account} />
+          <Route path="/product-detail" component={ProductDetail} />
+          <Route path="/test" component={TestSlide} />
           {/* Footer */}
           <Footer />
         </div>

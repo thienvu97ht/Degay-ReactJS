@@ -1,6 +1,7 @@
 /* Tin tức */
 .container__product-item {
   width: 100%;
+  padding: 0 10px;
 }
 
 .news-content {
@@ -72,55 +73,4 @@
   border-radius: 5px;
   text-align: center;
   line-height: 48px;
-}
-
-/* Slide show 2 */
-
-.js-carousel-catmain {
-  display: flex;
-}
-
-.js-carousel-catmain .owl-dots {
-  top: 350px;
-}
-
-.owl-nav {
-  display: none;
-  z-index: 2;
-}
-
-.owl-nav button {
-  border: none !important;
-  outline: none !important;
-}
-
-.owl-prev-two,
-.owl-next-two {
-  position: absolute;
-  top: 150px;
-  color: #000 !important;
-  font-size: 20px !important;
-  font-weight: bolder !important;
-  background-color: transparent !important;
-  border-radius: 50% !important;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.owl-prev-two:hover,
-.owl-next-two:hover {
-  transition: all linear 0.3s;
-  background-color: rgb(255, 255, 255, 0.3) !important;
-}
-
-.owl-prev-two {
-  left: 10%;
-}
-
-.owl-next-two {
-  right: 10%;
 }

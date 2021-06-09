@@ -9,7 +9,7 @@
 @media (max-width: 1023px) {
   /* Slide 1 */
   .slide-container {
-    top: 60px;
+    margin-top: 60px;
   }
 }
 
@@ -23,6 +23,9 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+  .slide-container {
+    margin-top: 60px;
+  }
   .header__slider-img {
     object-position: 0px 0;
     height: 400px;
