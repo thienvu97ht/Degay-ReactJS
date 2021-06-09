@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import Menu from "./components/Menu/Menu";
-import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import ListProducts from "./components/ListProducts/ListProducts";
+import Stores from "./components/Stores/Stores";
+import About from "./components/About/About";
+import Search from "./components/Search/Search";
+import ViewCart from "./components/ViewCart/ViewCart";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -14,7 +20,12 @@ class App extends Component {
           <Menu />
           {/* Nội dung */}
           <Route path="/" exact component={Home} />
-          <Route path="/listProducts" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/listProducts" component={ListProducts} />
+          <Route path="/stores" component={Stores} />
+          <Route path="/about" component={About} />
+          <Route path="/search" component={Search} />
+          <Route path="/view-cart" component={ViewCart} />
           {/* Footer */}
           <Footer />
         </div>

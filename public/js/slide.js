@@ -37,13 +37,8 @@ function CarouselInit() {
       carousel.trigger("destroy.owl.carousel").removeClass("owl-carousel");
     }
   }
-}
-$(document).ready(CarouselInit);
-$(window).resize(CarouselInit);
 
-/* Jquery*/
-$(document).ready(function () {
-  $(".sajid-1").owlCarousel({
+  $(".sajid-1").addClass("owl-carousel").owlCarousel({
     margin: 0,
     loop: true,
     items: 1,
@@ -64,11 +59,12 @@ $(document).ready(function () {
   $(".owl-prev-one").click(function () {
     owl.trigger("prev.owl.carousel", [700]);
   });
-
-});
+}
+$(document).ready(CarouselInit);
+$(window).resize(CarouselInit);
 
 /* Modal */
-$('.sv-slider-modal .owl-carousel').owlCarousel({
+$(".sv-slider-modal .owl-carousel").owlCarousel({
   autoplay: false,
   autoplayHoverPause: true,
   dots: false,
@@ -76,8 +72,8 @@ $('.sv-slider-modal .owl-carousel').owlCarousel({
   thumbs: true,
   thumbImage: true,
   thumbsPrerendered: true,
-  thumbContainerClass: 'owl-thumbs',
-  thumbItemClass: 'owl-thumb-item',
+  thumbContainerClass: "owl-thumbs",
+  thumbItemClass: "owl-thumb-item",
   dots: true,
   loop: true,
   items: 1,
@@ -90,6 +86,6 @@ $('.sv-slider-modal .owl-carousel').owlCarousel({
     },
     992: {
       items: 1,
-    }
-  }
+    },
+  },
 });

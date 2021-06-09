@@ -1,6 +1,5 @@
 .list-products-container {
   margin-top: 110px;
-  
 }
 
 /* Filter */
@@ -190,15 +189,14 @@
 }
 
 .product-pagination-item {
-  width:38px;
-  height:38px;
+  width: 38px;
+  height: 38px;
   border: 1px solid #ededed;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
 }
-
 
 .product-pagination-item:last-child {
   margin-right: 0px;
