@@ -1,45 +1,58 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const images = [
+  {
+    src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
+  },
+];
 
 class ProductDetail extends Component {
   render() {
+    const settings = {
+      customPaging: function (i) {
+        return (
+          <a>
+            <img className="thumb-img" src={images[i].src} />
+          </a>
+        );
+      },
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
     return (
       <Fragment>
         <>
           <div className="product-detail-container">
             <div className="grid wide">
               <div className="row">
-                <div className="col l-6 m-12 c-10 c-o-1 detail-product-left sv-slider-modal">
-                  <div className="owl-carousel owl-theme" data-slider-id={1}>
-                    <div className="detail-product-img sv-slider-item">
-                      <img
-                        src="https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg"
-                        alt
-                      />
-                    </div>
-                    <div className="detail-product-img sv-slider-item">
-                      <img
-                        src="https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg"
-                        alt
-                      />
-                    </div>
-                    <div className="detail-product-img sv-slider-item">
-                      <img
-                        src="https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg"
-                        alt
-                      />
-                    </div>
-                    <div className="detail-product-img sv-slider-item">
-                      <img
-                        src="https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg"
-                        alt
-                      />
-                    </div>
-                  </div>
-                  <div className="owl-thumbs" data-slider-id={1}></div>
+                <div className="col l-6 m-12 c-10 c-o-1 detail-product-left">
+                  <Slider {...settings}>
+                    {images.map((img) => (
+                      <div className="detail-product-img sv-slider-item">
+                        <img src={img.src} />
+                      </div>
+                    ))}
+                  </Slider>
                 </div>
-                
+
                 <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
                   <div>
                     <h1 className="product-detail-title">

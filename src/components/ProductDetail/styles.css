@@ -148,29 +148,24 @@ input[name="option-0"] {
   object-fit: contain;
 }
 
-.sv-slider .owl-thumbs {
-  white-space: nowrap;
+.slick-dots {
+  bottom: -90px;
 }
 
-.owl-thumbs {
-  display: flex;
-  margin-top: 10px;
-  overflow-x: auto;
+.slick-dots li {
+  margin: 0 6px;
+  padding: 4px;
+  width: auto;
+  height: auto;
 }
 
-.owl-thumbs > .owl-thumb-item {
-  border: none;
-  background-color: #fff;
-  padding: 5px;
-  margin: 0 5px;
+.thumb-img {
+  height: 70px;
 }
 
-.owl-thumb-item.active {
-  border: 1px solid #000;
-}
-
-.owl-thumbs button > img {
-  height: 80px;
+.slick-dots li.slick-active {
+  border: 2px solid #000;
+  border-radius: 5px;
 }
 
 /* Line */
