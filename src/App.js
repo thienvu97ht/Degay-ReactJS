@@ -9,6 +9,7 @@ import Stores from "./components/Stores/Stores";
 import About from "./components/About/About";
 import Search from "./components/Search/Search";
 import ViewCart from "./components/ViewCart/ViewCart";
+import Account from "./components/Account/Account";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/search" component={Search} />
           <Route path="/view-cart" component={ViewCart} />
+          <Route path="/account" component={Account} />
           {/* Footer */}
           <Footer />
         </div>
