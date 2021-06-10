@@ -19,8 +19,8 @@
 }
 
 .menu__mobile--tablet-header button {
-    border: none;
-    background-color: transparent;
+  border: none;
+  background-color: transparent;
 }
 
 .mobile--tablet__link-close {
@@ -100,7 +100,7 @@
 }
 
 .menu__mobile--tablet-subnav-icon-box {
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }

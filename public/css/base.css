@@ -37,6 +37,10 @@ html {
   display: none;
 }
 
+.modal.active {
+  display: block;
+}
+
 .modal__overlay {
   position: absolute;
   width: 100%;

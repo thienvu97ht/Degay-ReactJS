@@ -6,7 +6,10 @@
   bottom: 0;
   max-width: 460px;
   background-color: #fff;
-  display: none;
+}
+
+.header__menu-nav-bag.active {
+  display: block;
 }
 
 .nav__bang-header {
@@ -86,9 +89,9 @@
 }
 
 .nav__bag-list-item-category p {
-    font-size: 1.4rem;
-    color: #949494;
-    margin: 10px 0;
+  font-size: 1.4rem;
+  color: #949494;
+  margin: 10px 0;
 }
 
 .nav__bag--item-name-link {

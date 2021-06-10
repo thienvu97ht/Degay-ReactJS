@@ -163,7 +163,7 @@ input[name="option-0"] {
   height: 70px;
 }
 
-.slick-dots li.slick-active {
+.slick-thumb.slick-dots li.slick-active {
   border: 2px solid #000;
   border-radius: 5px;
 }
