@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import CartModal from "./CartModal/CartModal";
 import NavBarMobileModal from "./NavBarMobileModal/NavBarMobileModal";
 import SearchModal from "./SearchModal/SearchModal";
+import { connect } from "react-redux";
 
 class ModalNavbar extends Component {
   render() {
-    var { isOpenCart, isOpenNavMobie, isOpenSearch, isModalOpen } = this.props;
+    var { isOpenCart, isOpenNavMobie, isOpenSearch, isModalOpen } =
+      this.props.isDisplayModal;
+    console.log(this.props.isDisplayModal);
     return (
       <div className={isModalOpen ? "modal active" : "modal"}>
-        <div className="modal__overlay" onclick="closeModal()" />
+        <div className="modal__overlay" />
         {/* Modal cart */}
         {isOpenCart ? <CartModal isOpenCart={isOpenCart} /> : ""}
         {/* Modal menu mobile */}
@@ -24,4 +27,10 @@ class ModalNavbar extends Component {
   }
 }
 
-export default ModalNavbar;
+const mapStateToProps = (state) => {
+  return {
+    isDisplayModal: state.isDisplayModal,
+  };
+};
+
+export default connect(mapStateToProps, null)(ModalNavbar);

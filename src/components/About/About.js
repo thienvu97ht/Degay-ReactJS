@@ -44,7 +44,6 @@ class About extends Component {
               </p>
               <div className="video-wrapper">
                 <iframe
-                  className
                   width="100%"
                   height={700}
                   src="https://www.youtube.com/embed/H7vcKCjX-IE?controls=0"

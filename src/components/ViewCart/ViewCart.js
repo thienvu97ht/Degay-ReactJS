@@ -26,7 +26,7 @@ class ViewCart extends Component {
                         <div className="thumb-cart">
                           <img
                             src="https://product.hstatic.net/1000281824/product/f4b7d41d-dc19-4b81-8d29-1c14334ac00b_d96a30057e1a4519a210a3444b9fa548_grande.jpeg"
-                            alt
+                            alt=""
                           />
                           <div className="thumb-cart-info">
                             <p className="name">Áo Thun Loang Tím</p>
@@ -70,7 +70,7 @@ class ViewCart extends Component {
                         <div className="thumb-cart">
                           <img
                             src="https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg"
-                            alt
+                            alt=""
                           />
                           <div className="thumb-cart-info">
                             <p className="name">Sơ Mi Siết Tay Anh Xanh</p>

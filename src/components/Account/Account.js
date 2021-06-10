@@ -15,22 +15,22 @@ class Account extends Component {
               <div className="nav-bar-bottom">
                 <ul className="account-information-list">
                   <li className="account-information-item active">
-                    <a href className="account-information-link">
+                    <a href="!#" className="account-information-link">
                       Thông tin chung
                     </a>
                   </li>
                   <li className="account-information-item">
-                    <a href className="account-information-link">
+                    <a href="!#" className="account-information-link">
                       Sổ địa chỉ
                     </a>
                   </li>
                   <li className="account-information-item">
-                    <a href className="account-information-link">
+                    <a href="!#" className="account-information-link">
                       Đơn hàng của tôi
                     </a>
                   </li>
                   <li className="account-information-item">
-                    <a href className="account-information-link">
+                    <a href="!#" className="account-information-link">
                       Đăng xuất
                     </a>
                   </li>
@@ -60,7 +60,7 @@ class Account extends Component {
                 <div className="accountNeworder">
                   <div className="accountNeworder-title">
                     <p>Các đơn hàng vừa đặt</p>
-                    <a href>Xem tất cả</a>
+                    <a href="!#">Xem tất cả</a>
                   </div>
                   <div className="accountNeworder-table">
                     <table className="table table-bordered">
@@ -78,13 +78,11 @@ class Account extends Component {
                           <td>#310970</td>
                           <td>19/04/2021</td>
                           <td>
-                            1.{" "}
-                            <a href title>
-                              HEYYOU ESSENTIAL WHITE TEE - L
-                            </a>{" "}
+                            1.
+                            <a href="!#">HEYYOU ESSENTIAL WHITE TEE - L</a>
                             <br />
-                            2.{" "}
-                            <a href title>
+                            2.
+                            <a href="!#">
                               HEYYOU BASIC NHỊP TIM BABY BLUE TEE - L
                             </a>
                             <br />
@@ -99,7 +97,7 @@ class Account extends Component {
                 <div className="accountAddress">
                   <div className="accountAddress-title">
                     <p>Sổ địa chỉ</p>
-                    <a href>Xem tất cả</a>
+                    <a href="!#">Xem tất cả</a>
                   </div>
                   <div className="row">
                     <div className="col l-6 m-12 c-12">
@@ -113,10 +111,10 @@ class Account extends Component {
                         <p className="phone">Điện thoại: 84981877669</p>
                         <p className="address-actions">
                           <span className="action-btn action-edit">
-                            <a href>Sửa</a>
+                            <a href="!#">Sửa</a>
                           </span>
                           <span className="action-btn action-delete">
-                            <a href>Xóa</a>
+                            <a href="!#">Xóa</a>
                           </span>
                         </p>
                       </div>
@@ -132,10 +130,10 @@ class Account extends Component {
                         <p className="phone">Điện thoại: 84981877669</p>
                         <p className="address-actions">
                           <span className="action-btn action-edit">
-                            <a href>Sửa</a>
+                            <a href="!#">Sửa</a>
                           </span>
                           <span className="action-btn action-delete">
-                            <a href>Xóa</a>
+                            <a href="!#">Xóa</a>
                           </span>
                         </p>
                       </div>

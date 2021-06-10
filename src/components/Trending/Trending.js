@@ -23,9 +23,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -36,7 +34,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -59,9 +57,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -72,7 +68,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -95,9 +91,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -108,7 +102,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -131,9 +125,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -144,7 +136,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -167,9 +159,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -180,7 +170,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -203,9 +193,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -216,7 +204,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -239,9 +227,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -252,7 +238,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>
@@ -275,9 +261,7 @@ class Trending extends Component {
                     className="container__trending-img2"
                   />
                 </div>
-                <button
-                  className="quick-view-btn"
-                  onclick="showModalDetailProduct()">
+                <button className="quick-view-btn">
                   <i
                     className="icon-eye ti-eye hide-on-mobile-tablet"
                     title="Xem nhanh"
@@ -288,7 +272,7 @@ class Trending extends Component {
                 </button>
               </div>
               <div className="product-name-box text-center">
-                <a href className="product-name">
+                <a href="!#" className="product-name">
                   Áo 2 Cổ Degrey - A2C
                 </a>
               </div>

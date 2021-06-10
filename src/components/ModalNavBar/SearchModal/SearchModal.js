@@ -15,9 +15,7 @@ class SearchModal extends Component {
                 placeholder="Tìm kiếm sản phẩm..."
               />
             </div>
-            <button onclick="searchProduct()" className="btn-search">
-              Tìm kiếm
-            </button>
+            <button className="btn-search">Tìm kiếm</button>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ import ViewCart from "./components/ViewCart/ViewCart";
 import Account from "./components/Account/Account";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import TestSlide from "./components/TestSlider/TestSlider";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   render() {

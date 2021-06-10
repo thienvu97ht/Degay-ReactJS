@@ -23,13 +23,13 @@ class CartModal extends Component {
               <div className="nav__bag-list-item-left">
                 <img
                   src="https://goya.everthemes.com/demo-fashion/wp-content/uploads/sites/3/2019/05/woman-abstract-a1-150x150.jpg"
-                  alt
+                  alt=""
                   className="product-in-cart-img"
                 />
               </div>
               <div className="nav__bag-list-item-right">
                 <div className="nav__bag--item-name">
-                  <a href className="nav__bag--item-name-link">
+                  <a href="!#" className="nav__bag--item-name-link">
                     Abstract Print Cotton Blouse
                   </a>
                   <i className="ti-close nav__bag--item-name-close" />
@@ -39,7 +39,7 @@ class CartModal extends Component {
                 </div>
                 <div className="nav__bag--item-pricing">
                   <div className="nav__bag--item-quantity">
-                    <a href="#" className="minus">
+                    <a href="!#" className="minus">
                       <i className=" ti-minus" />
                     </a>
                     <input
@@ -49,7 +49,7 @@ class CartModal extends Component {
                       defaultValue={1}
                       placeholder={0}
                     />
-                    <a href="#" className="plus">
+                    <a href="!#" className="plus">
                       <i className=" ti-plus" />
                     </a>
                   </div>
@@ -61,13 +61,13 @@ class CartModal extends Component {
               <div className="nav__bag-list-item-left">
                 <img
                   src="https://goya.everthemes.com/demo-fashion/wp-content/uploads/sites/3/2020/01/woman-microbag-a1-150x150.jpg"
-                  alt
+                  alt=""
                   className="product-in-cart-img"
                 />
               </div>
               <div className="nav__bag-list-item-right">
                 <div className="nav__bag--item-name">
-                  <a href className="nav__bag--item-name-link">
+                  <a href="!#" className="nav__bag--item-name-link">
                     Micro Form Bag
                   </a>
                   <i className="ti-close nav__bag--item-name-close" />
@@ -77,7 +77,7 @@ class CartModal extends Component {
                 </div>
                 <div className="nav__bag--item-pricing">
                   <div className="nav__bag--item-quantity">
-                    <a href="#" className="minus">
+                    <a href="!#" className="minus">
                       <i className=" ti-minus" />
                     </a>
                     <input
@@ -87,7 +87,7 @@ class CartModal extends Component {
                       defaultValue={1}
                       placeholder={0}
                     />
-                    <a href="#" className="plus">
+                    <a href="!#" className="plus">
                       <i className=" ti-plus" />
                     </a>
                   </div>
@@ -99,13 +99,13 @@ class CartModal extends Component {
               <div className="nav__bag-list-item-left">
                 <img
                   src="https://goya.everthemes.com/demo-fashion/wp-content/uploads/sites/3/2020/01/woman-microbag-a1-150x150.jpg"
-                  alt
+                  alt=""
                   className="product-in-cart-img"
                 />
               </div>
               <div className="nav__bag-list-item-right">
                 <div className="nav__bag--item-name">
-                  <a href className="nav__bag--item-name-link">
+                  <a href="!#" className="nav__bag--item-name-link">
                     Micro Form Bag
                   </a>
                   <i className="ti-close nav__bag--item-name-close" />
@@ -115,7 +115,7 @@ class CartModal extends Component {
                 </div>
                 <div className="nav__bag--item-pricing">
                   <div className="nav__bag--item-quantity">
-                    <a href="#" className="minus">
+                    <a href="!#" className="minus">
                       <i className=" ti-minus" />
                     </a>
                     <input
@@ -125,7 +125,7 @@ class CartModal extends Component {
                       defaultValue={1}
                       placeholder={0}
                     />
-                    <a href="#" className="plus">
+                    <a href="!#" className="plus">
                       <i className=" ti-plus" />
                     </a>
                   </div>
@@ -137,13 +137,13 @@ class CartModal extends Component {
               <div className="nav__bag-list-item-left">
                 <img
                   src="https://goya.everthemes.com/demo-fashion/wp-content/uploads/sites/3/2020/01/woman-microbag-a1-150x150.jpg"
-                  alt
+                  alt=""
                   className="product-in-cart-img"
                 />
               </div>
               <div className="nav__bag-list-item-right">
                 <div className="nav__bag--item-name">
-                  <a href className="nav__bag--item-name-link">
+                  <a href="!#" className="nav__bag--item-name-link">
                     Micro Form Bag
                   </a>
                   <i className="ti-close nav__bag--item-name-close" />
@@ -153,7 +153,7 @@ class CartModal extends Component {
                 </div>
                 <div className="nav__bag--item-pricing">
                   <div className="nav__bag--item-quantity">
-                    <a href="#" className="minus">
+                    <a href="!#" className="minus">
                       <i className=" ti-minus" />
                     </a>
                     <input
@@ -163,7 +163,7 @@ class CartModal extends Component {
                       defaultValue={1}
                       placeholder={0}
                     />
-                    <a href="#" className="plus">
+                    <a href="!#" className="plus">
                       <i className=" ti-plus" />
                     </a>
                   </div>

@@ -3,29 +3,16 @@ import "./styles.css";
 import "./responsive.css";
 import { Link } from "react-router-dom";
 import Modal from "../ModalNavBar/ModalNavbar";
+import { connect } from "react-redux";
+import * as actions from "../../actions/index";
 
 class Menu extends Component {
-  state = {
-    isOpenCart: false,
-    isOpenNavMobie: false,
-    isOpenSearch: false,
-    isModalOpen: false,
-  };
 
   isOpenCart = () => {
-    this.setState({ isOpenCart: !this.state.isOpenCart, isModalOpen: true });
-  };
-
-  isOpenNavMobie = () => {
-    this.setState({ isOpenNavMobie: !this.state.isOpenNavMobie });
-  };
-
-  isOpenSearch = () => {
-    this.setState({ isOpenSearch: !this.state.isOpenSearch });
+    this.props.isOpenCart();
   };
 
   render() {
-    var { isOpenCart, isOpenNavMobie, isOpenSearch, isModalOpen } = this.state;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -142,15 +129,24 @@ class Menu extends Component {
         </div>
 
         {/* Modal */}
-        <Modal
-          isOpenCart={isOpenCart}
-          isOpenNavMobie={isOpenNavMobie}
-          isOpenSearch={isOpenSearch}
-          isModalOpen={isModalOpen}
-        />
+        <Modal />
       </Fragment>
     );
   }
 }
 
-export default Menu;
+const mapStateToProps = (state) => {
+  return {
+    isDisplayModal: state.isDisplayModal,
+  };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    isOpenCart: () => {
+      dispatch(actions.openCart());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

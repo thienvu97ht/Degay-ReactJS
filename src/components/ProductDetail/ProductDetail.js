@@ -25,8 +25,8 @@ class ProductDetail extends Component {
     const settings = {
       customPaging: function (i) {
         return (
-          <a>
-            <img className="thumb-img" src={images[i].src} />
+          <a href="!#">
+            <img alt="" className="thumb-img" src={images[i].src} />
           </a>
         );
       },
@@ -47,7 +47,7 @@ class ProductDetail extends Component {
                   <Slider {...settings}>
                     {images.map((img) => (
                       <div className="detail-product-img sv-slider-item">
-                        <img src={img.src} />
+                        <img alt="" src={img.src} />
                       </div>
                     ))}
                   </Slider>
@@ -143,12 +143,12 @@ class ProductDetail extends Component {
                   <div className="product-item-img">
                     <img
                       src="https://product.hstatic.net/1000281824/product/71d141bb-580d-4270-9abb-420a0c909d95_e7d101fe66ad451c8ab1b38ff40fa582_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img1"
                     />
                     <img
                       src="https://product.hstatic.net/1000281824/product/d8b5b151-57cc-414f-bfec-d909e798aa20_5a5da2462e2142c592b4bafadd628dad_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img2"
                     />
                   </div>
@@ -173,12 +173,12 @@ class ProductDetail extends Component {
                   <div className="product-item-img">
                     <img
                       src="https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img1"
                     />
                     <img
                       src="https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img2"
                     />
                   </div>
@@ -203,12 +203,12 @@ class ProductDetail extends Component {
                   <div className="product-item-img">
                     <img
                       src="https://product.hstatic.net/1000281824/product/1cae6e07-b7cf-47ef-be84-312fe8624ac6_22dc8ea3a62149b89d122358b7a7c561_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img1"
                     />
                     <img
                       src="https://product.hstatic.net/1000281824/product/a21d8180-8d30-4b60-b216-99ecc776a345_2598ffa046ce48e68546e00b1d09a72a_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img2"
                     />
                   </div>
@@ -233,12 +233,12 @@ class ProductDetail extends Component {
                   <div className="product-item-img">
                     <img
                       src="https://product.hstatic.net/1000281824/product/3a40e204-3a90-45c4-995e-364f2bcf33c5_46bef1ba93964783b35f15efc94790cc_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img1"
                     />
                     <img
                       src="https://product.hstatic.net/1000281824/product/f5d7907f-263c-481f-bbb8-54ef86781258_2f7b94c822364ecb96c84631f54c1c50_large.jpeg"
-                      alt
+                      alt=""
                       className="product-item-img2"
                     />
                   </div>

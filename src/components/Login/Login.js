@@ -31,7 +31,6 @@ class Login extends Component {
                         id="login-form-username"
                         name="customer[email]"
                         placeholder="Email của bạn"
-                        defaultValue
                         className="form-control"
                       />
                     </div>
@@ -43,13 +42,11 @@ class Login extends Component {
                         id="login-form-password"
                         name="customer[password]"
                         placeholder="Nhập mật khẩu"
-                        defaultValue
                         className="form-control"
                       />
                     </div>
                     <div className="col_full nobottommargin action">
                       <button
-                        onclick="redirectAccount()"
                         className="button button-3d button-black nomargin"
                         id="login-form-submit"
                         name="login-form-submit"
@@ -58,7 +55,7 @@ class Login extends Component {
                         Đăng nhập
                       </button>
                       <div className="text-center">
-                        <a href="#" className="forgot-password">
+                        <a href="!#" className="forgot-password">
                           Quên mật khẩu?
                         </a>
                       </div>
@@ -76,7 +73,6 @@ class Login extends Component {
                       <input
                         required
                         type="text"
-                        defaultValue
                         autoComplete="off"
                         name="customer[last_name]"
                         placeholder="Họ"
@@ -91,7 +87,6 @@ class Login extends Component {
                       <input
                         required
                         type="text"
-                        defaultValue
                         autoComplete="off"
                         name="customer[first_name]"
                         placeholder="Tên"
@@ -106,7 +101,6 @@ class Login extends Component {
                       <input
                         required
                         type="email"
-                        defaultValue
                         autoComplete="on"
                         placeholder="Email"
                         name="customer[email]"
@@ -121,7 +115,6 @@ class Login extends Component {
                       <input
                         required
                         type="password"
-                        defaultValue
                         autoComplete="false"
                         id="register-form-password"
                         placeholder="Mật khẩu"

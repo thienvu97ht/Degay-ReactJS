@@ -70,21 +70,21 @@ class Footer extends Component {
               <div className="grid wide">
                 <div className="row">
                   <div className="col l-6 m-6 c-12 footer-menu-left">
-                    <a href className="footer-menu-link">
+                    <a href="!#" className="footer-menu-link">
                       TÌM KIẾM
                     </a>
-                    <a href className="footer-menu-link">
+                    <a href="!#" className="footer-menu-link">
                       GIỚI THIỆU
                     </a>
-                    <a href className="footer-menu-link">
+                    <a href="!#" className="footer-menu-link">
                       CHÍNH SÁCH ĐỔI TRẢ
                     </a>
                   </div>
                   <div className="col l-6 m-6 c-12 footer-menu-right">
-                    <a href className="footer-menu-link">
+                    <a href="!#" className="footer-menu-link">
                       CHÍNH SÁCH BẢO MẬT
                     </a>
-                    <a href className="footer-menu-link">
+                    <a href="!#" className="footer-menu-link">
                       ĐIỀU KHOẢN DỊCH VỤ
                     </a>
                   </div>

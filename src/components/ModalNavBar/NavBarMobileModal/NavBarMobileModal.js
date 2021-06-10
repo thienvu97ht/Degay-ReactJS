@@ -7,9 +7,7 @@ class NavBarMobileModal extends Component {
     return (
       <div className="modal-menu-mobile">
         <div className="menu__mobile--tablet-header">
-          <button
-            onclick="closeModalMenu()"
-            className="mobile--tablet__link-close">
+          <button className="mobile--tablet__link-close">
             <i className="mobile--tablet__close-icon ti-close" />
           </button>
         </div>
@@ -24,38 +22,44 @@ class NavBarMobileModal extends Component {
               />
             </div>
             <div className="menu__mobile--tablet-nav">
-              <a href className="menu__mobile--tablet-content">
+              <a href="!#" className="menu__mobile--tablet-content">
                 Trang chủ
               </a>
             </div>
             <div className="menu__mobile--tablet-nav">
-              <a href className="menu__mobile--tablet-content">
+              <a href="!#" className="menu__mobile--tablet-content">
                 Sản phẩm
               </a>
               <i className="menu__mobile--tablet-main-icon ti-angle-right" />
             </div>
             <div className="menu__mobile--tablet-nav">
-              <a href className="menu__mobile--tablet-content">
+              <a href="!#" className="menu__mobile--tablet-content">
                 Cửa hàng
               </a>
             </div>
             <div className="menu__mobile--tablet-nav">
-              <a href className="menu__mobile--tablet-content">
+              <a href="!#" className="menu__mobile--tablet-content">
                 Giới thiệu
               </a>
             </div>
           </div>
           <div className="menu__mobile--tablet-body-bottom">
             <div className="menu__mobile--tablet-subnav">
-              <a className="menu__mobile--tablet-subnav-content">Đăng nhập</a>
+              <a href="!#" className="menu__mobile--tablet-subnav-content">
+                Đăng nhập
+              </a>
               <i className="menu__mobile--tablet-subnav-icon ti-lock" />
             </div>
             <div className="menu__mobile--tablet-subnav">
-              <a className="menu__mobile--tablet-subnav-content">Giỏ hàng</a>
+              <a href="!#" className="menu__mobile--tablet-subnav-content">
+                Giỏ hàng
+              </a>
               <i className="menu__mobile--tablet-subnav-icon ti-bag" />
             </div>
             <div className="menu__mobile--tablet-subnav">
-              <a className="menu__mobile--tablet-subnav-content">Yêu thích</a>
+              <a href="!#" className="menu__mobile--tablet-subnav-content">
+                Yêu thích
+              </a>
               <i className="menu__mobile--tablet-subnav-icon ti-heart" />
             </div>
             <div className="menu__mobile--tablet-subnav-icon-box">

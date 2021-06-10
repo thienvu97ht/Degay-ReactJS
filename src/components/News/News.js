@@ -112,7 +112,7 @@ class News extends Component {
             </div>
           </Slider>
           <div className="text-center">
-            <a href className="load-more-news">
+            <a href="!#" className="load-more-news">
               Xem thêm
             </a>
           </div>
