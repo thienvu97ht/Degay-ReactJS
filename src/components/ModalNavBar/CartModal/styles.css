@@ -2,14 +2,18 @@
   position: fixed;
   z-index: 4;
   top: 0;
-  right: 0px;
+  right: -100%;
   bottom: 0;
   max-width: 460px;
   background-color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease;;
 }
 
 .header__menu-nav-bag.active {
-  display: block;
+  right: 0;
+  transition: all 0.5s ease;;
+  opacity: 1;
 }
 
 .nav__bang-header {

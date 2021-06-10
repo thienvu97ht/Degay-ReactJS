@@ -1,21 +1,13 @@
 import * as types from "../constants/ActionTypes";
 
-var initialState = {
-  isOpenCart: false,
-  isOpenNavMobie: false,
-  isOpenSearch: false,
-  isModalOpen: false,
-}; // close form
+var initialState = false;
 
 var isDisplayModal = (state = initialState, action) => {
   switch (action.type) {
     case types.CLOSE_CART:
-      console.log(action);
-      return state;
+      return false;
     case types.OPEN_CART:
-      state.isModalOpen = true;
-      state.isOpenCart = true;
-      return state;
+      return true;
     default:
       return state;
   }

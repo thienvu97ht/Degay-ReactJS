@@ -23,7 +23,7 @@ class ListProducts extends Component {
           </div>
           <div className="filter-right">
             <p className="filter-right-text">Sắp Xếp:</p>
-            <select name id className="custom-dropdown__select">
+            <select className="custom-dropdown__select">
               <option value="manual">Sản phẩm nổi bật</option>
               <option value="price-ascending">Giá: Tăng dần</option>
               <option value="price-descending">Giá: Giảm dần</option>
@@ -280,25 +280,25 @@ class ListProducts extends Component {
         <div className="product-pagination">
           <ul className="product-pagination-list">
             <li className="product-pagination-item hiden">
-              <a href>
+              <a href="!#">
                 <i className="ti-angle-double-left" />
               </a>
             </li>
             <li className="product-pagination-item active">
-              <a href>1</a>
+              <a href="!#">1</a>
             </li>
             <li className="product-pagination-item">
-              <a href>2</a>
+              <a href="!#">2</a>
             </li>
             <li className="product-pagination-item">
-              <a href>3</a>
+              <a href="!#">3</a>
             </li>
             <li className="product-pagination-item">...</li>
             <li className="product-pagination-item">
-              <a href>7</a>
+              <a href="!#">7</a>
             </li>
             <li className="product-pagination-item">
-              <a href>
+              <a href="!#">
                 <i className="ti-angle-double-right" />
               </a>
             </li>

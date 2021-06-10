@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import { connect } from "react-redux";
+import * as actions from "../../../actions/index";
+import { Link } from "react-router-dom";
 
 class CartModal extends Component {
+  onCloseCart = () => {
+    this.props.isCloseCart();
+  };
+
   render() {
-    var { isOpenCart } = this.props;
-    console.log(isOpenCart);
+    var { isDisplayModal } = this.props;
     return (
       <div
         className={
-          isOpenCart ? "header__menu-nav-bag active" : "header__menu-nav-bag"
+          isDisplayModal === true
+            ? "header__menu-nav-bag active"
+            : "header__menu-nav-bag"
         }>
         <div className="nav__bang-header">
           <span className="nav__bang-header-cart">Giỏ hàng </span>
-          <label onclick="closeModalCart()" className="nav__bag-header-link">
+          <label onClick={this.onCloseCart} className="nav__bag-header-link">
             <i className="nav__bang-header-icon ti-close" />
           </label>
         </div>
@@ -177,12 +185,18 @@ class CartModal extends Component {
               <p className="nav__bag-total-text">Tổng tiền:</p>
               <p className="nav__bag-total-price">$137.00</p>
             </div>
-            <a href="viewCart.html" className="nav__bag-view-cart">
+            <Link
+              to="/view-cart"
+              className="nav__bag-view-cart"
+              onClick={this.onCloseCart}>
               Xem giỏ hàng
-            </a>
-            <a href="checkout.html" className="nav__bag-check-out">
+            </Link>
+            <Link
+              to="/checkout"
+              className="nav__bag-check-out"
+              onClick={this.onCloseCart}>
               Thanh toán
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -190,4 +204,18 @@ class CartModal extends Component {
   }
 }
 
-export default CartModal;
+const mapStateToProps = (state) => {
+  return {
+    isDisplayModal: state.isDisplayModal,
+  };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    isCloseCart: () => {
+      dispatch(actions.closeCart());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartModal);

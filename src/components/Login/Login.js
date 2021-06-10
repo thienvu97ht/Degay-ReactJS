@@ -66,7 +66,7 @@ class Login extends Component {
               <div className="col l-6 m-12 c-10 c-o-1">
                 <div className="login-socia-title">ĐĂNG KÝ THÀNH VIÊN MỚI</div>
                 <div className="content-cus-form">
-                  <form action>
+                  <form>
                     <div className="col_full">
                       <span className="not-null">*</span>
                       <span className="icon_checkout ico-name" />

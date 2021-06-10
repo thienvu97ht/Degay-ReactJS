@@ -138,9 +138,7 @@ input[name="option-0"] {
 
 /* Ẩn trên Mobile & Tablet */
 @media (max-width: 1023px) {
-  .modal {
-    display: none;
-  }
+  
 }
 
 /* Slide modal */

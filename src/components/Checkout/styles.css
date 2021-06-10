@@ -273,7 +273,7 @@ option {
   position: absolute;
   right: -10px;
   top: -10px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .checkout-product-price p {

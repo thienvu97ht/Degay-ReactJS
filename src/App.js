@@ -11,7 +11,8 @@ import Search from "./components/Search/Search";
 import ViewCart from "./components/ViewCart/ViewCart";
 import Account from "./components/Account/Account";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-import TestSlide from "./components/TestSlider/TestSlider";
+import Checkout from "./components/Checkout/Checkout";
+import EmptyCart from "./components/EmptyCart/EmptyCart";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -24,14 +25,15 @@ class App extends Component {
           {/* Nội dung */}
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/listProducts" component={ListProducts} />
+          <Route path="/list-products" component={ListProducts} />
           <Route path="/stores" component={Stores} />
           <Route path="/about" component={About} />
           <Route path="/search" component={Search} />
           <Route path="/view-cart" component={ViewCart} />
           <Route path="/account" component={Account} />
           <Route path="/product-detail" component={ProductDetail} />
-          <Route path="/test" component={TestSlide} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/empty-cart" component={EmptyCart} />
           {/* Footer */}
           <Footer />
         </div>

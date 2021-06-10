@@ -2,17 +2,23 @@ import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
 import { Link } from "react-router-dom";
-import Modal from "../ModalNavBar/ModalNavbar";
 import { connect } from "react-redux";
 import * as actions from "../../actions/index";
+import CartModal from "../ModalNavBar/CartModal/CartModal";
+import NavBarMobileModal from "../ModalNavBar/NavBarMobileModal/NavBarMobileModal";
+import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
 
 class Menu extends Component {
-
   isOpenCart = () => {
     this.props.isOpenCart();
   };
 
+  onCloseModal = () => {
+    this.props.isCloseCart();
+  };
+
   render() {
+    var { isDisplayModal } = this.props;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -129,7 +135,18 @@ class Menu extends Component {
         </div>
 
         {/* Modal */}
-        <Modal />
+        <div className={isDisplayModal === true ? "modal" : ""}>
+          <div
+            className={isDisplayModal === true ? "modal__overlay" : ""}
+            onClick={this.onCloseModal}
+          />
+          {/* Modal cart */}
+          <CartModal />
+          {/* Modal menu mobile */}
+          <NavBarMobileModal />
+          {/* Modal search */}
+          <SearchModal />
+        </div>
       </Fragment>
     );
   }
@@ -145,6 +162,9 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     isOpenCart: () => {
       dispatch(actions.openCart());
+    },
+    isCloseCart: () => {
+      dispatch(actions.closeCart());
     },
   };
 };
