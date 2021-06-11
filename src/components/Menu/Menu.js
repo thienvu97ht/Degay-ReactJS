@@ -6,12 +6,13 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/index";
 import CartModal from "../ModalNavBar/CartModal/CartModal";
 import NavBarMobileModal from "../ModalNavBar/NavBarMobileModal/NavBarMobileModal";
-// import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
+import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
 
 class Menu extends Component {
   state = {
     isOpenCart: false,
     isOpenMenu: false,
+    isOpenSearch: false,
   };
 
   isOpenCart = () => {
@@ -30,8 +31,16 @@ class Menu extends Component {
     this.setState({ isOpenMenu: params });
   };
 
+  isOpenSearch = () => {
+    this.setState({ isOpenSearch: !this.state.isOpenSearch });
+  };
+
+  isCloseSearch = (params) => {
+    this.setState({ isOpenSearch: params });
+  };
+
   render() {
-    var { isOpenCart, isOpenMenu } = this.state;
+    var { isOpenCart, isOpenMenu, isOpenSearch } = this.state;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -151,7 +160,16 @@ class Menu extends Component {
         <CartModal isOpenCart={isOpenCart} isCloseCart={this.isCloseCart} />
 
         {/* Modal Menu */}
-        <NavBarMobileModal isOpenMenu={isOpenMenu} isCloseMenu={this.isCloseMenu} />
+        <NavBarMobileModal
+          isOpenMenu={isOpenMenu}
+          isCloseMenu={this.isCloseMenu}
+        />
+
+        {/* Moadl Search */}
+        <SearchModal
+          isOpenSearch={isOpenSearch}
+          isCloseSearch={this.isCloseSearch}
+        />
       </Fragment>
     );
   }
