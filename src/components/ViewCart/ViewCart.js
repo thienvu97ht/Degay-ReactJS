@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import { Link } from "react-router-dom";
 
 class ViewCart extends Component {
   render() {
@@ -111,9 +112,9 @@ class ViewCart extends Component {
                 </tbody>
               </table>
               <div className="continue_shopping-btn">
-                <a href="listproducts.html" className="continue_shopping-link">
+                <Link to="/list-products" className="continue_shopping-link">
                   TIẾP TỤC MUA HÀNG
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col l-4 m-12 c-10 c-o-1">
@@ -123,9 +124,9 @@ class ViewCart extends Component {
                   <p>650,000₫</p>
                 </div>
                 <div className="final_total">
-                  <a href="checkOut.html" className="update_cart">
+                  <Link to="checkout" className="update_cart">
                     Thanh toán
-                  </a>
+                  </Link>
                 </div>
               </div>
               <label

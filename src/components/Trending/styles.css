@@ -84,24 +84,26 @@
 
 .add-cart-btn {
   transition: ease-in 0.3s;
-  top: 50px;
+  top: 20px;
 }
 
 .container__trending-item:hover .quick-view-btn {
-  transform: translateX(-45px);
+  transform: translateX(-55px);
   transition: ease-in 0.2s;
   opacity: 1;
 }
 
 .container__trending-item:hover .add-cart-btn {
-  transform: translateX(-45px);
+  transform: translateX(-55px);
   transition: ease-in 0.3s;
   opacity: 1;
 }
 
-.quick-view-btn:hover,
-.add-cart-btn:hover {
+.quick-view-btn:hover .icon-eye,
+.add-cart-btn:hover .icon-bag {
+  opacity: 1;
   color: #000;
+  transition: ease-in 0.2s;
 }
 
 /* Product */

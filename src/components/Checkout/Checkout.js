@@ -17,7 +17,7 @@ class Checkout extends Component {
                 <div className="checkout-box-header">
                   <ul className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <a href="viewCart.html">Giỏ hàng</a>
+                      <Link to="/view-cart">Giỏ hàng</Link>
                     </li>
                     <li className="breadcrumb-item">Thông tin giao hàng</li>
                     <li className="breadcrumb-item">Phương thức thanh toán</li>

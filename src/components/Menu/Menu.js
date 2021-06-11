@@ -4,9 +4,9 @@ import "./responsive.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/index";
-import CartModal from "../ModalNavBar/CartModal/CartModal";
-import NavBarMobileModal from "../ModalNavBar/NavBarMobileModal/NavBarMobileModal";
-import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
+import CartModal from "../Modal/CartModal/CartModal";
+import NavBarMobileModal from "../Modal/NavBarMobileModal/NavBarMobileModal";
+import SearchModal from "../Modal/SearchModal/SearchModal";
 
 class Menu extends Component {
   state = {

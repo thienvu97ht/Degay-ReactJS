@@ -168,6 +168,37 @@ input[name="option-0"] {
   border-radius: 5px;
 }
 
+/* button slide */
+.detail-product-left .slick-prev,
+.detail-product-left .slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.detail-product-left .slick-prev::before,
+.detail-product-left .slick-next::before {
+  font-size: 4rem;
+  color: #000;
+  opacity: 0.4;
+}
+
+.detail-product-left .slick-prev:hover,
+.detail-product-left .slick-prev:focus,
+.detail-product-left .slick-next:hover,
+.detail-product-left .slick-next:focus {
+  opacity: 1;
+  color: #000;
+}
+
+.detail-product-left .slick-prev {
+  left: 2%;
+}
+
+.detail-product-left .slick-next {
+  right: 2%;
+}
+
 /* Line */
 
 .line-or {
