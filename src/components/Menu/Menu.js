@@ -53,7 +53,7 @@ class Menu extends Component {
               </li>
               <li className="header__navbar-item hide-on-mobile-tablet">
                 <Link
-                  to="/listProducts"
+                  to="/list-products"
                   className="header__navbar-item-link header__navbar-item-link-underline">
                   Sản phẩm
                 </Link>

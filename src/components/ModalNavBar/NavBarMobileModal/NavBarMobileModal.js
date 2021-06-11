@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import { Link } from "react-router-dom";
 
 class NavBarMobileModal extends Component {
   onCloseMenu = (params) => {
@@ -18,7 +19,7 @@ class NavBarMobileModal extends Component {
 
         {/* Modal menu */}
         <div
-        className={
+          className={
             isOpenMenu === true
               ? "modal-menu-mobile active-menu"
               : "modal-menu-mobile"
@@ -41,45 +42,57 @@ class NavBarMobileModal extends Component {
                 />
               </div>
               <div className="menu__mobile--tablet-nav">
-                <a href="!#" className="menu__mobile--tablet-content">
+                <Link
+                  to="/"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-content">
                   Trang chủ
-                </a>
+                </Link>
               </div>
               <div className="menu__mobile--tablet-nav">
-                <a href="!#" className="menu__mobile--tablet-content">
+                <Link
+                  to="/list-products"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-content">
                   Sản phẩm
-                </a>
+                </Link>
                 <i className="menu__mobile--tablet-main-icon ti-angle-right" />
               </div>
               <div className="menu__mobile--tablet-nav">
-                <a href="!#" className="menu__mobile--tablet-content">
+                <Link
+                  to="/store"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-content">
                   Cửa hàng
-                </a>
+                </Link>
               </div>
               <div className="menu__mobile--tablet-nav">
-                <a href="!#" className="menu__mobile--tablet-content">
+                <Link
+                  to="/about"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-content">
                   Giới thiệu
-                </a>
+                </Link>
               </div>
             </div>
             <div className="menu__mobile--tablet-body-bottom">
               <div className="menu__mobile--tablet-subnav">
-                <a href="!#" className="menu__mobile--tablet-subnav-content">
+                <Link
+                  to="/login"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-subnav-content">
                   Đăng nhập
-                </a>
+                </Link>
                 <i className="menu__mobile--tablet-subnav-icon ti-lock" />
               </div>
               <div className="menu__mobile--tablet-subnav">
-                <a href="!#" className="menu__mobile--tablet-subnav-content">
+                <Link
+                  to="/view-cart"
+                  onClick={this.onCloseMenu}
+                  className="menu__mobile--tablet-subnav-content">
                   Giỏ hàng
-                </a>
+                </Link>
                 <i className="menu__mobile--tablet-subnav-icon ti-bag" />
-              </div>
-              <div className="menu__mobile--tablet-subnav">
-                <a href="!#" className="menu__mobile--tablet-subnav-content">
-                  Yêu thích
-                </a>
-                <i className="menu__mobile--tablet-subnav-icon ti-heart" />
               </div>
               <div className="menu__mobile--tablet-subnav-icon-box">
                 <i className="menu__mobile--tablet-subnav-icon ti-facebook" />
