@@ -6,19 +6,32 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/index";
 import CartModal from "../ModalNavBar/CartModal/CartModal";
 import NavBarMobileModal from "../ModalNavBar/NavBarMobileModal/NavBarMobileModal";
-import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
+// import SearchModal from "../ModalNavBar/SearchModal/SearchModal";
 
 class Menu extends Component {
-  isOpenCart = () => {
-    this.props.isOpenCart();
+  state = {
+    isOpenCart: false,
+    isOpenMenu: false,
   };
 
-  onCloseModal = () => {
-    this.props.isCloseCart();
+  isOpenCart = () => {
+    this.setState({ isOpenCart: !this.state.isOpenCart });
+  };
+
+  isCloseCart = (params) => {
+    this.setState({ isOpenCart: params });
+  };
+
+  isOpenMenu = () => {
+    this.setState({ isOpenMenu: !this.state.isOpenMenu });
+  };
+
+  isCloseMenu = (params) => {
+    this.setState({ isOpenMenu: params });
   };
 
   render() {
-    var { isDisplayModal } = this.props;
+    var { isOpenCart, isOpenMenu } = this.state;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -27,7 +40,7 @@ class Menu extends Component {
               <li className="header__navbar-item header__icon-menu">
                 <button
                   className="header__navbar-item-link"
-                  onClick={this.isOpenNavMobie}>
+                  onClick={this.isOpenMenu}>
                   <i className="header__navbar-icon ti-menu" />
                 </button>
               </li>
@@ -134,19 +147,11 @@ class Menu extends Component {
           </div>
         </div>
 
-        {/* Modal */}
-        <div className={isDisplayModal === true ? "modal" : ""}>
-          <div
-            className={isDisplayModal === true ? "modal__overlay" : ""}
-            onClick={this.onCloseModal}
-          />
-          {/* Modal cart */}
-          <CartModal />
-          {/* Modal menu mobile */}
-          <NavBarMobileModal />
-          {/* Modal search */}
-          <SearchModal />
-        </div>
+        {/* Modal Cart */}
+        <CartModal isOpenCart={isOpenCart} isCloseCart={this.isCloseCart} />
+
+        {/* Modal Menu */}
+        <NavBarMobileModal isOpenMenu={isOpenMenu} isCloseMenu={this.isCloseMenu} />
       </Fragment>
     );
   }
@@ -165,6 +170,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     isCloseCart: () => {
       dispatch(actions.closeCart());
+    },
+    isOpenMenu: () => {
+      dispatch(actions.openMenu());
     },
   };
 };
