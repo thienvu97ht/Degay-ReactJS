@@ -2,55 +2,79 @@ import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const images = [
+  {
+    src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
+  },
+  {
+    src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
+  },
+];
 
 class ProductDetailModal extends Component {
-  onCloseMenu = (params) => {
-    this.props.isCloseMenu(params);
+  onCloseProductDetal = (params) => {
+    this.props.isCloseProductDetail(params);
   };
 
   render() {
-    var { isOpenMenu } = this.props;
+    const settings_2 = {
+      customPaging: function (i) {
+        return (
+          <a href="!#">
+            <img alt="" className="thumb-img" src={images[i].src} />
+          </a>
+        );
+      },
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    var { isOpenProductDetail } = this.props;
     return (
-      <div className={isOpenMenu === true ? "modal-menu" : ""}>
+      <div
+        className={isOpenProductDetail === true ? "modal-product-detail" : ""}>
         <div
-          className={isOpenMenu === true ? "modal__overlay-menu" : ""}
-          onClick={this.onCloseMenu}
+          className={
+            isOpenProductDetail === true ? "modal__overlay-product-detail" : ""
+          }
+          onClick={() => this.onCloseProductDetal(false)}
         />
 
         {/* Modal menu */}
-        <div className="modal__body-detail-product">
-          <div className="gird custom-wide-model-box">
+        <div
+          className={
+            isOpenProductDetail
+              ? "modal__body-detail-product active-product-detail-modal"
+              : "modal__body-detail-product"
+          }>
+          <div className="gird">
             <div className="row">
-              <div className="col l-6 detail-product-left sv-slider-modal">
-                <div className="owl-carousel owl-theme" data-slider-id={1}>
-                  <div className="sdetail-product-img sv-slider-item">
-                    <img
-                      src="https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="detail-product-img sv-slider-item">
-                    <img
-                      src="https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="detail-product-img sv-slider-item">
-                    <img
-                      src="https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="detail-product-img sv-slider-item">
-                    <img
-                      src="https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="owl-thumbs" data-slider-id={1}></div>
+              <div className="col l-6 detail-product-left-modal">
+                <Slider {...settings_2}>
+                  {images.map((img, index) => (
+                    <div
+                      key={index}
+                      className="detail-product-img sv-slider-item-modal">
+                      <img alt="" src={img.src} />
+                    </div>
+                  ))}
+                </Slider>
               </div>
-              <div className="col l-6 detail-product-right">
+              <div className="col l-6 detail-product-right-modal">
                 <h1 className="modal-title-product">
                   Sơ Mi Siết Tay Anh Xanh - STA Xanh
                 </h1>
@@ -100,11 +124,11 @@ class ProductDetailModal extends Component {
             </div>
           </div>
           <div className="modal__body-close">
-            <btton
-              className="modal__body-close-btn"
-              onclick="closeModalDetail()">
+            <button
+              onClick={this.onCloseProductDetal}
+              className="modal__body-close-btn">
               <i className="fas fa-times" />
-            </btton>
+            </button>
           </div>
         </div>
       </div>
