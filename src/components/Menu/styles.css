@@ -46,6 +46,12 @@
   align-items: center;
   margin: 0 14px;
   position: relative;
+  text-decoration: none;
+}
+
+.header__navbar-item.active-text .header__navbar-item-link-underline:after {
+  width: 100%;
+  left: 0;
 }
 
 .header__navbar-item button {
@@ -96,7 +102,7 @@
 
 .header__navbar-item-link-underline::after {
   background: none repeat scroll 0 0 transparent;
-  bottom: -4px;
+  bottom: -8px;
   content: "";
   display: block;
   height: 2px;

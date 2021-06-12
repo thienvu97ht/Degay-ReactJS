@@ -1,12 +1,31 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import * as actions from "../../actions/index";
+import { Link, Route, NavLink } from "react-router-dom";
 import CartModal from "../Modal/CartModal/CartModal";
 import NavBarMobileModal from "../Modal/NavBarMobileModal/NavBarMobileModal";
 import SearchModal from "../Modal/SearchModal/SearchModal";
+
+const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
+  return (
+    <Route
+      path={to}
+      exact={activeOnlyWhenActive}
+      children={({ match }) => {
+        var active = match ? "active-text" : "";
+        return (
+          <li className={`header__navbar-item hide-on-mobile-tablet ${active}`}>
+            <Link
+              to={to}
+              className="header__navbar-item-link header__navbar-item-link-underline">
+              {label}
+            </Link>
+          </li>
+        );
+      }}
+    />
+  );
+};
 
 class Menu extends Component {
   state = {
@@ -53,14 +72,11 @@ class Menu extends Component {
                   <i className="header__navbar-icon ti-menu" />
                 </button>
               </li>
-              <li className="header__navbar-item hide-on-mobile-tablet">
-                <Link
-                  to="/"
-                  className="header__navbar-item-link header__navbar-item-link-underline">
-                  Trang chủ
-                </Link>
-              </li>
-              <li className="header__navbar-item hide-on-mobile-tablet">
+              <MenuLink label="Trang chủ" to="/" activeOnlyWhenActive={true} />
+              <NavLink
+                activeClassName="active-text"
+                to="/list-products"
+                className="header__navbar-item hide-on-mobile-tablet">
                 <Link
                   to="/list-products"
                   className="header__navbar-item-link header__navbar-item-link-underline">
@@ -102,21 +118,17 @@ class Menu extends Component {
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li className="header__navbar-item hide-on-mobile-tablet">
-                <Link
-                  to="/stores"
-                  className="header__navbar-item-link header__navbar-item-link-underline">
-                  Cửa hàng
-                </Link>
-              </li>
-              <li className="header__navbar-item hide-on-mobile-tablet">
-                <Link
-                  to="/about"
-                  className="header__navbar-item-link header__navbar-item-link-underline">
-                  Giới thiệu
-                </Link>
-              </li>
+              </NavLink>
+              <MenuLink
+                label="Cửa hàng"
+                to="/stores"
+                activeOnlyWhenActive={false}
+              />
+              <MenuLink
+                label="Giới thiệu"
+                to="/about"
+                activeOnlyWhenActive={false}
+              />
             </ul>
           </div>
           <div className="header__navbar-center">
@@ -130,13 +142,11 @@ class Menu extends Component {
           </div>
           <div className="header__navbar-right">
             <ul className="header__navbar-list">
-              <li className="header__navbar-item hide-on-mobile-tablet">
-                <Link
-                  to="/login"
-                  className="header__navbar-item-link header__navbar-item-link-underline">
-                  Đăng nhập
-                </Link>
-              </li>
+              <MenuLink
+                label="Đăng nhập"
+                to="/login"
+                activeOnlyWhenActive={false}
+              />
               <li className="header__navbar-item hide-on-mobile-tablet">
                 <button
                   onClick={this.isOpenSearch}
@@ -175,24 +185,4 @@ class Menu extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isDisplayModal: state.isDisplayModal,
-  };
-};
-
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    isOpenCart: () => {
-      dispatch(actions.openCart());
-    },
-    isCloseCart: () => {
-      dispatch(actions.closeCart());
-    },
-    isOpenMenu: () => {
-      dispatch(actions.openMenu());
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default Menu;
