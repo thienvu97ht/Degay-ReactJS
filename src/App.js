@@ -4,6 +4,7 @@ import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes";
+import ScrollToTop from "./constants/ScrollToTop";
 
 class App extends Component {
   render() {
@@ -13,7 +14,9 @@ class App extends Component {
           {/* Menu */}
           <Menu />
           {/* Nội dung */}
-          <Switch>{this.showContentMenus(routes)}</Switch>
+          <ScrollToTop>
+            <Switch>{this.showContentMenus(routes)}</Switch>
+          </ScrollToTop>
           {/* Footer */}
           <Footer />
         </div>
