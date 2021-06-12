@@ -10,11 +10,11 @@ class Trending extends Component {
 
   isOpenProductDetail = () => {
     this.setState({ isOpenProductDetail: !this.state.isOpenProductDetail });
-    console.log(this.state.isOpenProductDetail);
   };
 
   isCloseProductDetail = (params) => {
     this.setState({ isOpenProductDetail: params });
+    console.log(params);
   };
 
   render() {

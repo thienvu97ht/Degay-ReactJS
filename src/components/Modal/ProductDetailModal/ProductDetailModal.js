@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -125,7 +124,7 @@ class ProductDetailModal extends Component {
           </div>
           <div className="modal__body-close">
             <button
-              onClick={this.onCloseProductDetal}
+              onClick={() => this.onCloseProductDetal(false)}
               className="modal__body-close-btn">
               <i className="fas fa-times" />
             </button>

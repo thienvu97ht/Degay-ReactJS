@@ -2,18 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
-import ListProducts from "./components/ListProducts/ListProducts";
-import Stores from "./components/Stores/Stores";
-import About from "./components/About/About";
-import Search from "./components/Search/Search";
-import ViewCart from "./components/ViewCart/ViewCart";
-import Account from "./components/Account/Account";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
-import Checkout from "./components/Checkout/Checkout";
-import EmptyCart from "./components/EmptyCart/EmptyCart";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import routes from "./routes";
 
 class App extends Component {
   render() {
@@ -23,22 +13,29 @@ class App extends Component {
           {/* Menu */}
           <Menu />
           {/* Nội dung */}
-          <Route path="/" exact component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/list-products" component={ListProducts} />
-          <Route path="/stores" component={Stores} />
-          <Route path="/about" component={About} />
-          <Route path="/search" component={Search} />
-          <Route path="/view-cart" component={ViewCart} />
-          <Route path="/account" component={Account} />
-          <Route path="/product-detail" component={ProductDetail} />
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/empty-cart" component={EmptyCart} />
+          <Switch>{this.showContentMenus(routes)}</Switch>
           {/* Footer */}
           <Footer />
         </div>
       </Router>
     );
   }
+
+  showContentMenus = (routes) => {
+    var result = null;
+    if (routes.length > 0) {
+      result = routes.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.main}
+          />
+        );
+      });
+    }
+    return result;
+  };
 }
 export default App;

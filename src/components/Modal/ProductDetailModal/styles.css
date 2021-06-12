@@ -25,16 +25,14 @@
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
-  transform: scale(40%);
-  z-index: -1;
-  transition: all 0.5s ease;;
+  display: none;
+  transition: all 0.5s ease;
 }
 
 .modal__body-detail-product.active-product-detail-modal {
-  z-index: 2;
+  display: block;
   opacity: 1;
-  transform: scale(100%);
-  transition: all 0.5s ease;;
+  transition: all 0.5s ease;
 }
 
 .small-img-product {
@@ -155,6 +153,9 @@ input[name="option-0"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #000;
+  border: none;
+  cursor: pointer;
 }
 
 /* Ẩn trên Mobile & Tablet */
@@ -174,4 +175,9 @@ input[name="option-0"] {
 
 .detail-product-left-modal .slick-thumb {
   bottom: -70px;
+}
+
+.detail-product-left-modal .slick-prev:before,
+.detail-product-left-modal .slick-next:before {
+  color: #999;
 }
