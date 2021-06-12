@@ -60,7 +60,7 @@ class NavBarMobileModal extends Component {
               </div>
               <div className="menu__mobile--tablet-nav">
                 <Link
-                  to="/store"
+                  to="/stores"
                   onClick={this.onCloseMenu}
                   className="menu__mobile--tablet-content">
                   Cửa hàng

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import isDisplayModal from "./isDisplayModal";
+import products from "./products";
 
 const appReducer = combineReducers({
-  isDisplayModal,
+  products,
 });
 
 export default appReducer;

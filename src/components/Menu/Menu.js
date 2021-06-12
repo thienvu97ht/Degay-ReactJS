@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
-import { Link, Route, NavLink } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import CartModal from "../Modal/CartModal/CartModal";
 import NavBarMobileModal from "../Modal/NavBarMobileModal/NavBarMobileModal";
 import SearchModal from "../Modal/SearchModal/SearchModal";
@@ -73,10 +73,7 @@ class Menu extends Component {
                 </button>
               </li>
               <MenuLink label="Trang chủ" to="/" activeOnlyWhenActive={true} />
-              <NavLink
-                activeClassName="active-text"
-                to="/list-products"
-                className="header__navbar-item hide-on-mobile-tablet">
+              <li className="header__navbar-item hide-on-mobile-tablet">
                 <Link
                   to="/list-products"
                   className="header__navbar-item-link header__navbar-item-link-underline">
@@ -118,7 +115,7 @@ class Menu extends Component {
                     </li>
                   </ul>
                 </div>
-              </NavLink>
+              </li>
               <MenuLink
                 label="Cửa hàng"
                 to="/stores"
