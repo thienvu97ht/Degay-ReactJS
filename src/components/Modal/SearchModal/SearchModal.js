@@ -3,21 +3,35 @@ import "./styles.css";
 import "./responsive.css";
 
 class SearchModal extends Component {
-  onCloseSearch = (params) => {
-    this.props.isCloseSearch(params);
+  state = {
+    isOpenSearchModal: this.props.isDisplayModal.isOpenSearchModal,
   };
 
+  onCloseSearch = () => {
+    this.props.onCloseSearchModal();
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.isDisplayModal.isOpenSearchModal !== state.isOpenSearchModal) {
+      return {
+        isOpenSearchModal: props.isDisplayModal.isOpenSearchModal,
+      };
+    }
+    return null;
+  }
+
   render() {
-    var { isOpenSearch } = this.props;
+    var { isOpenSearchModal } = this.state;
     return (
-      <div className={isOpenSearch === true ? "modal-search-container" : ""}>
+      <div
+        className={isOpenSearchModal === true ? "modal-search-container" : ""}>
         <div
-          className={isOpenSearch === true ? "modal__overlay-search" : ""}
-          onClick={() => this.onCloseSearch(false)}
+          className={isOpenSearchModal === true ? "modal__overlay-search" : ""}
+          onClick={this.onCloseSearch}
         />
         <div
           className={
-            isOpenSearch === true
+            isOpenSearchModal === true
               ? "modal-search active-search"
               : "modal-search"
           }>

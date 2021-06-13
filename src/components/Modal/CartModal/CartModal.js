@@ -15,6 +15,7 @@ class CartModal extends Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.isDisplayModal.isOpenCartModal !== state.isOpenCartModal) {
+      console.log(props);
       return {
         isOpenCartModal: props.isDisplayModal.isOpenCartModal,
       };
@@ -24,7 +25,6 @@ class CartModal extends Component {
 
   render() {
     var { isOpenCartModal } = this.state;
-    console.log(this.props);
     return (
       <div className={isOpenCartModal === true ? "modal-cart" : ""}>
         <div

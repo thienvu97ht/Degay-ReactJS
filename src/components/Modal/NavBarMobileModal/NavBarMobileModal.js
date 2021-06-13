@@ -4,23 +4,37 @@ import "./responsive.css";
 import { Link } from "react-router-dom";
 
 class NavBarMobileModal extends Component {
-  onCloseMenu = (params) => {
-    this.props.isCloseMenu(params);
+  state = {
+    isOpenMenuModal: this.props.isDisplayModal.isOpenMenuModal,
   };
 
+  onCloseMenu = () => {
+    this.props.onCloseMenuModal();
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.isDisplayModal.isOpenMenuModal !== state.isOpenMenuModal) {
+      console.log(props);
+      return {
+        isOpenMenuModal: props.isDisplayModal.isOpenMenuModal,
+      };
+    }
+    return null;
+  }
+
   render() {
-    var { isOpenMenu } = this.props;
+    var { isOpenMenuModal } = this.state;
     return (
-      <div className={isOpenMenu === true ? "modal-menu" : ""}>
+      <div className={isOpenMenuModal === true ? "modal-menu" : ""}>
         <div
-          className={isOpenMenu === true ? "modal__overlay-menu" : ""}
+          className={isOpenMenuModal === true ? "modal__overlay-menu" : ""}
           onClick={this.onCloseMenu}
         />
 
         {/* Modal menu */}
         <div
           className={
-            isOpenMenu === true
+            isOpenMenuModal === true
               ? "modal-menu-mobile active-menu"
               : "modal-menu-mobile"
           }>

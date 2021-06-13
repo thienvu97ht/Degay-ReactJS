@@ -3,8 +3,8 @@ import "./styles.css";
 import "./responsive.css";
 import { Link, Route } from "react-router-dom";
 import CartModalContainer from "../../containers/CartModalContainer";
-import NavBarMobileModal from "../Modal/NavBarMobileModal/NavBarMobileModal";
-import SearchModal from "../Modal/SearchModal/SearchModal";
+import NavBarMobileModalContainer from "../../containers/NavBarMobileModalContainer";
+import SearchModalContainer from "../../containers/SearchModalContainer";
 
 const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
   return (
@@ -28,33 +28,19 @@ const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
 };
 
 class Menu extends Component {
-  state = {
-    isOpenMenu: false,
-    isOpenSearch: false,
-  };
-
   isOpenCart = () => {
     this.props.onOpenCartModal();
   };
 
   isOpenMenu = () => {
-    this.setState({ isOpenMenu: !this.state.isOpenMenu });
-  };
-
-  isCloseMenu = (params) => {
-    this.setState({ isOpenMenu: params });
+    this.props.onOpenMenuModal();
   };
 
   isOpenSearch = () => {
-    this.setState({ isOpenSearch: !this.state.isOpenSearch });
-  };
-
-  isCloseSearch = (params) => {
-    this.setState({ isOpenSearch: params });
+    this.props.onOpenSerchModal();
   };
 
   render() {
-    var { isOpenMenu, isOpenSearch } = this.state;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -162,16 +148,10 @@ class Menu extends Component {
         <CartModalContainer />
 
         {/* Modal Menu */}
-        <NavBarMobileModal
-          isOpenMenu={isOpenMenu}
-          isCloseMenu={this.isCloseMenu}
-        />
+        <NavBarMobileModalContainer />
 
         {/* Moadl Search */}
-        <SearchModal
-          isOpenSearch={isOpenSearch}
-          isCloseSearch={this.isCloseSearch}
-        />
+        <SearchModalContainer />
       </Fragment>
     );
   }

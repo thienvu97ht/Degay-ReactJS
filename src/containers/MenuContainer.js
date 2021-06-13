@@ -5,8 +5,14 @@ import Menu from "../components/Menu/Menu";
 
 class MenuContainer extends Component {
   render() {
-    var { onOpenCartModal } = this.props;
-    return <Menu onOpenCartModal={onOpenCartModal} />;
+    var { onOpenCartModal, onOpenMenuModal, onOpenSerchModal } = this.props;
+    return (
+      <Menu
+        onOpenCartModal={onOpenCartModal}
+        onOpenMenuModal={onOpenMenuModal}
+        onOpenSerchModal={onOpenSerchModal}
+      />
+    );
   }
 }
 
@@ -18,6 +24,12 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     onOpenCartModal: () => {
       dispatch(actions.openCart());
+    },
+    onOpenMenuModal: () => {
+      dispatch(actions.openMenu());
+    },
+    onOpenSerchModal: () => {
+      dispatch(actions.openSearch());
     },
   };
 };

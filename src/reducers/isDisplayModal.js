@@ -3,6 +3,8 @@ import * as types from "../constants/ActionTypes";
 var initialState = {
   isOpenProductDetail: false,
   isOpenCartModal: false,
+  isOpenMenuModal: false,
+  isOpenSearchModal: false,
 };
 
 var isDisplayModal = (state = initialState, action) => {
@@ -18,6 +20,18 @@ var isDisplayModal = (state = initialState, action) => {
       return state;
     case types.CLOSE_CART:
       state.isOpenCartModal = false;
+      return state;
+    case types.OPEN_MENU_MOBILE:
+      state.isOpenMenuModal = true;
+      return state;
+    case types.CLOSE_MENU_MOBILE:
+      state.isOpenMenuModal = false;
+      return state;
+    case types.OPEN_SEARCH:
+      state.isOpenSearchModal = true;
+      return state;
+    case types.CLOSE_SEARCH:
+      state.isOpenSearchModal = false;
       return state;
     default:
       return state;
