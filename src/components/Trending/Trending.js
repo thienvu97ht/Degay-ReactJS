@@ -1,24 +1,22 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
-import ProductDetailModal from "../Modal/ProductDetailModal/ProductDetailModal";
-import TrendingItem from "./TrendingItem";
-import callApi from "../../utils/apiCaller";
+import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
+import TrendingItemContainer from "../../containers/TrendingItemContainer";
+import { connect } from "react-redux";
+import { actFetchProductsRequest } from "../../actions/index";
 
 class Trending extends Component {
   state = {
     isOpenProductDetail: false,
-    trendingProducts: [],
   };
 
   componentDidMount() {
-    callApi("products", "GET", null).then((res) => {
-      this.setState({ trendingProducts: res.data });
-    });
+    this.props.fetchAllProducts();
   }
 
   isOpenProductDetail = () => {
-    this.setState({ isOpenProductDetail: !this.state.isOpenProductDetail });
+    this.setState({ isOpenProductDetail: this.props.isDisplayModal });
   };
 
   isCloseProductDetail = (params) => {
@@ -27,7 +25,8 @@ class Trending extends Component {
   };
 
   render() {
-    var { isOpenProductDetail, trendingProducts } = this.state;
+    var { isOpenProductDetail } = this.state;
+    var trendingProducts = this.props.products;
     return (
       <Fragment>
         <div className="container__trending">
@@ -38,8 +37,7 @@ class Trending extends Component {
             </div>
           </div>
         </div>
-
-        <ProductDetailModal
+        <ProductDetailModalContainer
           isOpenProductDetail={isOpenProductDetail}
           isCloseProductDetail={this.isCloseProductDetail}
         />
@@ -58,11 +56,31 @@ class Trending extends Component {
       var sortTrendingProducts = sortBySold.slice(0, 8);
 
       result = sortTrendingProducts.map((trendingProduct, index) => {
-        return <TrendingItem key={index} trendingProduct={trendingProduct} />;
+        return (
+          <TrendingItemContainer
+            key={index}
+            trendingProduct={trendingProduct}
+          />
+        );
       });
     }
     return result;
   };
 }
 
-export default Trending;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+    isDisplayModal: state.isDisplayModal,
+  };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    fetchAllProducts: () => {
+      dispatch(actFetchProductsRequest());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trending);

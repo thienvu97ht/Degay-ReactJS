@@ -1,9 +1,11 @@
 import { Component } from "react";
 
 class TrendingItem extends Component {
+  isOpenProductDetail = () => {
+    this.props.onOpenProductModal();
+  };
   render() {
     var { trendingProduct } = this.props;
-
     return (
       <div className="col l-3 m-6 c-10 c-o-1">
         <div className="container__trending-item">

@@ -1,4 +1,5 @@
 import * as Types from "../constants/ActionTypes";
+import callApi from "../utils/apiCaller";
 
 export const openCart = () => {
   return {
@@ -33,5 +34,34 @@ export const openSearch = () => {
 export const closeSearch = () => {
   return {
     type: Types.CLOSE_SEARCH,
+  };
+};
+
+export const openProductModal = () => {
+  return {
+    type: Types.OPEN_PRODUCT_MODAL,
+  };
+};
+
+export const closeProductModal = () => {
+  return {
+    type: Types.CLOSE_PRODUCT_MODAL,
+  };
+};
+
+/* API */
+
+export const actFetchProductsRequest = () => {
+  return (dispatch) => {
+    return callApi("products", "GET", null).then((res) => {
+      dispatch(actFetchProducts(res.data));
+    });
+  };
+};
+
+export const actFetchProducts = (products) => {
+  return {
+    type: Types.FETCH_PRODUCTS,
+    products,
   };
 };

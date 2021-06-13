@@ -73,12 +73,12 @@ class Menu extends Component {
                 </button>
               </li>
               <MenuLink label="Trang chủ" to="/" activeOnlyWhenActive={true} />
-              <li className="header__navbar-item hide-on-mobile-tablet">
-                <Link
+              <div className="header__navbar-item hide-on-mobile-tablet">
+                <MenuLink
+                  label="Sản phẩm"
                   to="/list-products"
-                  className="header__navbar-item-link header__navbar-item-link-underline">
-                  Sản phẩm
-                </Link>
+                  activeOnlyWhenActive={false}
+                />
                 <div className="products-nav">
                   <ul className="products-nav-list">
                     <li className="products-nav-item">
@@ -115,7 +115,7 @@ class Menu extends Component {
                     </li>
                   </ul>
                 </div>
-              </li>
+              </div>
               <MenuLink
                 label="Cửa hàng"
                 to="/stores"

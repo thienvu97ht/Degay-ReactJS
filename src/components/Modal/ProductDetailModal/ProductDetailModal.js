@@ -21,9 +21,27 @@ const images = [
 ];
 
 class ProductDetailModal extends Component {
-  onCloseProductDetal = (params) => {
-    this.props.isCloseProductDetail(params);
+  state = {
+    isOpenProductDetail: this.props.isDisplayModal.isOpenProductDetail,
   };
+
+  onCloseProductDetal = () => {
+    this.props.onCloseProductModal();
+    this.setState({
+      isOpenProductDetail: this.props.isDisplayModal.isOpenProductDetail,
+    });
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    if (
+      props.isDisplayModal.isOpenProductDetail !== state.isOpenProductDetail
+    ) {
+      return {
+        isOpenProductDetail: props.isDisplayModal.isOpenProductDetail,
+      };
+    }
+    return null;
+  }
 
   render() {
     const settings_2 = {
@@ -42,7 +60,7 @@ class ProductDetailModal extends Component {
       slidesToScroll: 1,
     };
 
-    var { isOpenProductDetail } = this.props;
+    var { isOpenProductDetail } = this.state;
     return (
       <div
         className={isOpenProductDetail === true ? "modal-product-detail" : ""}>
@@ -50,7 +68,7 @@ class ProductDetailModal extends Component {
           className={
             isOpenProductDetail === true ? "modal__overlay-product-detail" : ""
           }
-          onClick={() => this.onCloseProductDetal(false)}
+          onClick={this.onCloseProductDetal}
         />
 
         {/* Modal menu */}
