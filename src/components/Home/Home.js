@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Slide from "../Slide/Slide";
-import Trending from "../Trending/Trending";
+import TrendingContainer from "../../containers/TrendingContainer";
 import News from "../News/News";
 
 class Home extends Component {
@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <Fragment>
         <Slide />
-        <Trending />
+        <TrendingContainer />
         <News />
       </Fragment>
     );

@@ -3,29 +3,13 @@ import "./styles.css";
 import "./responsive.css";
 import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
 import TrendingItemContainer from "../../containers/TrendingItemContainer";
-import { connect } from "react-redux";
-import { actFetchProductsRequest } from "../../actions/index";
 
 class Trending extends Component {
-  state = {
-    isOpenProductDetail: false,
-  };
-
   componentDidMount() {
     this.props.fetchAllProducts();
   }
 
-  isOpenProductDetail = () => {
-    this.setState({ isOpenProductDetail: this.props.isDisplayModal });
-  };
-
-  isCloseProductDetail = (params) => {
-    this.setState({ isOpenProductDetail: params });
-    console.log(params);
-  };
-
   render() {
-    var { isOpenProductDetail } = this.state;
     var trendingProducts = this.props.products;
     return (
       <Fragment>
@@ -37,10 +21,7 @@ class Trending extends Component {
             </div>
           </div>
         </div>
-        <ProductDetailModalContainer
-          isOpenProductDetail={isOpenProductDetail}
-          isCloseProductDetail={this.isCloseProductDetail}
-        />
+        <ProductDetailModalContainer />
       </Fragment>
     );
   }
@@ -68,19 +49,4 @@ class Trending extends Component {
   };
 }
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.products,
-    isDisplayModal: state.isDisplayModal,
-  };
-};
-
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    fetchAllProducts: () => {
-      dispatch(actFetchProductsRequest());
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Trending);
+export default Trending;
