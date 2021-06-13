@@ -2,6 +2,7 @@ import * as types from "../constants/ActionTypes";
 
 var initialState = {
   isOpenProductDetail: false,
+  isOpenCartModal: false,
 };
 
 var isDisplayModal = (state = initialState, action) => {
@@ -11,6 +12,12 @@ var isDisplayModal = (state = initialState, action) => {
       return state;
     case types.CLOSE_PRODUCT_MODAL:
       state.isOpenProductDetail = false;
+      return state;
+    case types.OPEN_CART:
+      state.isOpenCartModal = true;
+      return state;
+    case types.CLOSE_CART:
+      state.isOpenCartModal = false;
       return state;
     default:
       return state;

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
 import { Link, Route } from "react-router-dom";
-import CartModal from "../Modal/CartModal/CartModal";
+import CartModalContainer from "../../containers/CartModalContainer";
 import NavBarMobileModal from "../Modal/NavBarMobileModal/NavBarMobileModal";
 import SearchModal from "../Modal/SearchModal/SearchModal";
 
@@ -29,17 +29,12 @@ const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
 
 class Menu extends Component {
   state = {
-    isOpenCart: false,
     isOpenMenu: false,
     isOpenSearch: false,
   };
 
   isOpenCart = () => {
-    this.setState({ isOpenCart: !this.state.isOpenCart });
-  };
-
-  isCloseCart = (params) => {
-    this.setState({ isOpenCart: params });
+    this.props.onOpenCartModal();
   };
 
   isOpenMenu = () => {
@@ -59,7 +54,7 @@ class Menu extends Component {
   };
 
   render() {
-    var { isOpenCart, isOpenMenu, isOpenSearch } = this.state;
+    var { isOpenMenu, isOpenSearch } = this.state;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -164,7 +159,7 @@ class Menu extends Component {
         </div>
 
         {/* Modal Cart */}
-        <CartModal isOpenCart={isOpenCart} isCloseCart={this.isCloseCart} />
+        <CartModalContainer />
 
         {/* Modal Menu */}
         <NavBarMobileModal

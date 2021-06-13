@@ -4,6 +4,10 @@ class TrendingItem extends Component {
   isOpenProductDetail = () => {
     this.props.onOpenProductModal();
   };
+
+  addToCart = (id) => {
+    this.props.onAddToCart(id);
+  };
   render() {
     var { trendingProduct } = this.props;
     return (
@@ -27,7 +31,7 @@ class TrendingItem extends Component {
               title="Xem nhanh"
             />
           </button>
-          <button className="add-cart-btn">
+          <button onClick={this.addToCart} className="add-cart-btn">
             <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
           </button>
         </div>

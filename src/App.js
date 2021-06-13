@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Menu from "./components/Menu/Menu";
+import MenuContainer from "./containers/MenuContainer";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes";
@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div className="app">
           {/* Menu */}
-          <Menu />
+          <MenuContainer />
           {/* Nội dung */}
           <ScrollToTop>
             <Switch>{this.showContentMenus(routes)}</Switch>

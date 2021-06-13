@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Trending from "../components/Trending/Trending";
 import { connect } from "react-redux";
 import { actFetchProductsRequest } from "../actions/index";
