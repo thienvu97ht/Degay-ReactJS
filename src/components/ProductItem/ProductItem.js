@@ -33,8 +33,7 @@ class ProductItem extends Component {
           </a>
         </div>
         <div className="product-price text-center">
-          <p className="product-price-number">{price}</p>
-          <p className="currency-unit">đ</p>
+          <p className="product-price-number">{price} VNĐ</p>
         </div>
       </div>
     );

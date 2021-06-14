@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import new1 from "../../assets/new1.jpg";
+import new2 from "../../assets/new2.jpg";
+import new3 from "../../assets/new3.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,7 +52,7 @@ class News extends Component {
           <Slider {...settings_2}>
             <div className="container__product-item">
               <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/121069130_3494939963932474_6093064416035987229_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=a26aad&_nc_ohc=w5hLXSCmDTcAX-oCHNz&tn=Laqnk5RZu9fU80Xi&_nc_ht=scontent.fsgn2-5.fna&oh=f64582f10b67c039f45eead494339ee9&oe=60D87189"
+                src={new1}
                 alt=""
                 className="news-item-img"
               />
@@ -69,7 +72,7 @@ class News extends Component {
             </div>
             <div className="container__product-item">
               <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/167549331_4040210996072032_6244063505369862654_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=xmVFvfPtYrgAX8muSU9&_nc_ht=scontent.fsgn2-5.fna&oh=c5273eac067ae4a2f743bbb9cbfacb1d&oe=60D8BE8E"
+                src={new2}
                 alt=""
                 className="news-item-img"
               />
@@ -91,7 +94,7 @@ class News extends Component {
             </div>
             <div className="container__product-item">
               <img
-                src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.6435-9/126092380_3609077525852050_7175847798993646698_n.jpg?_nc_cat=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=y6SiHrO0r50AX9yUYfh&_nc_ht=scontent.fsgn2-6.fna&oh=2d09514743d86a6787eef806130d2ec9&oe=60D71596"
+                src={new3}
                 alt=""
                 className="news-item-img"
               />

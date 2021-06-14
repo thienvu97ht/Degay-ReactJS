@@ -45,8 +45,9 @@ class CartModal extends Component {
     if (productsById.length > 0) {
       result = productsInCart.map((productInCart, index) => {
         var productById = productsById.find((productById) => {
-          return productById.id === productInCart.productId
-        })
+          return productById.id === productInCart.productId;
+        });
+
         return (
           <CartItem
             key={index}
@@ -59,26 +60,28 @@ class CartModal extends Component {
     return result;
   };
 
-  // showTotalAmount = (productsById) => {
-  //   var total = 0;
-  //   if (productsById.length > 0) {
-  //     for (var i = 0; i < productsById.length; i++) {
-  //       total += productsById[i].product.price * productsById[i].quantity;
-  //     }
-  //   }
-  //   var totalFormat = total
-  //     .toString()
-  //     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-
-  //   return totalFormat;
-  // };
+  showTotalAmount = (productsById, productsInCart) => {
+    var total = 0;
+    if (productsById.length > 0) {
+      for (var i = 0; i < productsById.length; i++) {
+        for (var j = 0; j < productsInCart.length; j++) {
+          if (productsById[i].id === productsInCart[j].productId) {
+            total += productsById[i].price * productsInCart[j].quantity;
+          }
+        }
+      }
+    }
+    var totalFormat = total
+      .toString()
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    return totalFormat;
+  };
 
   render() {
     var { isOpenCartModal } = this.state;
     var { productsInCart, products } = this.props;
 
     var productsById = this.findProductById(productsInCart, products);
-    // console.log(productsById);
     return (
       <div className={isOpenCartModal === true ? "modal-cart" : ""}>
         <div
@@ -106,7 +109,7 @@ class CartModal extends Component {
               <div className="nav__bag-cart-panel-total">
                 <p className="nav__bag-total-text">Tổng tiền:</p>
                 <p className="nav__bag-total-price">
-                  {/* {this.showTotalAmount(productsById, productsInCart)} đ */}
+                  {this.showTotalAmount(productsById, productsInCart)} đ
                 </p>
               </div>
               <Link

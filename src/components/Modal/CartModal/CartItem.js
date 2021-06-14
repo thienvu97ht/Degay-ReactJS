@@ -13,7 +13,6 @@ class CartItem extends Component {
     var price = productById.price
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-    console.log(productById);
     return (
       <li className="nav__bag-list-item">
         <div className="nav__bag-list-item-left">
@@ -49,7 +48,7 @@ class CartItem extends Component {
                 <i className=" ti-plus" />
               </a>
             </div>
-            <p className="nav__bag--item-price">{price} đ</p>
+            <p className="nav__bag--item-price">{price} VNĐ</p>
           </div>
         </div>
       </li>

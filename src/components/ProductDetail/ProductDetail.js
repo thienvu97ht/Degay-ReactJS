@@ -4,23 +4,66 @@ import "./responsive.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import * as actions from "../../actions/index";
+import { connect } from "react-redux";
+// import { Link } from "react-router-dom";
 
-const images = [
-  {
-    src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
-  },
-];
+// const images = [
+//   {
+//     src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
+//   },
+//   {
+//     src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
+//   },
+//   {
+//     src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
+//   },
+//   {
+//     src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
+//   },
+// ];
 
 class ProductDetail extends Component {
+  state = {
+    id: "",
+    images: "",
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.product.id !== state.id) {
+      props.onViewProductDetail(props.match.params.id);
+      return {
+        id: props.product.id,
+        images: props.product.images,
+      };
+    }
+    return null;
+  }
+
+  // componentDidMount() {
+  //   var { match } = this.props;
+  //   if (match) {
+  //     var id = match.params.id;
+  //     this.props.onViewProductDetail(id);
+  //   }
+  //   console.log("componentDidMount");
+  // }
+
+  showSilder = (images) => {
+    var result = "";
+    if (images) {
+      result = images.map((img, index) => {
+        return (
+          <div key={index} className="detail-product-img sv-slider-item">
+            <img alt="" src={img.src} />
+          </div>
+        );
+      });
+    }
+
+    return result;
+  };
+
   render() {
     const settings = {
       customPaging: function (i) {
@@ -37,6 +80,16 @@ class ProductDetail extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
+
+    var { product } = this.props;
+    var price = product.price
+      ? product.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+      : "";
+    var collections = product.collections
+      ? product.collections.toUpperCase()
+      : "";
+    var { images } = this.state;
+
     return (
       <Fragment>
         <>
@@ -44,21 +97,13 @@ class ProductDetail extends Component {
             <div className="grid wide">
               <div className="row">
                 <div className="col l-6 m-12 c-10 c-o-1 detail-product-left">
-                  <Slider {...settings}>
-                    {images.map((img) => (
-                      <div className="detail-product-img sv-slider-item">
-                        <img alt="" src={img.src} />
-                      </div>
-                    ))}
-                  </Slider>
+                  <Slider {...settings}>{this.showSilder(images)}</Slider>
                 </div>
 
                 <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
                   <div>
-                    <h1 className="product-detail-title">
-                      Sơ Mi Siết Tay Anh Xanh - STA Xanh
-                    </h1>
-                    <p className="category-product">Áo</p>
+                    <h1 className="product-detail-title">{product.name}</h1>
+                    <p className="category-product">{collections}</p>
                     <div className="product-detail_size-box">
                       <p className="size-title">Kích thước</p>
                       <div data-value="NHỎ" className="size-input-box">
@@ -98,7 +143,7 @@ class ProductDetail extends Component {
                         className="quantity-input"
                       />
                     </div>
-                    <p className="product-detail_price">330,000 VND</p>
+                    <p className="product-detail_price">{price} VND</p>
                     <button className="product-detail_add-btn">
                       THÊM VÀO GIỎ
                     </button>
@@ -159,7 +204,7 @@ class ProductDetail extends Component {
                   <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
                 </div>
                 <div className="product-name-box text-center">
-                  <a href className="product-name">
+                  <a href="!#" className="product-name">
                     Áo 2 Cổ Degrey - A2C
                   </a>
                 </div>
@@ -189,7 +234,7 @@ class ProductDetail extends Component {
                   <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
                 </div>
                 <div className="product-name-box text-center">
-                  <a href className="product-name">
+                  <a href="!#" className="product-name">
                     Áo 2 Cổ Degrey - A2C
                   </a>
                 </div>
@@ -219,7 +264,7 @@ class ProductDetail extends Component {
                   <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
                 </div>
                 <div className="product-name-box text-center">
-                  <a href className="product-name">
+                  <a href="!#" className="product-name">
                     Áo 2 Cổ Degrey - A2C
                   </a>
                 </div>
@@ -249,7 +294,7 @@ class ProductDetail extends Component {
                   <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
                 </div>
                 <div className="product-name-box text-center">
-                  <a href className="product-name">
+                  <a href="!#" className="product-name">
                     Áo 2 Cổ Degrey - A2C
                   </a>
                 </div>
@@ -266,4 +311,18 @@ class ProductDetail extends Component {
   }
 }
 
-export default ProductDetail;
+const mapStateToProps = (state) => {
+  return {
+    product: state.viewProduct,
+  };
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    onViewProductDetail: (id) => {
+      dispatch(actions.actGetProductRequest(id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

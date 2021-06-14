@@ -81,3 +81,19 @@ export const actFetchProductsInCart = (productsInCart) => {
     productsInCart,
   };
 };
+
+/* VIEW PRODUCT DETAIL */
+export const actGetProductRequest = (id) => {
+  return (dispatch) => {
+    return callApi(`products/${id}`, "GET", null).then((res) => {
+      dispatch(actGetProduct(res.data));
+    });
+  };
+};
+
+export const actGetProduct = (product) => {
+  return {
+    type: Types.VIEW_PRODUCT_DETAIL,
+    product,
+  };
+};

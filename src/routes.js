@@ -55,11 +55,6 @@ const routes = [
     main: () => <Account />,
   },
   {
-    path: "/product-detail",
-    exact: false,
-    main: () => <ProductDetail />,
-  },
-  {
     path: "/checkout",
     exact: false,
     main: () => <Checkout />,
@@ -73,6 +68,11 @@ const routes = [
     path: "/oder-success",
     exact: false,
     main: () => <OderSuccess />,
+  },
+  {
+    path: "/product-detail/:id",
+    exact: false,
+    main: ({ match }) => <ProductDetail match={match} />,
   },
   {
     path: "",
