@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-class ProductItem extends Component {
+class RelatedProducts extends Component {
   render() {
     var { product } = this.props;
     console.log(product.id)
@@ -12,7 +12,7 @@ class ProductItem extends Component {
       <div className="col l-3 m-6 c-10 c-o-1">
         <div className="product-items">
           <Link
-            to={`product-detail/${product.id}`}
+            to={`${product.id}`}
             className="product-item-img">
             <img
               src={product.images[0].src}
@@ -29,12 +29,12 @@ class ProductItem extends Component {
             className="icon-eye ti-eye hide-on-mobile-tablet"
             title="Xem nhanh"
           />
-          <Link to={`product-detail/${product.id}`}>
+          <Link to={`${product.id}`}>
             <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
           </Link>
         </div>
         <div className="product-name-box text-center">
-          <Link to={`product-detail/${product.id}`} className="product-name">
+          <Link to={`${product.id}`} className="product-name">
             {product.name}
           </Link>
         </div>
@@ -46,4 +46,4 @@ class ProductItem extends Component {
   }
 }
 
-export default ProductItem;
+export default RelatedProducts;
