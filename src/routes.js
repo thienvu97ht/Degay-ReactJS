@@ -11,6 +11,7 @@ import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Checkout from "./components/Checkout/Checkout";
 import EmptyCart from "./components/EmptyCart/EmptyCart";
 import NotFound from "./components/NotFound/NotFound";
+import OderSuccess from "./components/OderSuccess/OderSuccess";
 
 const routes = [
   {
@@ -71,7 +72,7 @@ const routes = [
   {
     path: "/oder-success",
     exact: false,
-    main: () => <EmptyCart />,
+    main: () => <OderSuccess />,
   },
   {
     path: "",

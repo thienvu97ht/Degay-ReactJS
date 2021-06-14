@@ -1,0 +1,38 @@
+@media (max-width: 1440px) {
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .oder_success-img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .oder_success-container {
+    margin-top: 90px;
+  }
+
+  .oder_success-text {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 738px) {
+}
+
+@media (min-width: 370px) and (max-width: 599px) {
+}
+
+@media (max-width: 369px) {
+  .oder_success-img {
+    height: 200px;
+    width: 200px;
+  }
+}

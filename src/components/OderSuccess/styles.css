@@ -1,0 +1,30 @@
+.oder_success-container {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.oder_success-img {
+  height: 400px;
+  width: 400px;
+  object-fit: contain;
+}
+
+.oder_success-text {
+  font-size: 1.4rem;
+}
+
+.oder_success-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  top: 10px;
+}
+
+.oder_success-icon {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+}
