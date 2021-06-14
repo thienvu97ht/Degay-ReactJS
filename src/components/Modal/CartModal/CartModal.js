@@ -9,6 +9,10 @@ class CartModal extends Component {
     isOpenCartModal: this.props.isDisplayModal.isOpenCartModal,
   };
 
+  componentDidMount() {
+    this.props.fetchAllProductsInCart();
+  }
+
   onCloseCart = () => {
     this.props.onCloseCartModal();
   };
@@ -22,19 +26,59 @@ class CartModal extends Component {
     return null;
   }
 
-  showProductsInCart = (productsInCart) => {
-    var result = null;
+  findProductById = (productsInCart, products) => {
+    var result = [];
     if (productsInCart.length > 0) {
+      for (var i = 0; i < products.length; i++) {
+        for (var j = 0; j < productsInCart.length; j++) {
+          if (products[i].id === productsInCart[j].productId) {
+            result.push(products[i]);
+          }
+        }
+      }
+    }
+    return result;
+  };
+
+  showProductsInCart = (productsById, productsInCart) => {
+    var result = null;
+    if (productsById.length > 0) {
       result = productsInCart.map((productInCart, index) => {
-        return <CartItem key={index} productInCart={productInCart} />;
+        var productById = productsById.find((productById) => {
+          return productById.id === productInCart.productId
+        })
+        return (
+          <CartItem
+            key={index}
+            productById={productById}
+            productInCart={productInCart}
+          />
+        );
       });
     }
     return result;
   };
 
+  // showTotalAmount = (productsById) => {
+  //   var total = 0;
+  //   if (productsById.length > 0) {
+  //     for (var i = 0; i < productsById.length; i++) {
+  //       total += productsById[i].product.price * productsById[i].quantity;
+  //     }
+  //   }
+  //   var totalFormat = total
+  //     .toString()
+  //     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+
+  //   return totalFormat;
+  // };
+
   render() {
     var { isOpenCartModal } = this.state;
-    var { productsInCart } = this.props;
+    var { productsInCart, products } = this.props;
+
+    var productsById = this.findProductById(productsInCart, products);
+    // console.log(productsById);
     return (
       <div className={isOpenCartModal === true ? "modal-cart" : ""}>
         <div
@@ -56,13 +100,13 @@ class CartModal extends Component {
           <div className="shopping__cart-container">
             <ul className="nav__bag-list">
               {/* Cart Item */}
-              {this.showProductsInCart(productsInCart)}
+              {this.showProductsInCart(productsById, productsInCart)}
             </ul>
             <div className="nav__bag-cart-panel">
               <div className="nav__bag-cart-panel-total">
                 <p className="nav__bag-total-text">Tổng tiền:</p>
                 <p className="nav__bag-total-price">
-                  {this.showTotalAmount(productsInCart)} đ
+                  {/* {this.showTotalAmount(productsById, productsInCart)} đ */}
                 </p>
               </div>
               <Link
@@ -83,18 +127,6 @@ class CartModal extends Component {
       </div>
     );
   }
-
-  showTotalAmount = (productsInCart) => {
-    var total = 0;
-    if (productsInCart.length > 0) {
-      for (var i = 0; i < productsInCart.length; i++) {
-        total += productsInCart[i].product.price * productsInCart[i].quantity;
-      }
-    }
-    var totalFormat = total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-
-    return totalFormat;
-  };
 }
 
 export default CartModal;

@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 
 class CartItem extends Component {
+  findProductById = (productsInCart, products) => {
+    var result = null;
+
+
+    return result;
+  };
+
   render() {
-    var { product, quantity } = this.props.productInCart;
-    var price = product.price
+    var { productById, productInCart } = this.props;
+    var price = productById.price
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-    var size = this.props.productInCart.size.toUpperCase();
+    console.log(productById);
     return (
       <li className="nav__bag-list-item">
         <div className="nav__bag-list-item-left">
           <img
-            src={product.images[1].src}
+            src={productById.images[1].src}
             alt=""
             className="product-in-cart-img"
           />
@@ -19,12 +26,12 @@ class CartItem extends Component {
         <div className="nav__bag-list-item-right">
           <div className="nav__bag--item-name">
             <a href="!#" className="nav__bag--item-name-link">
-              {product.name}
+              {productById.name}
             </a>
             <i className="ti-close nav__bag--item-name-close" />
           </div>
           <div className="nav__bag-list-item-category">
-            <p>{size}</p>
+            <p>{productInCart.size}</p>
           </div>
           <div className="nav__bag--item-pricing">
             <div className="nav__bag--item-quantity">
@@ -35,7 +42,7 @@ class CartItem extends Component {
                 type="number"
                 className="nav__bag--item-quantity-number"
                 maxLength={1}
-                defaultValue={quantity}
+                defaultValue={productInCart.quantity}
                 placeholder={0}
               />
               <a href="!#" className="plus">

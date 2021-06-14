@@ -65,3 +65,19 @@ export const actFetchProducts = (products) => {
     products,
   };
 };
+
+/* PRODUCTS IN CART */
+export const actFetchProductsInCartRequest = () => {
+  return (dispatch) => {
+    return callApi("productsInCart", "GET", null).then((res) => {
+      dispatch(actFetchProductsInCart(res.data));
+    });
+  };
+};
+
+export const actFetchProductsInCart = (productsInCart) => {
+  return {
+    type: Types.FETCH_PRODUCTS_IN_CART,
+    productsInCart,
+  };
+};
