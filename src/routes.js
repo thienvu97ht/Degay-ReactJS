@@ -10,6 +10,7 @@ import Account from "./components/Account/Account";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Checkout from "./components/Checkout/Checkout";
 import EmptyCart from "./components/EmptyCart/EmptyCart";
+import NotFound from "./components/NotFound/NotFound";
 
 const routes = [
   {
@@ -66,6 +67,16 @@ const routes = [
     path: "/empty-cart",
     exact: false,
     main: () => <EmptyCart />,
+  },
+  {
+    path: "/oder-success",
+    exact: false,
+    main: () => <EmptyCart />,
+  },
+  {
+    path: "",
+    exact: false,
+    main: () => <NotFound />,
   },
 ];
 

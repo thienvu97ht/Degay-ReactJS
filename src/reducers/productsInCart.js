@@ -1,4 +1,4 @@
-import * as Types from "../constants/ActionTypes";
+// import * as Types from "../constants/ActionTypes";
 
 var initialState = [
   {
@@ -25,6 +25,7 @@ var initialState = [
     },
 
     quantity: 2,
+    size: "trung",
   },
   {
     product: {
@@ -50,14 +51,12 @@ var initialState = [
     },
 
     quantity: 1,
+    size: "nhỏ",
   },
 ];
 
 var productsInCart = (state = initialState, action) => {
   switch (action.type) {
-    case Types.FETCH_PRODUCTS:
-      state = action.products;
-      return [...state];
     default:
       return [...state];
   }

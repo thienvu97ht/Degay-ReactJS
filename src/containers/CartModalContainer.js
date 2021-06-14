@@ -5,10 +5,10 @@ import CartModal from "../components/Modal/CartModal/CartModal";
 
 class CartModalContainer extends Component {
   render() {
-    var { products, isDisplayModal, onCloseCartModal } = this.props;
+    var { productsInCart, isDisplayModal, onCloseCartModal } = this.props;
     return (
       <CartModal
-        products={products}
+        productsInCart={productsInCart}
         isDisplayModal={isDisplayModal}
         onCloseCartModal={onCloseCartModal}
       />
@@ -18,7 +18,7 @@ class CartModalContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.productsInCart,
+    productsInCart: state.productsInCart,
     isDisplayModal: state.isDisplayModal,
   };
 };

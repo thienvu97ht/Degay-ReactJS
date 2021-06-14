@@ -1,0 +1,30 @@
+.notfound_container {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.notfound-img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.notfound-text {
+  font-size: 1.4rem;
+}
+
+.notfound-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  top: 10px;
+}
+
+.notfound-icon {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+}

@@ -15,7 +15,6 @@ class CartModal extends Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.isDisplayModal.isOpenCartModal !== state.isOpenCartModal) {
-      console.log(props);
       return {
         isOpenCartModal: props.isDisplayModal.isOpenCartModal,
       };
@@ -23,8 +22,19 @@ class CartModal extends Component {
     return null;
   }
 
+  showProductsInCart = (productsInCart) => {
+    var result = null;
+    if (productsInCart.length > 0) {
+      result = productsInCart.map((productInCart, index) => {
+        return <CartItem key={index} productInCart={productInCart} />;
+      });
+    }
+    return result;
+  };
+
   render() {
     var { isOpenCartModal } = this.state;
+    var { productsInCart } = this.props;
     return (
       <div className={isOpenCartModal === true ? "modal-cart" : ""}>
         <div
@@ -46,12 +56,14 @@ class CartModal extends Component {
           <div className="shopping__cart-container">
             <ul className="nav__bag-list">
               {/* Cart Item */}
-              <CartItem />
+              {this.showProductsInCart(productsInCart)}
             </ul>
             <div className="nav__bag-cart-panel">
               <div className="nav__bag-cart-panel-total">
                 <p className="nav__bag-total-text">Tổng tiền:</p>
-                <p className="nav__bag-total-price">$137.00</p>
+                <p className="nav__bag-total-price">
+                  {this.showTotalAmount(productsInCart)} đ
+                </p>
               </div>
               <Link
                 to="/view-cart"
@@ -71,6 +83,18 @@ class CartModal extends Component {
       </div>
     );
   }
+
+  showTotalAmount = (productsInCart) => {
+    var total = 0;
+    if (productsInCart.length > 0) {
+      for (var i = 0; i < productsInCart.length; i++) {
+        total += productsInCart[i].product.price * productsInCart[i].quantity;
+      }
+    }
+    var totalFormat = total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+
+    return totalFormat;
+  };
 }
 
 export default CartModal;
