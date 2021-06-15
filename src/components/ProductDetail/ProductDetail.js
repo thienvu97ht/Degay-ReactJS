@@ -29,7 +29,7 @@ class ProductDetail extends Component {
     id: "",
     images: "",
     size: "",
-    quantity: "",
+    quantity: 1,
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -86,6 +86,64 @@ class ProductDetail extends Component {
     return result;
   };
 
+  hiddenByCollection = (collections) => {
+    var result = "";
+    if (collections === "ACCESSORIES") {
+      return result
+    } else {
+      return (
+        <div className="product-detail_size-box">
+          <p className="size-title">Kích thước</p>
+          <div data-value="NHỎ" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-nh"
+              type="radio"
+              name="size"
+              defaultValue="NHỎ"
+            />
+            <label htmlFor="swatch-0-nh">NHỎ</label>
+          </div>
+          <div data-value="TRUNG" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-trung"
+              type="radio"
+              name="size"
+              defaultValue="TRUNG"
+            />
+            <label htmlFor="swatch-0-trung">TRUNG</label>
+          </div>
+          <div data-value="LỚN" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-lon"
+              type="radio"
+              name="size"
+              defaultValue="LỚN"
+            />
+            <label htmlFor="swatch-0-lon">LỚN</label>
+          </div>
+        </div>
+
+      )
+    }
+  }
+
+  addOrUpdate(product, productsInCart) {
+    var newProduct = []
+    for (var i = 0; i < productsInCart.length; i++) {
+      if (productsInCart[i].productId === product.productId && productsInCart[i].size === product.size) {
+        productsInCart[i].quantity += product.quantity
+        newProduct = productsInCart
+        this.props.onUpdateProductInCart(productsInCart[i]);
+      }
+    }
+    if (newProduct.length === 0) {
+      this.props.onAddProductInCart(product);
+    }
+  }
+
   onChange = (e) => {
     var target = e.target;
     var name = target.name;
@@ -98,14 +156,19 @@ class ProductDetail extends Component {
 
   onSave = (e) => {
     e.preventDefault();
+    var { productsInCart } = this.props;
     var { id, size, quantity } = this.state;
+    quantity = parseInt(quantity)
     var product = {
       productId: id,
       size: size,
       quantity: quantity
     }
 
-    this.props.onAddProductInCart(product);
+    /* PUSH OR PUT */
+    this.addOrUpdate(product, productsInCart)
+
+    // this.props.onAddProductInCart(product);
   };
 
 
@@ -135,6 +198,7 @@ class ProductDetail extends Component {
       : "";
     var { images } = this.state;
     this.showRelatedProducts(products, product.collections)
+
     return (
       <Fragment>
         <div className="product-detail-container">
@@ -148,40 +212,7 @@ class ProductDetail extends Component {
                 <form onSubmit={this.onSave} >
                   <h1 className="product-detail-title">{product.name}</h1>
                   <p className="category-product">{collections}</p>
-                  <div className="product-detail_size-box">
-                    <p className="size-title">Kích thước</p>
-                    <div data-value="NHỎ" className="size-input-box">
-                      <input
-                        onChange={this.onChange}
-                        id="swatch-0-nh"
-                        type="radio"
-                        name="size"
-                        defaultValue="NHỎ"
-                        defaultChecked
-                      />
-                      <label htmlFor="swatch-0-nh">NHỎ</label>
-                    </div>
-                    <div data-value="TRUNG" className="size-input-box">
-                      <input
-                        onChange={this.onChange}
-                        id="swatch-0-trung"
-                        type="radio"
-                        name="size"
-                        defaultValue="TRUNG"
-                      />
-                      <label htmlFor="swatch-0-trung">TRUNG</label>
-                    </div>
-                    <div data-value="LỚN" className="size-input-box">
-                      <input
-                        onChange={this.onChange}
-                        id="swatch-0-lon"
-                        type="radio"
-                        name="size"
-                        defaultValue="LỚN"
-                      />
-                      <label htmlFor="swatch-0-lon">LỚN</label>
-                    </div>
-                  </div>
+                  {this.hiddenByCollection(collections)}
                   <div className="quantity-product-box">
                     <p className="size-title">Số lượng</p>
                     <input
@@ -242,6 +273,7 @@ class ProductDetail extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    productsInCart: state.productsInCart,
     product: state.viewProduct,
     products: state.products,
   };
@@ -257,6 +289,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     onAddProductInCart: (product) => {
       dispatch(actions.actonAddProductToCartRequest(product));
+    },
+    onUpdateProductInCart: (product) => {
+      dispatch(actions.actUpdateProductToCartRequest(product));
     },
   };
 };

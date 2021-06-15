@@ -67,6 +67,7 @@ export const actFetchProducts = (products) => {
 };
 
 /* PRODUCTS IN CART */
+/* GET */
 export const actFetchProductsInCartRequest = () => {
   return (dispatch) => {
     return callApi("productsInCart", "GET", null).then((res) => {
@@ -82,6 +83,7 @@ export const actFetchProductsInCart = (productsInCart) => {
   };
 };
 
+/* POST */
 export const actonAddProductToCartRequest = (product) => {
   return (dispatch) => {
     return callApi("productsInCart", "POST", product).then((res) => {
@@ -93,6 +95,22 @@ export const actonAddProductToCartRequest = (product) => {
 export const actAddProductToCart = (product) => {
   return {
     type: Types.ADD_PRODUCT_TO_CARD,
+    product,
+  };
+};
+
+/* PUT */
+export const actUpdateProductToCartRequest = (product) => {
+  return (dispatch) => {
+    return callApi(`productsInCart/${product.id}`, "PUT", product).then((res) => {
+      dispatch(actUpdateProductToCart(res.data));
+    });
+  };
+};
+
+export const actUpdateProductToCart = (product) => {
+  return {
+    type: Types.UPDATE_PRODUCT_TO_CART,
     product,
   };
 };

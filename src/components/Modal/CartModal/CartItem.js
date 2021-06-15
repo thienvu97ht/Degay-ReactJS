@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
 class CartItem extends Component {
-  findProductById = (productsInCart, products) => {
-    var result = null;
 
+  onChange = (e) => {
 
-    return result;
-  };
+  }
 
   render() {
     var { productById, productInCart } = this.props;
-    var price = productById.price
+    var price = (productById.price * productInCart.quantity)
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     return (
@@ -34,19 +32,18 @@ class CartItem extends Component {
           </div>
           <div className="nav__bag--item-pricing">
             <div className="nav__bag--item-quantity">
-              <a href="!#" className="minus">
+              <button className="minus">
                 <i className=" ti-minus" />
-              </a>
+              </button>
               <input
                 type="number"
+                onChange={this.onChange}
                 className="nav__bag--item-quantity-number"
-                maxLength={1}
-                defaultValue={productInCart.quantity}
-                placeholder={0}
+                value={productInCart.quantity}
               />
-              <a href="!#" className="plus">
+              <button className="plus">
                 <i className=" ti-plus" />
-              </a>
+              </button>
             </div>
             <p className="nav__bag--item-price">{price} VNĐ</p>
           </div>

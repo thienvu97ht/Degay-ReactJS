@@ -139,6 +139,8 @@
   font-size: 1.4rem;
   text-decoration: none;
   color: #777;
+  border: none;
+  height: 1.4rem;
 }
 
 .nav__bag--item-quantity-number {
