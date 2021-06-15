@@ -1,5 +1,5 @@
 import { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class RelatedProducts extends Component {
   render() {
@@ -28,9 +28,9 @@ class RelatedProducts extends Component {
             className="icon-eye ti-eye hide-on-mobile-tablet"
             title="Xem nhanh"
           />
-          <a href={`${product.id}`}>
+          <Link href={`/product-detail/${product.id}`}>
             <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
-          </a>
+          </Link>
         </div>
         <div className="product-name-box text-center">
           <a href={`${product.id}`} className="product-name">
