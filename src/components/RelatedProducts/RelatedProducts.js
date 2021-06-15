@@ -28,14 +28,15 @@ class RelatedProducts extends Component {
             className="icon-eye ti-eye hide-on-mobile-tablet"
             title="Xem nhanh"
           />
-          <Link href={`/product-detail/${product.id}`}>
+          <Link to={`product-detail/${product.id}`}>
             <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
           </Link>
         </div>
         <div className="product-name-box text-center">
-          <a href={`${product.id}`} className="product-name">
+          <Link to={`product-detail/${product.id}`}
+            className="product-name">
             {product.name}
-          </a>
+          </Link>
         </div>
         <div className="product-price text-center">
           <p className="product-price-number">{price} VNĐ</p>
