@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class ProductItem extends Component {
   render() {
     var { product } = this.props;
-    console.log(product.id)
     var price = product.price
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");

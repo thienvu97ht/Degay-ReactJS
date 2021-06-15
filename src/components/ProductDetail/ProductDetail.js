@@ -48,7 +48,6 @@ class ProductDetail extends Component {
   //     var id = match.params.id;
   //     this.props.onViewProductDetail(id);
   //   }
-  //   console.log("componentDidMount");
   // }
 
   showSilder = (images) => {
