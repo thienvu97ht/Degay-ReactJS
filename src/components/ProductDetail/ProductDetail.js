@@ -28,6 +28,8 @@ class ProductDetail extends Component {
   state = {
     id: "",
     images: "",
+    size: "",
+    quantity: "",
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -84,6 +86,29 @@ class ProductDetail extends Component {
     return result;
   };
 
+  onChange = (e) => {
+    var target = e.target;
+    var name = target.name;
+    var value = target.type === "checkbox" ? target.checked : target.value;
+
+    this.setState({
+      [name]: value,
+    })
+  };
+
+  onSave = (e) => {
+    e.preventDefault();
+    var { id, size, quantity } = this.state;
+    var product = {
+      productId: id,
+      size: size,
+      quantity: quantity
+    }
+
+    this.props.onAddProductInCart(product);
+  };
+
+
   render() {
     const settings = {
       customPaging: function (i) {
@@ -112,101 +137,104 @@ class ProductDetail extends Component {
     this.showRelatedProducts(products, product.collections)
     return (
       <Fragment>
-        <>
-          <div className="product-detail-container">
-            <div className="grid wide">
-              <div className="row">
-                <div className="col l-6 m-12 c-10 c-o-1 detail-product-left">
-                  <Slider {...settings}>{this.showSilder(images)}</Slider>
-                </div>
+        <div className="product-detail-container">
+          <div className="grid wide">
+            <div className="row">
+              <div className="col l-6 m-12 c-10 c-o-1 detail-product-left">
+                <Slider {...settings}>{this.showSilder(images)}</Slider>
+              </div>
 
-                <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
-                  <div>
-                    <h1 className="product-detail-title">{product.name}</h1>
-                    <p className="category-product">{collections}</p>
-                    <div className="product-detail_size-box">
-                      <p className="size-title">Kích thước</p>
-                      <div data-value="NHỎ" className="size-input-box">
-                        <input
-                          id="swatch-0-nh"
-                          type="radio"
-                          name="option-0"
-                          defaultValue="NHỎ"
-                          defaultChecked
-                        />
-                        <label htmlFor="swatch-0-nh">NHỎ</label>
-                      </div>
-                      <div data-value="TRUNG" className="size-input-box">
-                        <input
-                          id="swatch-0-trung"
-                          type="radio"
-                          name="option-0"
-                          defaultValue="TRUNG"
-                        />
-                        <label htmlFor="swatch-0-trung">TRUNG</label>
-                      </div>
-                      <div data-value="LỚN" className="size-input-box">
-                        <input
-                          id="swatch-0-lon"
-                          type="radio"
-                          name="option-0"
-                          defaultValue="LỚN"
-                        />
-                        <label htmlFor="swatch-0-lon">LỚN</label>
-                      </div>
-                    </div>
-                    <div className="quantity-product-box">
-                      <p className="size-title">Số lượng</p>
+              <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
+                <form onSubmit={this.onSave} >
+                  <h1 className="product-detail-title">{product.name}</h1>
+                  <p className="category-product">{collections}</p>
+                  <div className="product-detail_size-box">
+                    <p className="size-title">Kích thước</p>
+                    <div data-value="NHỎ" className="size-input-box">
                       <input
-                        type="text"
-                        defaultValue={1}
-                        className="quantity-input"
+                        onChange={this.onChange}
+                        id="swatch-0-nh"
+                        type="radio"
+                        name="size"
+                        defaultValue="NHỎ"
+                        defaultChecked
                       />
+                      <label htmlFor="swatch-0-nh">NHỎ</label>
                     </div>
-                    <p className="product-detail_price">{price} VND</p>
-                    <button className="product-detail_add-btn">
-                      THÊM VÀO GIỎ
-                    </button>
+                    <div data-value="TRUNG" className="size-input-box">
+                      <input
+                        onChange={this.onChange}
+                        id="swatch-0-trung"
+                        type="radio"
+                        name="size"
+                        defaultValue="TRUNG"
+                      />
+                      <label htmlFor="swatch-0-trung">TRUNG</label>
+                    </div>
+                    <div data-value="LỚN" className="size-input-box">
+                      <input
+                        onChange={this.onChange}
+                        id="swatch-0-lon"
+                        type="radio"
+                        name="size"
+                        defaultValue="LỚN"
+                      />
+                      <label htmlFor="swatch-0-lon">LỚN</label>
+                    </div>
                   </div>
-                  <div>
-                    <div className="product_detail-description">
-                      <p className="title">Mô tả</p>
-                      <p className="description">
-                        Áo đẹp không mua phí cả một đời!
-                      </p>
-                    </div>
-                    <div className="free_shipping">
-                      <p>HỖ TRỢ GIAO HÀNG VỚI HOÁ ĐƠN TRÊN 150.000 VNĐ</p>
-                    </div>
-                    <div className="share-container">
-                      <p>Chia sẻ sản phẩm này:</p>
-                      <i
-                        className="share-icon ti-facebook"
-                        title="Không share được"
-                      />
-                      <i
-                        className="share-icon ti-google"
-                        title="Không share được"
-                      />
-                      <i
-                        className="share-icon ti-twitter-alt"
-                        title="Không share được"
-                      />
-                    </div>
+                  <div className="quantity-product-box">
+                    <p className="size-title">Số lượng</p>
+                    <input
+                      onChange={this.onChange}
+                      type="text"
+                      name="quantity"
+                      defaultValue={1}
+                      className="quantity-input"
+                    />
+                  </div>
+                  <p className="product-detail_price">{price} VND</p>
+                  <button type="submit" className="product-detail_add-btn">
+                    THÊM VÀO GIỎ
+                  </button>
+                </form>
+                <div>
+                  <div className="product_detail-description">
+                    <p className="title">Mô tả</p>
+                    <p className="description">
+                      Áo đẹp không mua phí cả một đời!
+                    </p>
+                  </div>
+                  <div className="free_shipping">
+                    <p>HỖ TRỢ GIAO HÀNG VỚI HOÁ ĐƠN TRÊN 150.000 VNĐ</p>
+                  </div>
+                  <div className="share-container">
+                    <p>Chia sẻ sản phẩm này:</p>
+                    <i
+                      className="share-icon ti-facebook"
+                      title="Không share được"
+                    />
+                    <i
+                      className="share-icon ti-google"
+                      title="Không share được"
+                    />
+                    <i
+                      className="share-icon ti-twitter-alt"
+                      title="Không share được"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="line-or">
-            <span className="liner-or-text">Sản phẩm liên quan</span>
+        </div>
+        <div className="line-or">
+          <span className="liner-or-text">Sản phẩm liên quan</span>
+        </div>
+        <div className="grid wide">
+          <div className="row">
+            {this.showRelatedProducts(products, product.collections)}
           </div>
-          <div className="grid wide">
-            <div className="row">
-              {this.showRelatedProducts(products, product.collections)}
-            </div>
-          </div>
-        </>
+        </div>
       </Fragment>
     );
   }
@@ -226,6 +254,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     fetchAllProducts: () => {
       dispatch(actions.actFetchProductsRequest());
+    },
+    onAddProductInCart: (product) => {
+      dispatch(actions.actonAddProductToCartRequest(product));
     },
   };
 };

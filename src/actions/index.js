@@ -82,6 +82,21 @@ export const actFetchProductsInCart = (productsInCart) => {
   };
 };
 
+export const actonAddProductToCartRequest = (product) => {
+  return (dispatch) => {
+    return callApi("productsInCart", "POST", product).then((res) => {
+      dispatch(actAddProductToCart(res.data));
+    });
+  };
+};
+
+export const actAddProductToCart = (product) => {
+  return {
+    type: Types.ADD_PRODUCT_TO_CARD,
+    product,
+  };
+};
+
 /* VIEW PRODUCT DETAIL */
 export const actGetProductRequest = (id) => {
   return (dispatch) => {
