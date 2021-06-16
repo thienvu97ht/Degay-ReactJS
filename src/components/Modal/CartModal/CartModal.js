@@ -78,6 +78,24 @@ class CartModal extends Component {
     return totalFormat;
   };
 
+  showEmptyCartItem = (productsInCart, productsById) => {
+    console.log(productsInCart.length)
+    if (productsInCart.length === 0) {
+      return (
+        <div className="empty-cart_item">
+          <p className="empty-cart_item-content">Không có sản phẩm nào trong giỏ hàng</p>
+        </div>
+      )
+    } else {
+      return (
+        <ul className="nav__bag-list">
+          {/* Cart Item */}
+          {this.showProductsInCart(productsById, productsInCart)}
+        </ul>
+      )
+    }
+  }
+
   render() {
     var { isOpenCartModal } = this.state;
     var { productsInCart, products } = this.props;
@@ -102,10 +120,7 @@ class CartModal extends Component {
             </label>
           </div>
           <div className="shopping__cart-container">
-            <ul className="nav__bag-list">
-              {/* Cart Item */}
-              {this.showProductsInCart(productsById, productsInCart)}
-            </ul>
+            {this.showEmptyCartItem(productsInCart, productsById)}
             <div className="nav__bag-cart-panel">
               <div className="nav__bag-cart-panel-total">
                 <p className="nav__bag-total-text">Tổng tiền:</p>

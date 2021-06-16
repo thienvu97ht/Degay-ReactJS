@@ -26,12 +26,12 @@
   max-width: 460px;
   background-color: #fff;
   opacity: 0;
-  transition: all 0.5s ease;;
+  transition: all 0.5s ease;
 }
 
 .header__menu-nav-bag.active-cart {
   right: 0;
-  transition: all 0.5s ease;;
+  transition: all 0.5s ease;
   opacity: 1;
 }
 
@@ -68,6 +68,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.empty-cart_item {
+  margin: auto;
+}
+
+.empty-cart_item-content {
+  font-size: 1.4rem;
+  color: #999;
 }
 
 .nav__bag-list {
