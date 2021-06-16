@@ -57,9 +57,10 @@
 .header__navbar-item button {
   border: none;
   background-color: transparent;
+  padding: 10px;
 }
 
-.header__navbar-item::after {
+.header__navbar-item:not(:first-child):not(:last-child):after {
   content: "";
   display: block;
   position: absolute;

@@ -91,4 +91,8 @@
   .menu__mobile--tablet-subnav-icon {
     font-size: 1.8rem;
   }
+
+  .menu__mobile--tablet-header {
+    margin-top: 15px;
+  }
 }

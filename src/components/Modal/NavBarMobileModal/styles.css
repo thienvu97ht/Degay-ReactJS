@@ -49,6 +49,7 @@
 .mobile--tablet__link-close {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  padding: 10px;
 }
 
 .mobile--tablet__close-icon {

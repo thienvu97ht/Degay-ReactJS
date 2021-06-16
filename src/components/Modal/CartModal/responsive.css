@@ -21,6 +21,10 @@
   .nav__bang-header-icon {
     font-size: 1.4rem;
   }
+
+  .header__menu-nav-bag {
+    right: -118%;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 738px) {
@@ -46,5 +50,10 @@
   .nav__bag--item-name-link {
     font-size: 1.4rem;
     line-height: 24px;
+  }
+
+  .nav__bag-list-item-left {
+    height: 80px;
+    max-width: 80px;
   }
 }

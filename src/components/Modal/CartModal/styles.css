@@ -52,13 +52,13 @@
 .nav__bag-header-link {
   cursor: pointer;
   text-decoration: none;
+  padding: 9px;
 }
 
 .nav__bang-header-icon {
   font-size: 1.7rem;
   color: #333;
   background-color: #fff;
-  padding: 8px;
   border-radius: 50%;
 }
 
@@ -210,4 +210,10 @@
   font-weight: 4500;
   justify-content: center;
   line-height: 45px;
+}
+
+.cart_item-close-btn {
+  border: none;
+  height: 27px;
+  padding: 5px;
 }

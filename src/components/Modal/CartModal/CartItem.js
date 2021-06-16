@@ -25,7 +25,9 @@ class CartItem extends Component {
             <a href="!#" className="nav__bag--item-name-link">
               {productById.name}
             </a>
-            <i className="ti-close nav__bag--item-name-close" />
+            <button className="cart_item-close-btn">
+              <i className="ti-close nav__bag--item-name-close" />
+            </button>
           </div>
           <div className="nav__bag-list-item-category">
             <p>{productInCart.size}</p>
