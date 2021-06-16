@@ -5,12 +5,13 @@ import Menu from "../components/Menu/Menu";
 
 class MenuContainer extends Component {
   render() {
-    var { onOpenCartModal, onOpenMenuModal, onOpenSerchModal } = this.props;
+    var { onOpenCartModal, onOpenMenuModal, onOpenSerchModal, fetchAllProducts } = this.props;
     return (
       <Menu
         onOpenCartModal={onOpenCartModal}
         onOpenMenuModal={onOpenMenuModal}
         onOpenSerchModal={onOpenSerchModal}
+        fetchAllProducts={fetchAllProducts}
       />
     );
   }
@@ -30,6 +31,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     onOpenSerchModal: () => {
       dispatch(actions.openSearch());
+    },
+    fetchAllProducts: () => {
+      dispatch(actions.actFetchProductsRequest());
     },
   };
 };

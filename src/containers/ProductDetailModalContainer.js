@@ -5,10 +5,10 @@ import ProductDetailModal from "../components/Modal/ProductDetailModal/ProductDe
 
 class ProductDetailModalContainer extends Component {
   render() {
-    var { products, isDisplayModal, onCloseProductModal } = this.props;
+    var { product, isDisplayModal, onCloseProductModal } = this.props;
     return (
       <ProductDetailModal
-        products={products}
+        product={product}
         isDisplayModal={isDisplayModal}
         onCloseProductModal={onCloseProductModal}
       />
@@ -18,7 +18,7 @@ class ProductDetailModalContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products,
+    product: state.quickViewProduct,
     isDisplayModal: state.isDisplayModal,
   };
 };

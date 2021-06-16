@@ -5,9 +5,6 @@ import ProductDetailModalContainer from "../../containers/ProductDetailModalCont
 import TrendingItemContainer from "../../containers/TrendingItemContainer";
 
 class Trending extends Component {
-  componentDidMount() {
-    this.props.fetchAllProducts();
-  }
 
   render() {
     var trendingProducts = this.props.products;

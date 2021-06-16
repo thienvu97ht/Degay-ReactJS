@@ -23,6 +23,11 @@ const images = [
 class ProductDetailModal extends Component {
   state = {
     isOpenProductDetail: this.props.isDisplayModal.isOpenProductDetail,
+    id: "",
+    name: "",
+    images: "",
+    price: "",
+    collections: ""
   };
 
   onCloseProductDetal = () => {
@@ -32,16 +37,41 @@ class ProductDetailModal extends Component {
     });
   };
 
+  onChange = (e) => {
+
+  }
+
   static getDerivedStateFromProps(props, state) {
+    var { id, name, images, price, collections } = props.product;
     if (
       props.isDisplayModal.isOpenProductDetail !== state.isOpenProductDetail
     ) {
       return {
         isOpenProductDetail: props.isDisplayModal.isOpenProductDetail,
+        id: id,
+        name: name,
+        images: images,
+        price: price,
+        collections: collections,
       };
     }
     return null;
   }
+
+  showSilder = (images) => {
+    var result = "";
+    if (images) {
+      result = images.map((img, index) => {
+        return (
+          <div key={index} className="detail-product-img sv-slider-item">
+            <img alt="" src={img.src} />
+          </div>
+        );
+      });
+    }
+
+    return result;
+  };
 
   render() {
     const settings_2 = {
@@ -62,7 +92,9 @@ class ProductDetailModal extends Component {
       slidesToScroll: 1,
     };
 
-    var { isOpenProductDetail } = this.state;
+    var { isOpenProductDetail, name, images, price, collections } = this.state;
+    price = price ? price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") : "";
+    console.log(name, images, collections);
     return (
       <div
         className={isOpenProductDetail === true ? "modal-product-detail" : ""}>
@@ -84,18 +116,12 @@ class ProductDetailModal extends Component {
             <div className="row">
               <div className="col l-6 detail-product-left-modal">
                 <Slider {...settings_2}>
-                  {images.map((img, index) => (
-                    <div
-                      key={index}
-                      className="detail-product-img sv-slider-item-modal">
-                      <img alt="" src={img.src} />
-                    </div>
-                  ))}
+                  {this.showSilder(images)}
                 </Slider>
               </div>
               <div className="col l-6 detail-product-right-modal">
                 <h1 className="modal-title-product">
-                  Sơ Mi Siết Tay Anh Xanh - STA Xanh
+                  {name}
                 </h1>
                 <p className="category-product">Áo</p>
                 <div className="modal-size-box">
@@ -133,11 +159,12 @@ class ProductDetailModal extends Component {
                   <p className="size-title">Số lượng</p>
                   <input
                     type="text"
-                    defaultValue={1}
+                    onChange={this.onChange}
+                    value={1}
                     className="quantity-input"
                   />
                 </div>
-                <p className="modal-product-price">330,000 VND</p>
+                <p className="modal-product-price">{price} VND</p>
                 <button className="modal-add-product-btn">THÊM VÀO GIỎ</button>
               </div>
             </div>

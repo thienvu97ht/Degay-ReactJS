@@ -44,11 +44,11 @@ class CartModal extends Component {
   showProductsInCart = (productsById, productsInCart) => {
     var result = null;
     if (productsById.length > 0) {
+      // console.log("productsById", productsById)
       result = productsInCart.map((productInCart, index) => {
         var productById = productsById.find((productById) => {
           return productById.id === productInCart.productId;
         });
-
         return (
           <CartItem
             key={index}
@@ -79,7 +79,6 @@ class CartModal extends Component {
   };
 
   showEmptyCartItem = (productsInCart, productsById) => {
-    console.log(productsInCart.length)
     if (productsInCart.length === 0) {
       return (
         <div className="empty-cart_item">

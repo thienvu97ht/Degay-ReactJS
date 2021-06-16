@@ -142,7 +142,7 @@ input[name="size"] {
 }
 
 /* Slide product detail */
-.sv-slider-item img {
+.detail-product-left .sv-slider-item img {
   width: 100%;
   height: 500px;
   object-fit: contain;

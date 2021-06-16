@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import Trending from "../components/Trending/Trending";
 import { connect } from "react-redux";
-import { actFetchProductsRequest } from "../actions/index";
 
 class TrendingContainer extends Component {
   render() {
-    var { products, fetchAllProducts } = this.props;
-    return <Trending products={products} fetchAllProducts={fetchAllProducts} />;
+    var { products } = this.props;
+    return <Trending products={products} />;
   }
 }
 
@@ -18,9 +17,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    fetchAllProducts: () => {
-      dispatch(actFetchProductsRequest());
-    },
   };
 };
 

@@ -49,6 +49,13 @@ export const closeProductModal = () => {
   };
 };
 
+export const QuickViewProductModal = (product) => {
+  return {
+    type: Types.QUICK_VIEW_PRODUCT,
+    product,
+  };
+};
+
 /* API */
 
 export const actFetchProductsRequest = () => {

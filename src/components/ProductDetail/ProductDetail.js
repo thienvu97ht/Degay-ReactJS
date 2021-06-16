@@ -7,22 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import * as actions from "../../actions/index";
 import { connect } from "react-redux";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
-// import { Link } from "react-router-dom";
-
-// const images = [
-//   {
-//     src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
-//   },
-//   {
-//     src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
-//   },
-//   {
-//     src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
-//   },
-//   {
-//     src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
-//   },
-// ];
 
 class ProductDetail extends Component {
   state = {
@@ -35,7 +19,6 @@ class ProductDetail extends Component {
   static getDerivedStateFromProps(props, state) {
     if (props.product.id !== state.id) {
       props.onViewProductDetail(props.match.params.id);
-      props.fetchAllProducts()
       return {
         id: props.product.id,
         images: props.product.images,
@@ -43,14 +26,6 @@ class ProductDetail extends Component {
     }
     return null;
   }
-
-  // componentDidMount() {
-  //   var { match } = this.props;
-  //   if (match) {
-  //     var id = match.params.id;
-  //     this.props.onViewProductDetail(id);
-  //   }
-  // }
 
   showSilder = (images) => {
     var result = "";
@@ -167,8 +142,6 @@ class ProductDetail extends Component {
 
     /* PUSH OR PUT */
     this.addOrUpdate(product, productsInCart)
-
-    // this.props.onAddProductInCart(product);
   };
 
 
@@ -283,9 +256,6 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     onViewProductDetail: (id) => {
       dispatch(actions.actGetProductRequest(id));
-    },
-    fetchAllProducts: () => {
-      dispatch(actions.actFetchProductsRequest());
     },
     onAddProductInCart: (product) => {
       dispatch(actions.actonAddProductToCartRequest(product));

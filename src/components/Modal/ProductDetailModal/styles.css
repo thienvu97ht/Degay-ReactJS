@@ -18,6 +18,7 @@
 /* Modal product detail */
 .modal__body-detail-product {
   background-color: #fff;
+  min-height: 360px;
   margin: auto;
   position: relative;
   padding: 20px;
@@ -163,7 +164,11 @@ input[name="option-0"] {
 }
 
 /* Slide modal */
-.sv-slider-item-modal img {
+.detail-product-left-modal .slick-list {
+  height: 260px;
+}
+
+.detail-product-left-modal .sv-slider-item img {
   width: 100%;
   height: 260px;
   object-fit: contain;

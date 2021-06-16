@@ -28,6 +28,11 @@ const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
 };
 
 class Menu extends Component {
+  componentDidMount() {
+    this.props.fetchAllProducts();
+  }
+
+
   isOpenCart = () => {
     this.props.onOpenCartModal();
   };
