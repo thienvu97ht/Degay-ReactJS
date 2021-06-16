@@ -74,27 +74,28 @@
   position: absolute;
   right: -34px;
   cursor: pointer;
-  opacity: 0.5;
-  color: rgb(125, 125, 125);
+  opacity: 0.3;
+  color: rgb(104, 102, 102);
 }
 
 .quick-view-btn {
+  padding: 5px;
   transition: ease-in 0.2s;
 }
 
 .add-cart-btn {
   transition: ease-in 0.3s;
-  top: 20px;
+  top: 0px;
 }
 
 .container__trending-item:hover .quick-view-btn {
-  transform: translateX(-55px);
+  transform: translateX(-40px);
   transition: ease-in 0.2s;
   opacity: 1;
 }
 
 .container__trending-item:hover .add-cart-btn {
-  transform: translateX(-55px);
+  transform: translateX(-65px);
   transition: ease-in 0.3s;
   opacity: 1;
 }

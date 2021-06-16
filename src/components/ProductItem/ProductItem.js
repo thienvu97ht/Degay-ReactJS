@@ -2,6 +2,12 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 
 class ProductItem extends Component {
+  isOpenProductDetail = () => {
+    var { product } = this.props
+    this.props.onOpenProductModal();
+    this.props.onQuickViewProductModal(product)
+  };
+
   render() {
     var { product } = this.props;
     var price = product.price
@@ -24,10 +30,12 @@ class ProductItem extends Component {
               className="product-item-img2"
             />
           </Link>
-          <i
-            className="icon-eye ti-eye hide-on-mobile-tablet"
-            title="Xem nhanh"
-          />
+          <button onClick={this.isOpenProductDetail} className="product_item-quick-view-btn">
+            <i
+              className="icon-eye ti-eye hide-on-mobile-tablet"
+              title="Xem nhanh"
+            />
+          </button>
           <Link to={`product-detail/${product.id}`}>
             <i className="icon-bag ti-bag" title="Thêm vào giỏ hàng" />
           </Link>

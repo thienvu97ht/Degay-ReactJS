@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import ListProducts from "./components/ListProducts/ListProducts";
+import ListProductsContainer from "./containers/ListProductsContainter";
 import Stores from "./components/Stores/Stores";
 import About from "./components/About/About";
 import Search from "./components/Search/Search";
@@ -27,7 +27,7 @@ const routes = [
   {
     path: "/list-products",
     exact: false,
-    main: () => <ListProducts />,
+    main: () => <ListProductsContainer />,
   },
   {
     path: "/stores",

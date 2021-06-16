@@ -180,9 +180,25 @@ input[name="option-0"] {
 
 .detail-product-left-modal .slick-thumb {
   bottom: -70px;
+  display: flex !important;
+  justify-content: center;
+}
+
+.detail-product-left-modal .slick-prev,
+.detail-product-left-modal .slick-next {
+  z-index: 1;
+}
+
+.detail-product-left-modal .slick-prev {
+  left: -14px;
+}
+
+.detail-product-left-modal .slick-next {
+  right: 3px;
 }
 
 .detail-product-left-modal .slick-prev:before,
 .detail-product-left-modal .slick-next:before {
   color: #999;
+  font-size: 35px;
 }

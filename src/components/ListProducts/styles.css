@@ -116,14 +116,27 @@
   transform: rotateY(180deg);
 }
 
-.icon-eye,
-.icon-bag {
+.product_item-quick-view-btn {
+  border: none;
+  height: fit-content;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
   position: absolute;
+  transition: ease-in 0.2s;
+}
+
+.product_item-quick-view-btn,
+.icon-bag {
   right: -30px;
   font-size: 2rem;
   color: rgb(104, 102, 102);
   opacity: 0.3;
   padding: 10px;
+}
+
+.icon-bag {
+  position: absolute;
 }
 
 .icon-eye {
@@ -132,7 +145,7 @@
 
 .icon-bag {
   transition: ease-in 0.3s;
-  top: 40px;
+  top: 50px;
 }
 
 .icon-eye:hover,
@@ -140,7 +153,7 @@
   color: #000;
 }
 
-.product-items:hover .icon-eye {
+.product-items:hover .product_item-quick-view-btn {
   transform: translateX(-40px);
   transition: ease-in 0.2s;
   opacity: 1;

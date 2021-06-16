@@ -6,6 +6,7 @@ import ProductDetailModal from "../components/Modal/ProductDetailModal/ProductDe
 class ProductDetailModalContainer extends Component {
   render() {
     var { product, isDisplayModal, onCloseProductModal } = this.props;
+
     return (
       <ProductDetailModal
         product={product}
