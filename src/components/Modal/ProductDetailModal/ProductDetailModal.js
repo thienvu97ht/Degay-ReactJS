@@ -5,21 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [
-  {
-    src: "https://product.hstatic.net/1000281824/product/e8ab76c2-b57c-4861-836b-685b9d73dcf5_7fb1655340114ca7bf2a480718c7199d_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/e2e226f4-4b09-40d9-8800-bb3e10cbf531_1173270acf634e2989cbbc9818313cb1_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/9f2fee31-4ed7-45ac-b8d3-47fb3389959c_99e325a42b3b4921a05f81929bca02ef_grande.jpeg",
-  },
-  {
-    src: "https://product.hstatic.net/1000281824/product/aa537864-cfa3-42ad-9a9f-5be1b23f4827_128761ceea22403788c0dac679bdbcf4_grande.jpeg",
-  },
-];
-
 class ProductDetailModal extends Component {
   state = {
     isOpenProductDetail: this.props.isDisplayModal.isOpenProductDetail,
@@ -94,7 +79,8 @@ class ProductDetailModal extends Component {
 
     var { isOpenProductDetail, name, images, price, collections } = this.state;
     price = price ? price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") : "";
-    console.log(name, images, collections);
+    collections = collections ? collections.toUpperCase()
+      : "";
     return (
       <div
         className={isOpenProductDetail === true ? "modal-product-detail" : ""}>
@@ -123,7 +109,7 @@ class ProductDetailModal extends Component {
                 <h1 className="modal-title-product">
                   {name}
                 </h1>
-                <p className="category-product">Áo</p>
+                <p className="category-product">{collections}</p>
                 <div className="modal-size-box">
                   <p className="size-title">Kích thước</p>
                   <div data-value="NHỎ" className="size-input-box">
@@ -132,7 +118,6 @@ class ProductDetailModal extends Component {
                       type="radio"
                       name="option-0"
                       defaultValue="NHỎ"
-                      defaultChecked
                     />
                     <label htmlFor="swatch-0-nh">NHỎ</label>
                   </div>

@@ -45,7 +45,18 @@ class Menu extends Component {
     this.props.onOpenSerchModal();
   };
 
+  showQuantity = (productsInCart) => {
+    var result = 0;
+    if (productsInCart.length > 0) {
+      for (var i = 0; i < productsInCart.length; i++) {
+        result += productsInCart[i].quantity
+      }
+    }
+    return result
+  }
+
   render() {
+    var { productsInCart } = this.props;
     return (
       <Fragment>
         <div id="header__navbar-scroll" className="header__navbar">
@@ -143,7 +154,9 @@ class Menu extends Component {
                   className="header__navbar-item-link">
                   <i className="header__navbar-icon ti-bag" />
                 </button>
-                <span className="header__navbar-item-notice">2</span>
+                <span className="header__navbar-item-notice">
+                  {this.showQuantity(productsInCart)}
+                </span>
               </li>
             </ul>
           </div>
