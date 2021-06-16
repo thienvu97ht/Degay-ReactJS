@@ -5,13 +5,23 @@ import ProductDetailModal from "../components/Modal/ProductDetailModal/ProductDe
 
 class ProductDetailModalContainer extends Component {
   render() {
-    var { product, isDisplayModal, onCloseProductModal } = this.props;
+    var {
+      product,
+      productsInCart,
+      isDisplayModal,
+      onCloseProductModal,
+      onAddProductInCart,
+      onUpdateProductInCart,
+    } = this.props;
 
     return (
       <ProductDetailModal
         product={product}
+        productsInCart={productsInCart}
         isDisplayModal={isDisplayModal}
         onCloseProductModal={onCloseProductModal}
+        onAddProductInCart={onAddProductInCart}
+        onUpdateProductInCart={onUpdateProductInCart}
       />
     );
   }
@@ -19,6 +29,7 @@ class ProductDetailModalContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    productsInCart: state.productsInCart,
     product: state.quickViewProduct,
     isDisplayModal: state.isDisplayModal,
   };
@@ -28,6 +39,12 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     onCloseProductModal: () => {
       dispatch(actions.closeProductModal());
+    },
+    onAddProductInCart: (product) => {
+      dispatch(actions.actonAddProductToCartRequest(product));
+    },
+    onUpdateProductInCart: (product) => {
+      dispatch(actions.actUpdateProductToCartRequest(product));
     },
   };
 };

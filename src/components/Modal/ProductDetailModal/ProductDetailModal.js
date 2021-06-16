@@ -12,7 +12,8 @@ class ProductDetailModal extends Component {
     name: "",
     images: "",
     price: "",
-    collections: ""
+    quantity: 1,
+    collections: "",
   };
 
   onCloseProductDetal = () => {
@@ -21,10 +22,6 @@ class ProductDetailModal extends Component {
       isOpenProductDetail: this.props.isDisplayModal.isOpenProductDetail,
     });
   };
-
-  onChange = (e) => {
-
-  }
 
   static getDerivedStateFromProps(props, state) {
     var { id, name, images, price, collections } = props.product;
@@ -58,6 +55,92 @@ class ProductDetailModal extends Component {
     return result;
   };
 
+  hiddenByCollection = (collections) => {
+    var result = "";
+    if (collections === "ACCESSORIES") {
+      return result;
+    } else {
+      return (
+        <div className="product-detail_size-box">
+          <p className="size-title">Kích thước</p>
+          <div data-value="NHỎ" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-nh"
+              type="radio"
+              name="size"
+              value="NHỎ"
+            />
+            <label htmlFor="swatch-0-nh">NHỎ</label>
+          </div>
+          <div data-value="TRUNG" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-trung"
+              type="radio"
+              name="size"
+              value="TRUNG"
+            />
+            <label htmlFor="swatch-0-trung">TRUNG</label>
+          </div>
+          <div data-value="LỚN" className="size-input-box">
+            <input
+              onChange={this.onChange}
+              id="swatch-0-lon"
+              type="radio"
+              name="size"
+              value="LỚN"
+            />
+            <label htmlFor="swatch-0-lon">LỚN</label>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  addOrUpdate(product, productsInCart) {
+    var newProduct = [];
+    for (var i = 0; i < productsInCart.length; i++) {
+      if (
+        productsInCart[i].productId === product.productId &&
+        productsInCart[i].size === product.size
+      ) {
+        productsInCart[i].quantity += product.quantity;
+        newProduct = productsInCart;
+        this.props.onUpdateProductInCart(productsInCart[i]);
+      }
+    }
+    if (newProduct.length === 0) {
+      this.props.onAddProductInCart(product);
+    }
+  }
+
+  onChange = (e) => {
+    var target = e.target;
+    var name = target.name;
+    var value = target.type === "checkbox" ? target.checked : target.value;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  onSave = (e) => {
+    e.preventDefault();
+    var { productsInCart } = this.props;
+    var { id, size, quantity } = this.state;
+    quantity = parseInt(quantity);
+    var product = {
+      productId: id,
+      size: size,
+      quantity: quantity,
+    };
+
+    /* PUSH OR PUT */
+
+    this.addOrUpdate(product, productsInCart);
+  };
+
   render() {
     const settings_2 = {
       customPaging: function (i) {
@@ -78,9 +161,10 @@ class ProductDetailModal extends Component {
     };
 
     var { isOpenProductDetail, name, images, price, collections } = this.state;
-    price = price ? price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") : "";
-    collections = collections ? collections.toUpperCase()
+    price = price
+      ? price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
       : "";
+    collections = collections ? collections.toUpperCase() : "";
     return (
       <div
         className={isOpenProductDetail === true ? "modal-product-detail" : ""}>
@@ -101,57 +185,29 @@ class ProductDetailModal extends Component {
           <div className="gird">
             <div className="row">
               <div className="col l-6 detail-product-left-modal">
-                <Slider {...settings_2}>
-                  {this.showSilder(images)}
-                </Slider>
+                <Slider {...settings_2}>{this.showSilder(images)}</Slider>
               </div>
-              <div className="col l-6 detail-product-right-modal">
-                <h1 className="modal-title-product">
-                  {name}
-                </h1>
+              <form
+                onSubmit={this.onSave}
+                className="col l-6 detail-product-right-modal">
+                <h1 className="modal-title-product">{name}</h1>
                 <p className="category-product">{collections}</p>
-                <div className="modal-size-box">
-                  <p className="size-title">Kích thước</p>
-                  <div data-value="NHỎ" className="size-input-box">
-                    <input
-                      id="swatch-0-nh"
-                      type="radio"
-                      name="option-0"
-                      defaultValue="NHỎ"
-                    />
-                    <label htmlFor="swatch-0-nh">NHỎ</label>
-                  </div>
-                  <div data-value="TRUNG" className="size-input-box">
-                    <input
-                      id="swatch-0-trung"
-                      type="radio"
-                      name="option-0"
-                      defaultValue="TRUNG"
-                    />
-                    <label htmlFor="swatch-0-trung">TRUNG</label>
-                  </div>
-                  <div data-value="LỚN" className="size-input-box">
-                    <input
-                      id="swatch-0-lon"
-                      type="radio"
-                      name="option-0"
-                      defaultValue="LỚN"
-                    />
-                    <label htmlFor="swatch-0-lon">LỚN</label>
-                  </div>
-                </div>
+                {this.hiddenByCollection(collections)}
                 <div className="quantity-product-box">
                   <p className="size-title">Số lượng</p>
                   <input
-                    type="text"
                     onChange={this.onChange}
-                    value={1}
+                    type="text"
+                    name="quantity"
+                    defaultValue={1}
                     className="quantity-input"
                   />
                 </div>
                 <p className="modal-product-price">{price} VND</p>
-                <button className="modal-add-product-btn">THÊM VÀO GIỎ</button>
-              </div>
+                <button type="submit" className="modal-add-product-btn">
+                  THÊM VÀO GIỎ
+                </button>
+              </form>
             </div>
           </div>
           <div className="modal__body-close">

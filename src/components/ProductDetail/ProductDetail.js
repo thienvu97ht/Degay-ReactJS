@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as actions from "../../actions/index";
 import { connect } from "react-redux";
 import RelatedProductsContainer from "../../containers/RelatedProductsContainer";
-import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer"
+import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
 
 class ProductDetail extends Component {
   state = {
@@ -49,15 +49,13 @@ class ProductDetail extends Component {
       var relatedProducts = [];
       for (var i = 0; i < products.length; i++) {
         if (products[i].collections === collections) {
-          relatedProducts.push(products[i])
+          relatedProducts.push(products[i]);
         }
       }
-      products = relatedProducts.slice(0, 4)
+      products = relatedProducts.slice(0, 4);
       result = products.map((product, index) => {
-        return (
-          <RelatedProductsContainer key={index} product={product} />
-        )
-      })
+        return <RelatedProductsContainer key={index} product={product} />;
+      });
     }
     return result;
   };
@@ -65,7 +63,7 @@ class ProductDetail extends Component {
   hiddenByCollection = (collections) => {
     var result = "";
     if (collections === "ACCESSORIES") {
-      return result
+      return result;
     } else {
       return (
         <div className="product-detail_size-box">
@@ -101,17 +99,19 @@ class ProductDetail extends Component {
             <label htmlFor="swatch-0-lon">LỚN</label>
           </div>
         </div>
-
-      )
+      );
     }
-  }
+  };
 
   addOrUpdate(product, productsInCart) {
-    var newProduct = []
+    var newProduct = [];
     for (var i = 0; i < productsInCart.length; i++) {
-      if (productsInCart[i].productId === product.productId && productsInCart[i].size === product.size) {
-        productsInCart[i].quantity += product.quantity
-        newProduct = productsInCart
+      if (
+        productsInCart[i].productId === product.productId &&
+        productsInCart[i].size === product.size
+      ) {
+        productsInCart[i].quantity += product.quantity;
+        newProduct = productsInCart;
         this.props.onUpdateProductInCart(productsInCart[i]);
       }
     }
@@ -127,24 +127,23 @@ class ProductDetail extends Component {
 
     this.setState({
       [name]: value,
-    })
+    });
   };
 
   onSave = (e) => {
     e.preventDefault();
     var { productsInCart } = this.props;
     var { id, size, quantity } = this.state;
-    quantity = parseInt(quantity)
+    quantity = parseInt(quantity);
     var product = {
       productId: id,
       size: size,
-      quantity: quantity
-    }
+      quantity: quantity,
+    };
 
     /* PUSH OR PUT */
-    this.addOrUpdate(product, productsInCart)
+    this.addOrUpdate(product, productsInCart);
   };
-
 
   render() {
     const settings = {
@@ -171,7 +170,6 @@ class ProductDetail extends Component {
       ? product.collections.toUpperCase()
       : "";
     var { images } = this.state;
-    this.showRelatedProducts(products, product.collections)
 
     return (
       <Fragment>
@@ -183,7 +181,7 @@ class ProductDetail extends Component {
               </div>
 
               <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
-                <form onSubmit={this.onSave} >
+                <form onSubmit={this.onSave}>
                   <h1 className="product-detail-title">{product.name}</h1>
                   <p className="category-product">{collections}</p>
                   {this.hiddenByCollection(collections)}
@@ -270,6 +268,3 @@ const mapDispatchToProps = (dispatch, props) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);
-
-
-
