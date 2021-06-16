@@ -6,7 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as actions from "../../actions/index";
 import { connect } from "react-redux";
-import RelatedProducts from "../RelatedProducts/RelatedProducts";
+import RelatedProductsContainer from "../../containers/RelatedProductsContainer";
+import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer"
 
 class ProductDetail extends Component {
   state = {
@@ -54,7 +55,7 @@ class ProductDetail extends Component {
       products = relatedProducts.slice(0, 4)
       result = products.map((product, index) => {
         return (
-          <RelatedProducts key={index} product={product} />
+          <RelatedProductsContainer key={index} product={product} />
         )
       })
     }
@@ -239,6 +240,8 @@ class ProductDetail extends Component {
             {this.showRelatedProducts(products, product.collections)}
           </div>
         </div>
+
+        <ProductDetailModalContainer />
       </Fragment>
     );
   }

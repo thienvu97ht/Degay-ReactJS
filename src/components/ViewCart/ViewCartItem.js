@@ -28,7 +28,7 @@ class ViewCartItem extends Component {
               <div className="thumb-cart-info">
                 <p className="name">{productById.name}</p>
                 <p className="size">Size: {productInCart.size}</p>
-                <p className="price">{priceProduct} VNĐ</p>
+                <p className="price">{priceProduct  } VNĐ</p>
               </div>
             </div>
           </a>
