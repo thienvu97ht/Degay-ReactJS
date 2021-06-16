@@ -5,7 +5,7 @@ import ListProductsContainer from "./containers/ListProductsContainter";
 import Stores from "./components/Stores/Stores";
 import About from "./components/About/About";
 import Search from "./components/Search/Search";
-import ViewCart from "./components/ViewCart/ViewCart";
+import ViewCartContainer from "./containers/ViewCartContainer";
 import Account from "./components/Account/Account";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Checkout from "./components/Checkout/Checkout";
@@ -47,7 +47,7 @@ const routes = [
   {
     path: "/view-cart",
     exact: false,
-    main: () => <ViewCart />,
+    main: () => <ViewCartContainer />,
   },
   {
     path: "/account",

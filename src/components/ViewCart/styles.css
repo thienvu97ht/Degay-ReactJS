@@ -44,6 +44,14 @@
   object-fit: contain;
 }
 
+.thumb-cart-info {
+  text-align: left;
+}
+
+.thumb-cart-info .price {
+  text-align: left;
+}
+
 .cart_item a {
   text-decoration: none;
   color: #000;

@@ -21,7 +21,6 @@ class CartModal extends Component {
     if (props.isDisplayModal.isOpenCartModal !== state.isOpenCartModal) {
       return {
         isOpenCartModal: props.isDisplayModal.isOpenCartModal,
-
       };
     }
     return null;
