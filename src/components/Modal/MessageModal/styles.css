@@ -1,0 +1,89 @@
+/* Modal */
+.modal-add_product-success {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.modal__overlay-add_product-success {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-message-box {
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  display: none;
+}
+
+.modal-message-box.active-message {
+  display: block;
+}
+
+.custom-wide-message-box {
+}
+
+.modal-message-box-container {
+  padding: 20px 20px 30px 20px;
+  text-align: center;
+}
+
+.modal-message-box-title {
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 15px 50px;
+}
+
+.modal-message-box-text {
+  font-size: 1.4rem;
+  padding: 0 30px;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.modal-message-size-text {
+  font-size: 1.4rem;
+}
+
+.view-cart {
+  align-items: center;
+  text-decoration: none;
+  background-color: #000;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* Button close modal */
+
+.modal-message-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.modal-message-close-btn {
+  color: #000;
+  font-size: 1.4rem;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}

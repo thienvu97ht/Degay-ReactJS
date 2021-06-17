@@ -13,7 +13,6 @@ class CartItem extends Component {
 
   render() {
     var { productById, productInCart } = this.props;
-    console.log(productInCart);
     var price = (productById.price * productInCart.quantity)
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");

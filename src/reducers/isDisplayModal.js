@@ -5,6 +5,7 @@ var initialState = {
   isOpenCartModal: false,
   isOpenMenuModal: false,
   isOpenSearchModal: false,
+  isOpenMessageModal: false,
 };
 
 var isDisplayModal = (state = initialState, action) => {
@@ -32,6 +33,12 @@ var isDisplayModal = (state = initialState, action) => {
       return state;
     case types.CLOSE_SEARCH:
       state.isOpenSearchModal = false;
+      return state;
+    case types.OPEN_MESSAGE:
+      state.isOpenMessageModal = true;
+      return state;
+    case types.CLOSE_MESSAGE:
+      state.isOpenMessageModal = false;
       return state;
     default:
       return state;

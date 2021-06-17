@@ -6,7 +6,6 @@ import Cartitem from "../components/Modal/CartModal/CartItem";
 class CartItemContainer extends Component {
   render() {
     var { productById, productInCart, productsInCart } = this.props;
-    console.log("productInCart", productInCart);
     return (
       <Cartitem
         productById={productById}

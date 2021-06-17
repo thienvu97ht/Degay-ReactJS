@@ -5,13 +5,15 @@ class TrendingItem extends Component {
   isOpenProductDetail = () => {
     var { trendingProduct } = this.props;
     this.props.onOpenProductModal();
-    this.props.onQuickViewProductModal(trendingProduct)
+    this.props.onQuickViewProductModal(trendingProduct);
   };
 
   render() {
     var { trendingProduct } = this.props;
     var price = trendingProduct.price
-      ? trendingProduct.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+      ? trendingProduct.price
+          .toString()
+          .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
       : "";
     return (
       <div className="col l-3 m-6 c-10 c-o-1">

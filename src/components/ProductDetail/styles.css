@@ -41,6 +41,10 @@
   align-items: center;
 }
 
+.product-detail_size-box.hidden-size-box {
+  display: none;
+}
+
 input[name="size"] {
   display: none;
 }

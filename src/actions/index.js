@@ -49,6 +49,19 @@ export const closeProductModal = () => {
   };
 };
 
+export const openMessage = () => {
+  return {
+    type: Types.OPEN_MESSAGE,
+  };
+};
+
+export const closeMessage = () => {
+  return {
+    type: Types.CLOSE_MESSAGE,
+  };
+};
+/* Quick view */
+
 export const QuickViewProductModal = (product) => {
   return {
     type: Types.QUICK_VIEW_PRODUCT,

@@ -2,10 +2,10 @@ import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
 import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
+import MessageModalContainer from "../../containers/MessageModalContainer";
 import TrendingItemContainer from "../../containers/TrendingItemContainer";
 
 class Trending extends Component {
-
   render() {
     var trendingProducts = this.props.products;
     return (
@@ -19,6 +19,7 @@ class Trending extends Component {
           </div>
         </div>
         <ProductDetailModalContainer />
+        <MessageModalContainer />
       </Fragment>
     );
   }

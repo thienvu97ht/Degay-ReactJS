@@ -7,6 +7,8 @@ export const OPEN_SEARCH = "OPEN_SEARCH";
 export const CLOSE_SEARCH = "CLOSE_SEARCH";
 export const OPEN_PRODUCT_MODAL = "OPEN_PRODUCT_MODAL";
 export const CLOSE_PRODUCT_MODAL = "CLOSE_PRODUCT_MODAL";
+export const OPEN_MESSAGE = "OPEN_MESSAGE";
+export const CLOSE_MESSAGE = "CLOSE_MESSAGE";
 
 /*  */
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
