@@ -5,12 +5,14 @@ import MessageModal from "../components/Modal/MessageModal/MessageModal";
 
 class MessageModalContainer extends Component {
   render() {
-    var { onCloseMessageModal, isDisplayModal, products } = this.props;
+    var { onCloseMessageModal, isDisplayModal, products, onCloseProductModal } =
+      this.props;
     return (
       <MessageModal
         products={products}
         isDisplayModal={isDisplayModal}
         onCloseMessageModal={onCloseMessageModal}
+        onCloseProductModal={onCloseProductModal}
       />
     );
   }
@@ -27,6 +29,9 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     onCloseMessageModal: () => {
       dispatch(actions.closeMessage());
+    },
+    onCloseProductModal: () => {
+      dispatch(actions.closeProductModal());
     },
   };
 };

@@ -20,7 +20,7 @@ class CartItem extends Component {
       <li className="nav__bag-list-item">
         <div className="nav__bag-list-item-left">
           <img
-            src={productById.images[1].src}
+            src={productById.images[0].src}
             alt=""
             className="product-in-cart-img"
           />

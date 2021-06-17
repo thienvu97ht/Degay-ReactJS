@@ -111,8 +111,10 @@ class ProductDetail extends Component {
       /* Bắt buộc chọn size */
       this.props.isRequiredSize();
     } else if (collection !== "accessories" && product.size !== "") {
+      this.props.onCloseMessageModal();
       this.addOrUpdate(product, productsInCart);
     } else {
+      this.props.onCloseMessageModal();
       this.addOrUpdate(product, productsInCart);
     }
   };
@@ -196,6 +198,7 @@ class ProductDetail extends Component {
                       <label htmlFor="lon">LỚN</label>
                     </div>
                   </div>
+
                   <div className="quantity-product-box">
                     <p className="size-title">Số lượng</p>
                     <input
@@ -281,6 +284,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     isRequiredSize: () => {
       dispatch(actions.onRequiredSize());
+    },
+    onCloseMessageModal: () => {
+      dispatch(actions.offRequiredSize());
     },
   };
 };

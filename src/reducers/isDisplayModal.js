@@ -43,8 +43,11 @@ var isDisplayModal = (state = initialState, action) => {
       return state;
 
     /* Required Size */
-    case types.REQUIRED_SIZE:
+    case types.ON_REQUIRED_SIZE:
       state.isRequiredSize = true;
+      return state;
+    case types.OFF_REQUIRED_SIZE:
+      state.isRequiredSize = false;
       return state;
     default:
       return state;

@@ -8,6 +8,11 @@ class MessageModal extends Component {
     isRequiredSize: this.props.isDisplayModal.isRequiredSize,
   };
 
+  onCloseAll = () => {
+    this.props.onCloseProductModal();
+    this.props.onCloseMessageModal();
+  };
+
   onCloseMessage = () => {
     this.props.onCloseMessageModal();
   };
@@ -30,10 +35,7 @@ class MessageModal extends Component {
       return (
         <Fragment>
           <p className="modal-message-box-text">Thêm vào giỏ hàng thành công</p>
-          <Link
-            to="/view-cart"
-            onClick={this.onCloseMessage}
-            className="view-cart">
+          <Link to="/view-cart" onClick={this.onCloseAll} className="view-cart">
             XEM GIỎ HÀNG
           </Link>
         </Fragment>

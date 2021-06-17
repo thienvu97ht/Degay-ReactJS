@@ -12,6 +12,9 @@ class ProductDetailModalContainer extends Component {
       onCloseProductModal,
       onAddProductInCart,
       onUpdateProductInCart,
+      onOpenMessageModal,
+      isRequiredSize,
+      onCloseMessageModal,
     } = this.props;
 
     return (
@@ -22,6 +25,9 @@ class ProductDetailModalContainer extends Component {
         onCloseProductModal={onCloseProductModal}
         onAddProductInCart={onAddProductInCart}
         onUpdateProductInCart={onUpdateProductInCart}
+        onOpenMessageModal={onOpenMessageModal}
+        isRequiredSize={isRequiredSize}
+        onCloseMessageModal={onCloseMessageModal}
       />
     );
   }
@@ -45,6 +51,15 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     onUpdateProductInCart: (product) => {
       dispatch(actions.actUpdateProductToCartRequest(product));
+    },
+    onOpenMessageModal: () => {
+      dispatch(actions.openMessage());
+    },
+    isRequiredSize: () => {
+      dispatch(actions.onRequiredSize());
+    },
+    onCloseMessageModal: () => {
+      dispatch(actions.offRequiredSize());
     },
   };
 };

@@ -4,14 +4,12 @@ import "./responsive.css";
 // import { Link } from "react-router-dom";
 
 class ViewCartItem extends Component {
-
-  onChange = (e) => {
-
-  }
+  onChange = (e) => {};
 
   render() {
     var { productById, productInCart } = this.props;
-    var priceProduct = productById.price.toString()
+    var priceProduct = productById.price
+      .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     var totalPriceProduct = (productById.price * productInCart.quantity)
       .toString()
@@ -21,36 +19,25 @@ class ViewCartItem extends Component {
         <th className="product">
           <a href="productDetail.html">
             <div className="thumb-cart">
-              <img
-                src={productById.images[1].src}
-                alt=""
-              />
+              <img src={productById.images[0].src} alt="" />
               <div className="thumb-cart-info">
                 <p className="name">{productById.name}</p>
                 <p className="size">Size: {productInCart.size}</p>
-                <p className="price">{priceProduct  } VNĐ</p>
+                <p className="price">{priceProduct} VNĐ</p>
               </div>
             </div>
           </a>
         </th>
         <th className="qty">
           <div className="qty-number">
-            <input
-              type="button"
-              className="qtymius"
-              defaultValue="<"
-            />
+            <input type="button" className="qtymius" defaultValue="<" />
             <input
               type="number"
               onChange={this.onChange}
               className="quantity"
               value={productInCart.quantity}
             />
-            <input
-              type="button"
-              className="qtyplus"
-              defaultValue=">"
-            />
+            <input type="button" className="qtyplus" defaultValue=">" />
           </div>
         </th>
         <th className="price">
@@ -62,7 +49,6 @@ class ViewCartItem extends Component {
           </button>
         </th>
       </tr>
-
     );
   }
 }

@@ -11,7 +11,8 @@ export const OPEN_MESSAGE = "OPEN_MESSAGE";
 export const CLOSE_MESSAGE = "CLOSE_MESSAGE";
 
 /* Required Size */
-export const REQUIRED_SIZE = "REQUIRED_SIZE";
+export const ON_REQUIRED_SIZE = "ON_REQUIRED_SIZE";
+export const OFF_REQUIRED_SIZE = "OFF_REQUIRED_SIZE";
 
 /*  */
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";

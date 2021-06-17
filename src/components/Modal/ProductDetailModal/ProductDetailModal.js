@@ -56,49 +56,6 @@ class ProductDetailModal extends Component {
     return result;
   };
 
-  hiddenByCollection = (collections) => {
-    var result = "";
-    if (collections === "ACCESSORIES") {
-      return result;
-    } else {
-      return (
-        <div className="product-detail_size-box">
-          <p className="size-title">Kích thước</p>
-          <div data-value="NHỎ" className="size-input-box">
-            <input
-              onChange={this.onChange}
-              id="swatch-0-nh"
-              type="radio"
-              name="size"
-              defaultValue="NHỎ"
-            />
-            <label htmlFor="swatch-0-nh">NHỎ</label>
-          </div>
-          <div data-value="TRUNG" className="size-input-box">
-            <input
-              onChange={this.onChange}
-              id="swatch-0-trung"
-              type="radio"
-              name="size"
-              defaultValue="TRUNG"
-            />
-            <label htmlFor="swatch-0-trung">TRUNG</label>
-          </div>
-          <div data-value="LỚN" className="size-input-box">
-            <input
-              onChange={this.onChange}
-              id="swatch-0-lon"
-              type="radio"
-              name="size"
-              defaultValue="LỚN"
-            />
-            <label htmlFor="swatch-0-lon">LỚN</label>
-          </div>
-        </div>
-      );
-    }
-  };
-
   addOrUpdate(product, productsInCart) {
     var newProduct = [];
     for (var i = 0; i < productsInCart.length; i++) {
@@ -137,8 +94,24 @@ class ProductDetailModal extends Component {
       quantity: quantity,
     };
 
-    /* PUSH OR PUT */
-    this.addOrUpdate(product, productsInCart);
+    /* Open Message */
+    this.isOpenMessageModal(product, productsInCart);
+  };
+
+  isOpenMessageModal = (product, productsInCart) => {
+    var collection = this.props.product.collections;
+    this.props.onOpenMessageModal();
+
+    if (collection !== "accessories" && product.size === "") {
+      /* Bắt buộc chọn size */
+      this.props.isRequiredSize();
+    } else if (collection !== "accessories" && product.size !== "") {
+      this.props.onCloseMessageModal();
+      this.addOrUpdate(product, productsInCart);
+    } else {
+      this.props.onCloseMessageModal();
+      this.addOrUpdate(product, productsInCart);
+    }
   };
 
   render() {
@@ -192,7 +165,47 @@ class ProductDetailModal extends Component {
                 className="col l-6 detail-product-right-modal">
                 <h1 className="modal-title-product">{name}</h1>
                 <p className="category-product">{collections}</p>
-                {this.hiddenByCollection(collections)}
+
+                {/* Product detail size box */}
+                <div
+                  className={
+                    collections === "ACCESSORIES"
+                      ? "product-detail_size-box hidden-size-box"
+                      : "product-detail_size-box"
+                  }>
+                  <p className="size-title">Kích thước</p>
+                  <div data-value="NHỎ" className="size-input-box">
+                    <input
+                      onChange={this.onChange}
+                      id="nho"
+                      type="radio"
+                      name="size"
+                      defaultValue="NHỎ"
+                    />
+                    <label htmlFor="nho">NHỎ</label>
+                  </div>
+                  <div data-value="TRUNG" className="size-input-box">
+                    <input
+                      onChange={this.onChange}
+                      id="trung"
+                      type="radio"
+                      name="size"
+                      defaultValue="TRUNG"
+                    />
+                    <label htmlFor="trung">TRUNG</label>
+                  </div>
+                  <div data-value="LỚN" className="size-input-box">
+                    <input
+                      onChange={this.onChange}
+                      id="lon"
+                      type="radio"
+                      name="size"
+                      defaultValue="LỚN"
+                    />
+                    <label htmlFor="lon">LỚN</label>
+                  </div>
+                </div>
+
                 <div className="quantity-product-box">
                   <p className="size-title">Số lượng</p>
                   <input

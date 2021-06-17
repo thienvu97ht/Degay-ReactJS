@@ -2,7 +2,8 @@ import { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
 import ProductItemContainer from "../../containers/ProductItemContainer";
-import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer"
+import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
+import MessageModalContainer from "../../containers/MessageModalContainer";
 
 class ListProducts extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class ListProducts extends Component {
   static getDerivedStateFromProps(props, state) {
     if (props.products !== state.products) {
       return {
-        products: props.products
+        products: props.products,
       };
     }
     return null;
@@ -86,6 +87,7 @@ class ListProducts extends Component {
           </div>
         </div>
         <ProductDetailModalContainer />
+        <MessageModalContainer />
       </Fragment>
     );
   }

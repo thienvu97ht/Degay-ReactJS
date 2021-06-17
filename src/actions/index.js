@@ -64,10 +64,14 @@ export const closeMessage = () => {
 /* Required Size */
 export const onRequiredSize = () => {
   return {
-    type: Types.REQUIRED_SIZE,
+    type: Types.ON_REQUIRED_SIZE,
   };
 };
-
+export const offRequiredSize = () => {
+  return {
+    type: Types.OFF_REQUIRED_SIZE,
+  };
+};
 /* Quick view */
 
 export const QuickViewProductModal = (product) => {
