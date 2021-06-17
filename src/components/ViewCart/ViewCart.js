@@ -6,7 +6,6 @@ import ViewCartItem from "./ViewCartItem";
 import EmptyCart from "../EmptyCart/EmptyCart";
 
 class ViewCart extends Component {
-
   findProductById = (productsInCart, products) => {
     var result = [];
     if (productsInCart.length > 0) {
@@ -24,7 +23,6 @@ class ViewCart extends Component {
   showProductsInCart = (productsById, productsInCart) => {
     var result = null;
     if (productsById.length > 0) {
-      // console.log("productsById", productsById)
       result = productsInCart.map((productInCart, index) => {
         var productById = productsById.find((productById) => {
           return productById.id === productInCart.productId;
@@ -60,9 +58,7 @@ class ViewCart extends Component {
 
   showEmptyCartItem = (productsInCart, productsById) => {
     if (productsInCart.length === 0) {
-      return (
-        <EmptyCart />
-      )
+      return <EmptyCart />;
     } else {
       return (
         <div className="view_cart-container">
@@ -93,9 +89,7 @@ class ViewCart extends Component {
                 <div className="total_cart">
                   <div className="sub_total">
                     <p>Tổng tiền</p>
-                    <p>
-                      {this.showTotalAmount(productsById, productsInCart)}
-                    </p>
+                    <p>{this.showTotalAmount(productsById, productsInCart)}</p>
                   </div>
                   <div className="final_total">
                     <Link to="checkout" className="update_cart">
@@ -119,15 +113,14 @@ class ViewCart extends Component {
             </div>
           </div>
         </div>
-      )
+      );
     }
-  }
+  };
 
   render() {
     var { productsInCart, products } = this.props;
 
     var productsById = this.findProductById(productsInCart, products);
-    console.log(productsById)
     return (
       <Fragment>
         {this.showEmptyCartItem(productsInCart, productsById)}

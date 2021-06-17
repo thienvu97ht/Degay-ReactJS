@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 
 class CartItem extends Component {
+  qtyMinus = () => {
+    console.log("Trừ");
+  };
 
-  onChange = (e) => {
+  qtyPlus = () => {
+    console.log("Cộng");
+  };
 
-  }
+  onChange = (e) => {};
 
   render() {
     var { productById, productInCart } = this.props;
+    console.log(productInCart);
     var price = (productById.price * productInCart.quantity)
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
@@ -34,7 +40,7 @@ class CartItem extends Component {
           </div>
           <div className="nav__bag--item-pricing">
             <div className="nav__bag--item-quantity">
-              <button className="minus">
+              <button onClick={this.qtyMinus} className="minus">
                 <i className=" ti-minus" />
               </button>
               <input
@@ -43,7 +49,7 @@ class CartItem extends Component {
                 className="nav__bag--item-quantity-number"
                 value={productInCart.quantity}
               />
-              <button className="plus">
+              <button onClick={this.qtyPlus} className="plus">
                 <i className=" ti-plus" />
               </button>
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
+import CartItemContainer from "../../../containers/CartItemContainer";
 
 class CartModal extends Component {
   state = {
@@ -48,8 +48,11 @@ class CartModal extends Component {
         var productById = productsById.find((productById) => {
           return productById.id === productInCart.productId;
         });
+
+        // console.log("productById", productById);
+        // console.log("productInCart", productInCart);
         return (
-          <CartItem
+          <CartItemContainer
             key={index}
             productById={productById}
             productInCart={productInCart}
@@ -81,18 +84,20 @@ class CartModal extends Component {
     if (productsInCart.length === 0) {
       return (
         <div className="empty-cart_item">
-          <p className="empty-cart_item-content">Không có sản phẩm nào trong giỏ hàng</p>
+          <p className="empty-cart_item-content">
+            Không có sản phẩm nào trong giỏ hàng
+          </p>
         </div>
-      )
+      );
     } else {
       return (
         <ul className="nav__bag-list">
           {/* Cart Item */}
           {this.showProductsInCart(productsById, productsInCart)}
         </ul>
-      )
+      );
     }
-  }
+  };
 
   render() {
     var { isOpenCartModal } = this.state;

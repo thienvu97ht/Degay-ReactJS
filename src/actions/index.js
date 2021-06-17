@@ -109,9 +109,11 @@ export const actAddProductToCart = (product) => {
 /* PUT */
 export const actUpdateProductToCartRequest = (product) => {
   return (dispatch) => {
-    return callApi(`productsInCart/${product.id}`, "PUT", product).then((res) => {
-      dispatch(actUpdateProductToCart(res.data));
-    });
+    return callApi(`productsInCart/${product.id}`, "PUT", product).then(
+      (res) => {
+        dispatch(actUpdateProductToCart(res.data));
+      }
+    );
   };
 };
 

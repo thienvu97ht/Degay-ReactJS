@@ -11,6 +11,7 @@ class ProductDetailModal extends Component {
     id: "",
     name: "",
     images: "",
+    size: "",
     price: "",
     quantity: 1,
     collections: "",
@@ -69,7 +70,7 @@ class ProductDetailModal extends Component {
               id="swatch-0-nh"
               type="radio"
               name="size"
-              value="NHỎ"
+              defaultValue="NHỎ"
             />
             <label htmlFor="swatch-0-nh">NHỎ</label>
           </div>
@@ -79,7 +80,7 @@ class ProductDetailModal extends Component {
               id="swatch-0-trung"
               type="radio"
               name="size"
-              value="TRUNG"
+              defaultValue="TRUNG"
             />
             <label htmlFor="swatch-0-trung">TRUNG</label>
           </div>
@@ -89,7 +90,7 @@ class ProductDetailModal extends Component {
               id="swatch-0-lon"
               type="radio"
               name="size"
-              value="LỚN"
+              defaultValue="LỚN"
             />
             <label htmlFor="swatch-0-lon">LỚN</label>
           </div>
@@ -137,7 +138,6 @@ class ProductDetailModal extends Component {
     };
 
     /* PUSH OR PUT */
-
     this.addOrUpdate(product, productsInCart);
   };
 

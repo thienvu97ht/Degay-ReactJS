@@ -150,6 +150,7 @@
   color: #777;
   border: none;
   height: 1.4rem;
+  cursor: pointer;
 }
 
 .nav__bag--item-quantity-number {

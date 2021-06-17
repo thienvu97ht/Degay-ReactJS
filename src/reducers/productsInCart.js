@@ -8,7 +8,9 @@ var productsInCart = (state = initialState, action) => {
       state = action.productsInCart;
       return [...state];
     case Types.ADD_PRODUCT_TO_CARD:
-      state.push(action.product)
+      state.push(action.product);
+      return [...state];
+    case Types.UPDATE_PRODUCT_TO_CART:
       return [...state];
     default:
       return [...state];
