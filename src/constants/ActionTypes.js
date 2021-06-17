@@ -10,6 +10,9 @@ export const CLOSE_PRODUCT_MODAL = "CLOSE_PRODUCT_MODAL";
 export const OPEN_MESSAGE = "OPEN_MESSAGE";
 export const CLOSE_MESSAGE = "CLOSE_MESSAGE";
 
+/* Required Size */
+export const REQUIRED_SIZE = "REQUIRED_SIZE";
+
 /*  */
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const VIEW_PRODUCT_DETAIL = "VIEW_PRODUCT_DETAIL";

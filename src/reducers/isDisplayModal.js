@@ -6,6 +6,7 @@ var initialState = {
   isOpenMenuModal: false,
   isOpenSearchModal: false,
   isOpenMessageModal: false,
+  isRequiredSize: false,
 };
 
 var isDisplayModal = (state = initialState, action) => {
@@ -39,6 +40,11 @@ var isDisplayModal = (state = initialState, action) => {
       return state;
     case types.CLOSE_MESSAGE:
       state.isOpenMessageModal = false;
+      return state;
+
+    /* Required Size */
+    case types.REQUIRED_SIZE:
+      state.isRequiredSize = true;
       return state;
     default:
       return state;

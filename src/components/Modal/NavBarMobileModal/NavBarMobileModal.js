@@ -14,7 +14,6 @@ class NavBarMobileModal extends Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.isDisplayModal.isOpenMenuModal !== state.isOpenMenuModal) {
-      console.log(props);
       return {
         isOpenMenuModal: props.isDisplayModal.isOpenMenuModal,
       };

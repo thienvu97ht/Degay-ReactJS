@@ -45,6 +45,9 @@
 }
 
 @media (min-width: 370px) and (max-width: 599px) {
+  .detail-product-left .sv-slider-item img {
+    height: 400px;
+  }
 }
 
 @media (max-width: 369px) {
@@ -63,5 +66,9 @@
 
   .detail-product-left .thumb-img {
     height: 40px;
+  }
+
+  .detail-product-left .sv-slider-item img {
+    height: 350px;
   }
 }

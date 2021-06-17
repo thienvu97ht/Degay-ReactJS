@@ -107,9 +107,9 @@ class ProductDetail extends Component {
     var collection = this.props.product.collections;
     this.props.onOpenMessageModal();
 
-    console.log(product);
     if (collection !== "accessories" && product.size === "") {
-      console.log("Vui lòng chọn size");
+      /* Bắt buộc chọn size */
+      this.props.isRequiredSize();
     } else if (collection !== "accessories" && product.size !== "") {
       this.addOrUpdate(product, productsInCart);
     } else {
@@ -154,7 +154,7 @@ class ProductDetail extends Component {
 
               {collections === "ACCESSORIES"}
               <div className="col l-6 m-12 c-10 c-o-1 detail-product-right">
-                <form onSubmit={this.onSave}>
+                <form onSubmit={this.onSave} name={`form${product.id}`}>
                   <h1 className="product-detail-title">{product.name}</h1>
                   <p className="category-product">{collections}</p>
                   {/* Product detail size box */}
@@ -168,32 +168,32 @@ class ProductDetail extends Component {
                     <div data-value="NHỎ" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="swatch-0-nh"
+                        id="nho"
                         type="radio"
                         name="size"
                         defaultValue="NHỎ"
                       />
-                      <label htmlFor="swatch-0-nh">NHỎ</label>
+                      <label htmlFor="nho">NHỎ</label>
                     </div>
                     <div data-value="TRUNG" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="swatch-0-trung"
+                        id="trung"
                         type="radio"
                         name="size"
                         defaultValue="TRUNG"
                       />
-                      <label htmlFor="swatch-0-trung">TRUNG</label>
+                      <label htmlFor="trung">TRUNG</label>
                     </div>
                     <div data-value="LỚN" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="swatch-0-lon"
+                        id="lon"
                         type="radio"
                         name="size"
                         defaultValue="LỚN"
                       />
-                      <label htmlFor="swatch-0-lon">LỚN</label>
+                      <label htmlFor="lon">LỚN</label>
                     </div>
                   </div>
                   <div className="quantity-product-box">
@@ -278,6 +278,9 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     onOpenMessageModal: () => {
       dispatch(actions.openMessage());
+    },
+    isRequiredSize: () => {
+      dispatch(actions.onRequiredSize());
     },
   };
 };

@@ -81,9 +81,9 @@ input[name="size"] {
   margin-left: 10px;
 }
 
-#swatch-0-nh:checked ~ label[for="swatch-0-nh"],
-#swatch-0-trung:checked ~ label[for="swatch-0-trung"],
-#swatch-0-lon:checked ~ label[for="swatch-0-lon"] {
+#nho:checked ~ label[for="nho"],
+#trung:checked ~ label[for="trung"],
+#lon:checked ~ label[for="lon"] {
   color: #fff;
   background-color: #bda47d;
   transition: ease-in 0.1s;

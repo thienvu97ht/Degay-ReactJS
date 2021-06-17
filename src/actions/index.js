@@ -60,6 +60,14 @@ export const closeMessage = () => {
     type: Types.CLOSE_MESSAGE,
   };
 };
+
+/* Required Size */
+export const onRequiredSize = () => {
+  return {
+    type: Types.REQUIRED_SIZE,
+  };
+};
+
 /* Quick view */
 
 export const QuickViewProductModal = (product) => {
