@@ -2,11 +2,19 @@ import React, { Component } from "react";
 
 class CartItem extends Component {
   qtyMinus = () => {
-    console.log("Trừ");
+    var { productInCart } = this.props;
+    if (productInCart.quantity <= 1) {
+      console.log("Sản phẩm phải nhiều hơn 1");
+    } else {
+      productInCart.quantity = productInCart.quantity - 1;
+      this.props.onUpdateProductInCart(productInCart);
+    }
   };
 
   qtyPlus = () => {
-    console.log("Cộng");
+    var { productInCart } = this.props;
+    productInCart.quantity = productInCart.quantity + 1;
+    this.props.onUpdateProductInCart(productInCart);
   };
 
   onChange = (e) => {};

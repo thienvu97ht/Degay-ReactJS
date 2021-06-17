@@ -1,16 +1,18 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-// import * as actions from "../actions/index";
+import * as actions from "../actions/index";
 import Cartitem from "../components/Modal/CartModal/CartItem";
 
 class CartItemContainer extends Component {
   render() {
-    var { productById, productInCart, productsInCart } = this.props;
+    var { productById, productInCart, productsInCart, onUpdateProductInCart } =
+      this.props;
     return (
       <Cartitem
         productById={productById}
         productInCart={productInCart}
         productsInCart={productsInCart}
+        onUpdateProductInCart={onUpdateProductInCart}
       />
     );
   }
@@ -23,7 +25,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, props) => {
-  return {};
+  return {
+    onUpdateProductInCart: (product) => {
+      dispatch(actions.actUpdateProductToCartRequest(product));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItemContainer);
