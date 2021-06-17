@@ -149,6 +149,23 @@ export const actUpdateProductToCart = (product) => {
   };
 };
 
+/* DELETE */
+export const actDeleteProductInCartRequest = (id) => {
+  return (dispatch) => {
+    return callApi(`productsInCart/${id}`, "DELETE", null).then((res) => {
+      dispatch(actDeleteProductInCart(id));
+    });
+  };
+};
+
+export const actDeleteProductInCart = (id) => {
+  return {
+    type: Types.DELETE_PRODUCT_IN_CART,
+    id,
+  };
+};
+
+/* ---------------------- */
 /* VIEW PRODUCT DETAIL */
 export const actGetProductRequest = (id) => {
   return (dispatch) => {

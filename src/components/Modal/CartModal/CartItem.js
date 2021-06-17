@@ -17,6 +17,11 @@ class CartItem extends Component {
     this.props.onUpdateProductInCart(productInCart);
   };
 
+  deleteProductInCart = () => {
+    var { productInCart } = this.props;
+    this.props.onDeleteProductInCart(productInCart.id);
+  };
+
   onChange = (e) => {};
 
   render() {
@@ -38,7 +43,9 @@ class CartItem extends Component {
             <a href="!#" className="nav__bag--item-name-link">
               {productById.name}
             </a>
-            <button className="cart_item-close-btn">
+            <button
+              onClick={this.deleteProductInCart}
+              className="cart_item-close-btn">
               <i className="ti-close nav__bag--item-name-close" />
             </button>
           </div>
