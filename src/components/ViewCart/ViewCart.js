@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
 import { Link } from "react-router-dom";
-import ViewCartItem from "./ViewCartItem";
+import ViewCartItemContainer from "../../containers/ViewCartItemContainer";
 import EmptyCart from "../EmptyCart/EmptyCart";
 
 class ViewCart extends Component {
@@ -28,7 +28,7 @@ class ViewCart extends Component {
           return productById.id === productInCart.productId;
         });
         return (
-          <ViewCartItem
+          <ViewCartItemContainer
             key={index}
             productById={productById}
             productInCart={productInCart}
@@ -67,7 +67,7 @@ class ViewCart extends Component {
           </div>
           <div className="grid wide">
             <div className="row">
-              <div className="col l-8 m-12 c-10 c-o-1">
+              <div className="col l-8 m-12 c-12 view-cart-left">
                 <table className="table table-cart">
                   <tbody>
                     <tr>
@@ -85,7 +85,7 @@ class ViewCart extends Component {
                   </Link>
                 </div>
               </div>
-              <div className="col l-4 m-12 c-10 c-o-1">
+              <div className="col l-4 m-12 c-12 view-cart-right">
                 <div className="total_cart">
                   <div className="sub_total">
                     <p>Tổng tiền</p>

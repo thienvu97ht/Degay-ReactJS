@@ -25,9 +25,17 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+  .view-cart-left {
+    padding: 0 20px;
+  }
+
   .thumb-cart {
     text-align: left;
     display: block;
+  }
+
+  .thumb-cart-info {
+    font-size: 1.3rem;
   }
 
   .thumb-cart img {
@@ -44,6 +52,7 @@
 
   .qty-number input {
     width: 25px;
+    height: 35px;
   }
 }
 
@@ -62,5 +71,9 @@
   .thumb-cart {
     width: 100px;
     white-space: normal;
+  }
+
+  .thumb-cart img {
+    height: 80px;
   }
 }

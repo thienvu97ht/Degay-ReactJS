@@ -48,10 +48,11 @@
   transition: ease-in 0.2s;
 }
 
-.line-or {
+.log-in-sign-up-container .line-or {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #dfdfdf;
+  margin: 50px 0;
 }
 
 .liner-or-text {

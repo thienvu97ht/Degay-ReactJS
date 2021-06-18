@@ -21,6 +21,10 @@
   .login-socia-title {
     margin-top: 40px;
   }
+
+  .log-in-sign-up-container .line-or {
+    margin: 30px 0;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 738px) {
@@ -32,5 +36,9 @@
 @media (max-width: 369px) {
   .content-cus-form {
     width: 100%;
+  }
+
+  .log-in-sign-up-container .line-or {
+    margin: 20px 0;
   }
 }
