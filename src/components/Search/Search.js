@@ -4,11 +4,18 @@ import "./responsive.css";
 import ListProductsContainer from "../../containers/ListProductsContainter";
 
 class Search extends Component {
+  componentWillUnmount() {
+    this.props.onClearKeyword();
+  }
+
   render() {
+    var { keyword } = this.props;
     return (
       <Fragment>
         <div className="search-container">
-          <p className="search-container-text">Kết quả tìm kiếm cho: "Áo"</p>
+          <p className="search-container-text">
+            Kết quả tìm kiếm cho: "{keyword}"
+          </p>
         </div>
 
         <ListProductsContainer />

@@ -4,25 +4,24 @@ import { connect } from "react-redux";
 import ListProducts from "../components/ListProducts/ListProducts";
 
 class ListProductsContainer extends Component {
-
-    render() {
-        var { products } = this.props;
-        return (
-            <ListProducts products={products} />
-        )
-    }
+  render() {
+    var { keyword, products } = this.props;
+    return <ListProducts keyword={keyword} products={products} />;
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        products: state.products,
-    };
+  return {
+    products: state.products,
+    keyword: state.keyword,
+  };
 };
 
 const mapDispatchToProps = (dispatch, props) => {
-    return {
-
-    };
+  return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListProductsContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ListProductsContainer);

@@ -5,10 +5,12 @@ import SearchModal from "../components/Modal/SearchModal/SearchModal";
 
 class SearchModalContainer extends Component {
   render() {
-    var { products, isDisplayModal, onCloseSearchModal } = this.props;
+    var { products, isDisplayModal, onCloseSearchModal, onSendKeyword } =
+      this.props;
     return (
       <SearchModal
         products={products}
+        onSendKeyword={onSendKeyword}
         isDisplayModal={isDisplayModal}
         onCloseSearchModal={onCloseSearchModal}
       />
@@ -27,6 +29,9 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     onCloseSearchModal: () => {
       dispatch(actions.closeSearch());
+    },
+    onSendKeyword: (keyword) => {
+      dispatch(actions.sendKeyword(keyword));
     },
   };
 };

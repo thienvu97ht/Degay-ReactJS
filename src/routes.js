@@ -4,7 +4,7 @@ import Login from "./components/Login/Login";
 import ListProductsContainer from "./containers/ListProductsContainter";
 import Stores from "./components/Stores/Stores";
 import About from "./components/About/About";
-import Search from "./components/Search/Search";
+import SearchContainer from "./containers/SearchContainer";
 import ViewCartContainer from "./containers/ViewCartContainer";
 import Account from "./components/Account/Account";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
@@ -40,9 +40,9 @@ const routes = [
     main: () => <About />,
   },
   {
-    path: "/search/:keyword",
+    path: "/search",
     exact: false,
-    main: ({ match }) => <Search match={match} />,
+    main: () => <SearchContainer />,
   },
   {
     path: "/view-cart",

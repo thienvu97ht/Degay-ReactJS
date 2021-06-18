@@ -81,8 +81,9 @@ export const QuickViewProductModal = (product) => {
   };
 };
 
+/* ---------------------------------------- */
+/* PRODUCTS */
 /* API */
-
 export const actFetchProductsRequest = () => {
   return (dispatch) => {
     return callApi("products", "GET", null).then((res) => {
@@ -98,6 +99,7 @@ export const actFetchProducts = (products) => {
   };
 };
 
+/* ---------------------------------------- */
 /* PRODUCTS IN CART */
 /* GET */
 export const actFetchProductsInCartRequest = () => {
@@ -165,7 +167,7 @@ export const actDeleteProductInCart = (id) => {
   };
 };
 
-/* ---------------------- */
+/* ---------------------------------------- */
 /* VIEW PRODUCT DETAIL */
 export const actGetProductRequest = (id) => {
   return (dispatch) => {
@@ -179,5 +181,20 @@ export const actGetProduct = (product) => {
   return {
     type: Types.VIEW_PRODUCT_DETAIL,
     product,
+  };
+};
+
+/* ---------------------------------------- */
+/* FILTER PRODUCTS */
+export const sendKeyword = (keyword) => {
+  return {
+    type: Types.SEND_KEYWORD,
+    keyword,
+  };
+};
+
+export const clearKeyword = () => {
+  return {
+    type: Types.CLEAR_KEYWORD,
   };
 };

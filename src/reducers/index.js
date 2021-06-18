@@ -4,6 +4,7 @@ import isDisplayModal from "./isDisplayModal";
 import productsInCart from "./productsInCart";
 import viewProduct from "./viewProduct";
 import quickViewProduct from "./quickViewProduct";
+import keyword from "./keyword";
 
 const appReducer = combineReducers({
   viewProduct,
@@ -11,6 +12,7 @@ const appReducer = combineReducers({
   isDisplayModal,
   products,
   productsInCart,
+  keyword,
 });
 
 export default appReducer;

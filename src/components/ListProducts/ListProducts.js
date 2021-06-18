@@ -22,9 +22,59 @@ class ListProducts extends Component {
     return null;
   }
 
+  convertViToEn = (str, toUpperCase = false) => {
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    // Some system encode vietnamese combining accent as individual utf-8 characters
+    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // Huyền sắc hỏi ngã nặng
+    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // Â, Ê, Ă, Ơ, Ư
+
+    return toUpperCase ? str.toUpperCase() : str;
+  };
+
+  filterProducts = () => {
+    var { keyword, products } = this.props;
+    var result = [];
+    if (keyword) {
+      result = products.filter((product) => {
+        return (
+          this.convertViToEn(product.name, true).indexOf(
+            this.convertViToEn(keyword, true)
+          ) !== -1
+        );
+      });
+    } else {
+      return products;
+    }
+
+    return result;
+  };
+
+  showProducts = (products) => {
+    var { keyword } = this.props;
+    var result = null;
+    if (keyword.length > 0) {
+      var productsBySearch = this.filterProducts();
+      result = productsBySearch.map((product, index) => {
+        return <ProductItemContainer key={index} product={product} />;
+      });
+    } else if (products.length > 0) {
+      result = products.map((product, index) => {
+        return <ProductItemContainer key={index} product={product} />;
+      });
+    }
+
+    return result;
+  };
+
   render() {
     var { products } = this.state;
-
     return (
       <Fragment>
         <div className="list-products-container">
@@ -91,17 +141,6 @@ class ListProducts extends Component {
       </Fragment>
     );
   }
-
-  showProducts = (products) => {
-    var result = null;
-    if (products.length > 0) {
-      result = products.map((product, index) => {
-        return <ProductItemContainer key={index} product={product} />;
-      });
-    }
-
-    return result;
-  };
 }
 
 export default ListProducts;

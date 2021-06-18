@@ -22,6 +22,12 @@ class SearchModal extends Component {
     this.props.onCloseSearchModal();
   };
 
+  sendKeyword = () => {
+    var { keyword } = this.state;
+    this.onCloseSearch();
+    this.props.onSendKeyword(keyword);
+  };
+
   onChange = (e) => {
     var target = e.target;
     var name = target.name;
@@ -34,13 +40,10 @@ class SearchModal extends Component {
 
   onSave = (e) => {
     e.preventDefault();
-    var { keyword } = this.state;
-
-    console.log(keyword);
   };
 
   render() {
-    var { isOpenSearchModal, keyword } = this.state;
+    var { isOpenSearchModal } = this.state;
     return (
       <div
         className={isOpenSearchModal === true ? "modal-search-container" : ""}>
@@ -69,8 +72,8 @@ class SearchModal extends Component {
                 />
               </div>
               <Link
-                to={`search/${keyword}`}
-                onClick={this.onCloseSearch}
+                to="/search"
+                onClick={this.sendKeyword}
                 type="submit"
                 className="btn-search">
                 Tìm kiếm

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 class ProductItem extends Component {
   isOpenProductDetail = () => {
-    var { product } = this.props
+    var { product } = this.props;
     this.props.onOpenProductModal();
-    this.props.onQuickViewProductModal(product)
+    this.props.onQuickViewProductModal(product);
   };
 
   render() {
@@ -30,7 +30,9 @@ class ProductItem extends Component {
               className="product-item-img2"
             />
           </Link>
-          <button onClick={this.isOpenProductDetail} className="product_item-quick-view-btn">
+          <button
+            onClick={this.isOpenProductDetail}
+            className="product_item-quick-view-btn">
             <i
               className="icon-eye ti-eye hide-on-mobile-tablet"
               title="Xem nhanh"
