@@ -26,6 +26,9 @@ class SearchModal extends Component {
     var { keyword } = this.state;
     this.onCloseSearch();
     this.props.onSendKeyword(keyword);
+    this.setState({
+      keyword: "",
+    });
   };
 
   onChange = (e) => {
@@ -44,6 +47,7 @@ class SearchModal extends Component {
 
   render() {
     var { isOpenSearchModal } = this.state;
+    console.log(this.state.keyword);
     return (
       <div
         className={isOpenSearchModal === true ? "modal-search-container" : ""}>
@@ -65,6 +69,7 @@ class SearchModal extends Component {
               <div className="header__menu-sreach-bar">
                 <input
                   onChange={this.onChange}
+                  autocomplete="off"
                   type="text"
                   name="keyword"
                   className="header__menu-sreach-input"
