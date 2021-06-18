@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import { Link } from "react-router-dom";
 
 class SearchModal extends Component {
   state = {
     isOpenSearchModal: this.props.isDisplayModal.isOpenSearchModal,
-  };
-
-  onCloseSearch = () => {
-    this.props.onCloseSearchModal();
+    keyword: "",
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -20,8 +18,29 @@ class SearchModal extends Component {
     return null;
   }
 
+  onCloseSearch = () => {
+    this.props.onCloseSearchModal();
+  };
+
+  onChange = (e) => {
+    var target = e.target;
+    var name = target.name;
+    var value = target.type === "checkbox" ? target.checked : target.value;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  onSave = (e) => {
+    e.preventDefault();
+    var { keyword } = this.state;
+
+    console.log(keyword);
+  };
+
   render() {
-    var { isOpenSearchModal } = this.state;
+    var { isOpenSearchModal, keyword } = this.state;
     return (
       <div
         className={isOpenSearchModal === true ? "modal-search-container" : ""}>
@@ -36,16 +55,27 @@ class SearchModal extends Component {
               : "modal-search"
           }>
           <div className="header__menu-sreach-nav">
-            <div className="header__menu-sreach-bar-all">
+            <form
+              onSubmit={this.onSave}
+              name="search-form"
+              className="header__menu-sreach-bar-all">
               <div className="header__menu-sreach-bar">
                 <input
+                  onChange={this.onChange}
                   type="text"
+                  name="keyword"
                   className="header__menu-sreach-input"
                   placeholder="Tìm kiếm sản phẩm..."
                 />
               </div>
-              <button className="btn-search">Tìm kiếm</button>
-            </div>
+              <Link
+                to={`search/${keyword}`}
+                onClick={this.onCloseSearch}
+                type="submit"
+                className="btn-search">
+                Tìm kiếm
+              </Link>
+            </form>
           </div>
         </div>
       </div>

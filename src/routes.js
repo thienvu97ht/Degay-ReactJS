@@ -40,9 +40,9 @@ const routes = [
     main: () => <About />,
   },
   {
-    path: "/search",
+    path: "/search/:keyword",
     exact: false,
-    main: () => <Search />,
+    main: ({ match }) => <Search match={match} />,
   },
   {
     path: "/view-cart",

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
 import "./responsive.css";
-import ListProducts from "../ListProducts/ListProducts";
+import ListProductsContainer from "../../containers/ListProductsContainter";
 
 class Search extends Component {
   render() {
@@ -11,7 +11,7 @@ class Search extends Component {
           <p className="search-container-text">Kết quả tìm kiếm cho: "Áo"</p>
         </div>
 
-        <ListProducts />
+        <ListProductsContainer />
       </Fragment>
     );
   }

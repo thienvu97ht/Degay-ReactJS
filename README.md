@@ -1,1 +1,1 @@
-Tech Update - 55%
+Tech Update - 60%

@@ -50,6 +50,9 @@
 
 .btn-search {
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
   width: 100px;
   height: 40px;
   outline: none;
