@@ -11,7 +11,6 @@ Tech Update - 63%
 
 2. Chức năng đang tiến hành
    - Lọc sản phẩm theo giá, lượt mua, tên
-   - Tùy chọn sắp xếp sản phẩm theo lưới hoặc hàng ngang
    - Trang tin tức
    - Đăng nhập, đăng ký
    - Đăng nhập với Google, Facebook

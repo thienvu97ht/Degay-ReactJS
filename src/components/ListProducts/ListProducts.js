@@ -79,20 +79,7 @@ class ListProducts extends Component {
       <Fragment>
         <div className="list-products-container">
           <div className="products-filter-container">
-            <div className="filter-left">
-              <ul className="product-filter-list">
-                <li className="product-filter-item active-ui">
-                  <a href="!#" className="filter-icon-link ">
-                    <i className="filter-icon fa fa-th-large" />
-                  </a>
-                </li>
-                <li className="product-filter-item">
-                  <a href="!#" className="filter-icon-link">
-                    <i className="filter-icon fa fa-th-list" />
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <div className="filter-left"></div>
             <div className="filter-right">
               <p className="filter-right-text">Sắp Xếp:</p>
               <select className="custom-dropdown__select">

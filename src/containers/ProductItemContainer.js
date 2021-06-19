@@ -35,6 +35,9 @@ const mapDispatchToProps = (dispatch, props) => {
     onOpenProductModal: () => {
       dispatch(actions.openProductModal());
     },
+    onQuickViewProductModal: (product) => {
+      dispatch(actions.QuickViewProductModal(product));
+    },
   };
 };
 
