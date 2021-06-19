@@ -10,6 +10,7 @@ class ListProducts extends Component {
     super(props);
     this.state = {
       products: [],
+      selectValue: "",
     };
   }
 
@@ -56,6 +57,30 @@ class ListProducts extends Component {
     return result;
   };
 
+  filterProductsByStatus = (products, selectValue) => {
+    switch (selectValue) {
+      case "price-ascending":
+        products = products.sort((a, b) => a.price - b.price);
+        return products;
+      case "price-descending":
+        products = products.sort((a, b) => b.price - a.price);
+        return products;
+      case "title-ascending":
+        products = products.sort((a, b) => a.name.localeCompare(b.name));
+        return products;
+      case "title-descending":
+        products = products.sort((a, b) => b.name.localeCompare(a.name));
+        return products;
+      case "best-selling":
+        products = products.sort((a, b) => b.sold - a.sold);
+        return products;
+      case "manual":
+        return products;
+      default:
+        return products;
+    }
+  };
+
   showProducts = (products) => {
     var { keyword } = this.props;
     var result = null;
@@ -73,16 +98,30 @@ class ListProducts extends Component {
     return result;
   };
 
+  onChange = (e) => {
+    var targer = e.target;
+    var name = targer.name;
+    var value = targer.type === "checkbox" ? targer.checked : targer.value;
+    this.setState({
+      [name]: value,
+    });
+  };
+
   render() {
-    var { products } = this.state;
+    var { products, selectValue } = this.state;
+    products = this.filterProductsByStatus(products, selectValue);
     return (
       <Fragment>
         <div className="list-products-container">
           <div className="products-filter-container">
             <div className="filter-left"></div>
-            <div className="filter-right">
+            <form className="filter-right">
               <p className="filter-right-text">Sắp Xếp:</p>
-              <select className="custom-dropdown__select">
+              <select
+                name="selectValue"
+                value={selectValue}
+                onChange={this.onChange}
+                className="custom-dropdown__select">
                 <option value="manual">Sản phẩm nổi bật</option>
                 <option value="price-ascending">Giá: Tăng dần</option>
                 <option value="price-descending">Giá: Giảm dần</option>
@@ -90,7 +129,7 @@ class ListProducts extends Component {
                 <option value="title-descending">Tên: Z-A</option>
                 <option value="best-selling">Bán chạy nhất</option>
               </select>
-            </div>
+            </form>
           </div>
           <div className="grid wide">
             <div className="row">{this.showProducts(products)}</div>

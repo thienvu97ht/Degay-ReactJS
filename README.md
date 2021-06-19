@@ -1,4 +1,4 @@
-Tech Update - 63%
+Tech Update - 66%
 
 1. Số chức năng đã hoàn thiện:
    - Hiển thị list sản phẩm
@@ -8,9 +8,9 @@ Tech Update - 63%
    - Xóa sản phẩm trong giỏ hàng
    - Cập nhật sản phẩm trong giỏ hàng
    - Tìm kiếm sản phẩm
+   - Lọc sản phẩm theo giá, lượt mua, tên
 
 2. Chức năng đang tiến hành
-   - Lọc sản phẩm theo giá, lượt mua, tên
    - Trang tin tức
    - Đăng nhập, đăng ký
    - Đăng nhập với Google, Facebook

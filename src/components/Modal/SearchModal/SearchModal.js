@@ -47,7 +47,6 @@ class SearchModal extends Component {
 
   render() {
     var { isOpenSearchModal } = this.state;
-    console.log(this.state.keyword);
     return (
       <div
         className={isOpenSearchModal === true ? "modal-search-container" : ""}>
@@ -69,7 +68,7 @@ class SearchModal extends Component {
               <div className="header__menu-sreach-bar">
                 <input
                   onChange={this.onChange}
-                  autocomplete="off"
+                  autoComplete="off"
                   type="text"
                   name="keyword"
                   className="header__menu-sreach-input"
