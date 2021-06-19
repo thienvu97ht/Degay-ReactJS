@@ -81,9 +81,9 @@ input[name="size"] {
   margin-left: 10px;
 }
 
-#nho:checked ~ label[for="nho"],
-#trung:checked ~ label[for="trung"],
-#lon:checked ~ label[for="lon"] {
+.size-nho:checked ~ label,
+.size-trung:checked ~ label,
+.size-lon:checked ~ label {
   color: #fff;
   background-color: #bda47d;
   transition: ease-in 0.1s;

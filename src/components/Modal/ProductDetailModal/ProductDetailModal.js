@@ -179,6 +179,7 @@ class ProductDetailModal extends Component {
                       onChange={this.onChange}
                       id="nho"
                       type="radio"
+                      className="size-nho"
                       name="size"
                       defaultValue="NHỎ"
                     />
@@ -189,6 +190,7 @@ class ProductDetailModal extends Component {
                       onChange={this.onChange}
                       id="trung"
                       type="radio"
+                      className="size-trung"
                       name="size"
                       defaultValue="TRUNG"
                     />
@@ -199,6 +201,7 @@ class ProductDetailModal extends Component {
                       onChange={this.onChange}
                       id="lon"
                       type="radio"
+                      className="size-lon"
                       name="size"
                       defaultValue="LỚN"
                     />

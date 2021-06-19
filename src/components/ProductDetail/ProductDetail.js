@@ -170,32 +170,35 @@ class ProductDetail extends Component {
                     <div data-value="NHỎ" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="nho"
+                        id={`nho${product.id}`}
+                        className="size-nho"
                         type="radio"
                         name="size"
                         defaultValue="NHỎ"
                       />
-                      <label htmlFor="nho">NHỎ</label>
+                      <label htmlFor={`nho${product.id}`}>NHỎ</label>
                     </div>
                     <div data-value="TRUNG" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="trung"
+                        id={`trung${product.id}`}
+                        className="size-trung"
                         type="radio"
                         name="size"
                         defaultValue="TRUNG"
                       />
-                      <label htmlFor="trung">TRUNG</label>
+                      <label htmlFor={`trung${product.id}`}>TRUNG</label>
                     </div>
                     <div data-value="LỚN" className="size-input-box">
                       <input
                         onChange={this.onChange}
-                        id="lon"
+                        id={`lon${product.id}`}
+                        className="size-lon"
                         type="radio"
                         name="size"
                         defaultValue="LỚN"
                       />
-                      <label htmlFor="lon">LỚN</label>
+                      <label htmlFor={`lon${product.id}`}>LỚN</label>
                     </div>
                   </div>
 

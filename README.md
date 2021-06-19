@@ -1,6 +1,7 @@
-Tech Update - 66%
+Updating - 66%
 
 1. Số chức năng đã hoàn thiện:
+
    - Hiển thị list sản phẩm
    - Hiển thị sản phẩm chi tiết
    - Quick View Modal
@@ -9,6 +10,7 @@ Tech Update - 66%
    - Cập nhật sản phẩm trong giỏ hàng
    - Tìm kiếm sản phẩm
    - Lọc sản phẩm theo giá, lượt mua, tên
+   - Pop-up thông báo
 
 2. Chức năng đang tiến hành
    - Trang tin tức
