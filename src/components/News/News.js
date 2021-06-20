@@ -7,6 +7,7 @@ import new3 from "../../assets/new3.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 class News extends Component {
   render() {
@@ -45,17 +46,15 @@ class News extends Component {
         },
       ],
     };
+
+    var { news } = this.props;
     return (
       <div className="app__container-product">
         <div className="grid wide">
           <h4 className="app__container-title">Tin tức</h4>
           <Slider {...settings_2}>
-            <div className="container__product-item">
-              <img
-                src={new1}
-                alt=""
-                className="news-item-img"
-              />
+            <Link to={`news`} className="container__product-item">
+              <img src={new1} alt="" className="news-item-img" />
               <h1 className="news-title">1.000.000 FOLLOWERS ON FACEBOOK</h1>
               <div className="news-upload-info">
                 <p className="news-info">Đăng bởi</p>
@@ -69,13 +68,9 @@ class News extends Component {
                 bờ bến tụi mình xin phép tổ chức event như sau.- Với mỗi hoá đơn
                 từ 1 triệu đồng (1.000.000vnd)...
               </p>
-            </div>
-            <div className="container__product-item">
-              <img
-                src={new2}
-                alt=""
-                className="news-item-img"
-              />
+            </Link>
+            <Link to={`news`} className="container__product-item">
+              <img src={new2} alt="" className="news-item-img" />
               <h1 className="news-title">
                 Cùng Degrey chung tay tuyên truyền phòng tránh Covid – 19
               </h1>
@@ -91,13 +86,9 @@ class News extends Component {
                 của mình nhằm kêu gọi tất cả mọi người tự cách ly tại nhà, chủ
                 động bảo vệ bản thân...
               </p>
-            </div>
-            <div className="container__product-item">
-              <img
-                src={new3}
-                alt=""
-                className="news-item-img"
-              />
+            </Link>
+            <Link to={`news`} className="container__product-item">
+              <img src={new3} alt="" className="news-item-img" />
               <h1 className="news-title">
                 MAKE LOVE NOT WAR - DEGREY x DIRTY COINS
               </h1>
@@ -112,7 +103,7 @@ class News extends Component {
                 sáng ngày 09/02/2020. Bộ sưu tập được bán tại trang mạng
                 http://degrey.vn - http://dirtycoins.vn
               </p>
-            </div>
+            </Link>
           </Slider>
           <div className="text-center">
             <a href="!#" className="load-more-news">

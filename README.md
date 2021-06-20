@@ -1,4 +1,4 @@
-Updating - 66%
+Updating - 69%
 
 1. Số chức năng đã hoàn thiện:
 
@@ -11,6 +11,7 @@ Updating - 66%
    - Tìm kiếm sản phẩm
    - Lọc sản phẩm theo giá, lượt mua, tên
    - Pop-up thông báo
+   - Pagination
 
 2. Chức năng đang tiến hành
    - Trang tin tức
