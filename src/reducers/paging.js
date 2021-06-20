@@ -1,7 +1,7 @@
 import * as Types from "../constants/ActionTypes";
 
 var initialState = {
-  perPage: 6,
+  perPage: 12,
   currentPage: 1,
   start: 0,
 };

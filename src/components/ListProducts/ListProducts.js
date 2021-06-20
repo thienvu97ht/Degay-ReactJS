@@ -4,11 +4,7 @@ import "./responsive.css";
 import ProductItemContainer from "../../containers/ProductItemContainer";
 import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
 import MessageModalContainer from "../../containers/MessageModalContainer";
-
-let perPage = 8;
-let currentPage = 1;
-let start = 0;
-let end = perPage;
+import PaginationContainer from "../../containers/PaginationContainer";
 
 class ListProducts extends Component {
   constructor(props) {
@@ -20,6 +16,10 @@ class ListProducts extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     if (props.products !== state.products) {
       return {
         products: props.products,
@@ -86,7 +86,7 @@ class ListProducts extends Component {
     }
   };
 
-  showProducts = (products) => {
+  showProducts = (products, start, end) => {
     var { keyword } = this.props;
     var result = null;
     if (keyword.length > 0) {
@@ -147,33 +147,7 @@ class ListProducts extends Component {
           <div className="grid wide">
             <div className="row">{this.showProducts(products, start, end)}</div>
           </div>
-          <div className="product-pagination">
-            <ul className="product-pagination-list">
-              <li className="product-pagination-item hiden">
-                <a href="!#">
-                  <i className="ti-angle-double-left" />
-                </a>
-              </li>
-              <li className="product-pagination-item active">
-                <a href="!#">1</a>
-              </li>
-              <li className="product-pagination-item">
-                <a href="!#">2</a>
-              </li>
-              <li className="product-pagination-item">
-                <a href="!#">3</a>
-              </li>
-              <li className="product-pagination-item">...</li>
-              <li className="product-pagination-item">
-                <a href="!#">7</a>
-              </li>
-              <li className="product-pagination-item">
-                <a href="!#">
-                  <i className="ti-angle-double-right" />
-                </a>
-              </li>
-            </ul>
-          </div>
+          <PaginationContainer />
         </div>
         <ProductDetailModalContainer />
         <MessageModalContainer />
