@@ -198,3 +198,18 @@ export const clearKeyword = () => {
     type: Types.CLEAR_KEYWORD,
   };
 };
+
+/* PAGINATION */
+export const sendPagingValue = (pagingValue) => {
+  return {
+    type: Types.SEND_VALUE_PAGING,
+    pagingValue,
+  };
+};
+
+export const sendCurenPage = (current) => {
+  return {
+    type: Types.SEND_CURRENTPAGE,
+    current,
+  };
+};

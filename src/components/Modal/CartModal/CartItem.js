@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class CartItem extends Component {
   qtyMinus = () => {
@@ -40,9 +41,9 @@ class CartItem extends Component {
         </div>
         <div className="nav__bag-list-item-right">
           <div className="nav__bag--item-name">
-            <a href="!#" className="nav__bag--item-name-link">
+            <Link to="" className="nav__bag--item-name-link">
               {productById.name}
-            </a>
+            </Link>
             <button
               onClick={this.deleteProductInCart}
               className="cart_item-close-btn">

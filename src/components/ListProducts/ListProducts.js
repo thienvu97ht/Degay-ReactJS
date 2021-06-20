@@ -5,6 +5,11 @@ import ProductItemContainer from "../../containers/ProductItemContainer";
 import ProductDetailModalContainer from "../../containers/ProductDetailModalContainer";
 import MessageModalContainer from "../../containers/MessageModalContainer";
 
+let perPage = 8;
+let currentPage = 1;
+let start = 0;
+let end = perPage;
+
 class ListProducts extends Component {
   constructor(props) {
     super(props);
@@ -87,11 +92,17 @@ class ListProducts extends Component {
     if (keyword.length > 0) {
       var productsBySearch = this.filterProducts();
       result = productsBySearch.map((product, index) => {
-        return <ProductItemContainer key={index} product={product} />;
+        if (index >= start && index < end) {
+          return <ProductItemContainer key={index} product={product} />;
+        }
+        return null;
       });
     } else if (products.length > 0) {
       result = products.map((product, index) => {
-        return <ProductItemContainer key={index} product={product} />;
+        if (index >= start && index < end) {
+          return <ProductItemContainer key={index} product={product} />;
+        }
+        return null;
       });
     }
 
@@ -110,6 +121,8 @@ class ListProducts extends Component {
   render() {
     var { products, selectValue } = this.state;
     products = this.filterProductsByStatus(products, selectValue);
+    let { perPage, currentPage, start } = this.props.paging;
+    let end = currentPage * perPage;
     return (
       <Fragment>
         <div className="list-products-container">
@@ -132,7 +145,7 @@ class ListProducts extends Component {
             </form>
           </div>
           <div className="grid wide">
-            <div className="row">{this.showProducts(products)}</div>
+            <div className="row">{this.showProducts(products, start, end)}</div>
           </div>
           <div className="product-pagination">
             <ul className="product-pagination-list">

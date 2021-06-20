@@ -5,13 +5,16 @@ import ListProducts from "../components/ListProducts/ListProducts";
 
 class ListProductsContainer extends Component {
   render() {
-    var { keyword, products } = this.props;
-    return <ListProducts keyword={keyword} products={products} />;
+    var { paging, keyword, products } = this.props;
+    return (
+      <ListProducts paging={paging} keyword={keyword} products={products} />
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
+    paging: state.paging,
     products: state.products,
     keyword: state.keyword,
   };

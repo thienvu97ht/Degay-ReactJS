@@ -232,3 +232,7 @@
 .product-pagination-item.hiden {
   display: none;
 }
+
+.bg-red {
+  background-color: red;
+}
