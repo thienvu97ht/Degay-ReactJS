@@ -31,7 +31,7 @@ class Stores extends Component {
                 </div>
                 {/* List Item */}
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
-                  <p className="srote-item-name">STORE HUỲNH VĂN BÁNH</p>
+                  <p className="srote-item-name">DEGREY SÀI GÒN CS1</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-address">
@@ -42,44 +42,116 @@ class Stores extends Component {
                   <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
-                  <p className="srote-item-name">STORE HUỲNH VĂN BÁNH</p>
+                  <p className="srote-item-name">DEGREY SÀI GÒN CS2</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-address">
-                    43 Huỳnh Văn Bánh, Q.Phú Nhuận, TP.Hồ Chí Minh
+                    905 Lúy Bán Bích, Q.Tân Phú, TP.Hồ Chí Minh
                   </p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
-                  <p className="srote-item-name">STORE HUỲNH VĂN BÁNH</p>
+                  <p className="srote-item-name">DEGREY SÀI GÒN CS3</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-address">
-                    43 Huỳnh Văn Bánh, Q.Phú Nhuận, TP.Hồ Chí Minh
+                    26 Lý Tự Trọng, Quận 1, TP.Hồ Chí Minh
                   </p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
-                  <p className="srote-item-name">STORE HUỲNH VĂN BÁNH</p>
+                  <p className="srote-item-name">DEGREY SÀI GÒN CS4</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-address">
-                    43 Huỳnh Văn Bánh, Q.Phú Nhuận, TP.Hồ Chí Minh
+                    96 Lê Lai, Quận 1, TP.Hồ Chí Minh
                   </p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
-                  <p className="srote-item-name">STORE HUỲNH VĂN BÁNH</p>
+                  <p className="srote-item-name">DEGREY HÀ NỘI</p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
                   <p className="srote-item-address">
-                    43 Huỳnh Văn Bánh, Q.Phú Nhuận, TP.Hồ Chí Minh
+                    117 Đông Các, Q.Đống Đa, TP.Hà Nội
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY ĐÀ NẴNG</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    126 Lê Duẩn, Q.Hải Châu, TP.Đà Nẵng
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY BIÊN HÒA</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    235 Phan Trung, TP.Biên Hòa
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY CẦN THƠ</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    15 Nguyễn Việt Hồng, Q.Ninh Kiều, TP.Cần Thơ
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY MỸ THO</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    73 Lý Thường Kiệt, TP.Mỹ Tho
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY ĐÀ LẠT</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    11 Khu Hòa Bình, Phường 1, TP.Đà Lạt
+                  </p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-cskh">CSKH (8H-22H) 033 6311 117</p>
+                </div>
+
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-name">DEGREY NHA TRANG</p>
+                </div>
+                <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">
+                  <p className="srote-item-address">
+                    8 Ngô Gia Tự, P.Phước Tiến, TP.Nha Trang
                   </p>
                 </div>
                 <div className="col l-4 m-4 c-10 c-o-1 list-srote-item">

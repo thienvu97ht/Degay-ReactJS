@@ -61,10 +61,34 @@ class Footer extends Component {
           </div>
           <div className="brand-policy">
             <div className="social-network-icon text-center">
-              <i className="social-icon ti-facebook" />
-              <i className="social-icon ti-instagram" />
-              <i className="social-icon fab fa-youtube" />
-              <i className="social-icon fab fa-tiktok" />
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/degrey.saigon"
+                className="social-network-link">
+                <i className="social-icon ti-facebook" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/degrey.saigon/"
+                className="social-network-link">
+                <i className="social-icon ti-instagram" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/degreyvn"
+                className="social-network-link">
+                <i className="social-icon fab fa-youtube" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tiktok.com/@degrey.vn?"
+                className="social-network-link">
+                <i className="social-icon fab fa-tiktok" />
+              </a>
             </div>
             <div className="footer-menu">
               <div className="grid wide">

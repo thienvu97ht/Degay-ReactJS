@@ -107,6 +107,10 @@
   padding: 20px 0;
 }
 
+.social-network-link {
+  text-decoration: none;
+}
+
 .social-icon {
   color: #fff;
   font-size: 2rem;
