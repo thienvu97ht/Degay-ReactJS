@@ -60,6 +60,14 @@
   padding: 10px;
 }
 
+.header__navbar-item button.login-btn {
+  padding: 0;
+}
+
+.header__navbar-item-link-underline.login-btn::after {
+  bottom: 3px;
+}
+
 .header__navbar-item:not(:first-child):not(:last-child):after {
   content: "";
   display: block;

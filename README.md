@@ -18,4 +18,6 @@ Updating - 69%
    - Đăng nhập, đăng ký
    - Đăng nhập với Google, Facebook
    - Thêm, xóa, sửa địa chỉ
+   - Gửi email thông báo đặt hàng thành công
+   - Thống kê các sản phẩm mà khách hàng đã đặt
    - ... (Sẽ cập nhật trong tương lai)

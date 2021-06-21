@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "./responsive.css";
+import LogoutButton from "../Authentication/LogoutButton";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class Account extends Component {
   render() {
+    const { user, isAuthenticated } = this.props.auth0;
     return (
       <div className="account-container">
         <div className="grid wide">
           <div className="row">
             <div className="col l-2 m-12 c-10 c-o-1">
               <div className="nav-bar-top">
-                <p className="account-name">Dương Đình Thiện Vũ</p>
+                <p className="account-name">{user.name}</p>
               </div>
               <div className="nav-bar-bottom">
                 <ul className="account-information-list">
@@ -29,11 +32,8 @@ class Account extends Component {
                       Đơn hàng của tôi
                     </a>
                   </li>
-                  <li className="account-information-item">
-                    <a href="!#" className="account-information-link">
-                      Đăng xuất
-                    </a>
-                  </li>
+                  {/* Đăng Xuất */}
+                  <LogoutButton />
                 </ul>
               </div>
             </div>
@@ -47,11 +47,11 @@ class Account extends Component {
                       <ul>
                         <li>
                           <span>Họ và tên:</span>
-                          <span>Dương Đình Thiện Vũ</span>
+                          <span>{user.name}</span>
                         </li>
                         <li>
                           <span>Email:</span>
-                          <span>thien.vu97ht123@gmail.com</span>
+                          <span>{user.email}</span>
                         </li>
                       </ul>
                     </div>
@@ -149,4 +149,4 @@ class Account extends Component {
   }
 }
 
-export default Account;
+export default withAuth0(Account);

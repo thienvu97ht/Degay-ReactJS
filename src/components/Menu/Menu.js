@@ -5,6 +5,7 @@ import { Link, Route } from "react-router-dom";
 import CartModalContainer from "../../containers/CartModalContainer";
 import NavBarMobileModalContainer from "../../containers/NavBarMobileModalContainer";
 import SearchModalContainer from "../../containers/SearchModalContainer";
+import LoginButton from "../Authentication/LoginButton";
 
 const MenuLink = ({ label, to, activeOnlyWhenActive }) => {
   return (
@@ -32,7 +33,6 @@ class Menu extends Component {
     this.props.fetchAllProducts();
   }
 
-
   isOpenCart = () => {
     this.props.onOpenCartModal();
   };
@@ -49,11 +49,11 @@ class Menu extends Component {
     var result = 0;
     if (productsInCart.length > 0) {
       for (var i = 0; i < productsInCart.length; i++) {
-        result += productsInCart[i].quantity
+        result += productsInCart[i].quantity;
       }
     }
-    return result
-  }
+    return result;
+  };
 
   render() {
     var { productsInCart } = this.props;
@@ -136,11 +136,7 @@ class Menu extends Component {
           </div>
           <div className="header__navbar-right">
             <ul className="header__navbar-list">
-              <MenuLink
-                label="Đăng nhập"
-                to="/login"
-                activeOnlyWhenActive={false}
-              />
+              <LoginButton />
               <li className="header__navbar-item hide-on-mobile-tablet">
                 <button
                   onClick={this.isOpenSearch}

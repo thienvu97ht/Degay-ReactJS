@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import MenuContainer from "./containers/MenuContainer";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";

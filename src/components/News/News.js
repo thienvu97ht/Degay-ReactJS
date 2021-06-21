@@ -47,7 +47,7 @@ class News extends Component {
       ],
     };
 
-    var { news } = this.props;
+    // var { news } = this.props;
     return (
       <div className="app__container-product">
         <div className="grid wide">
